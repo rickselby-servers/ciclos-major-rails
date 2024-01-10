@@ -43,6 +43,9 @@ gem "tzinfo-data", "~> 2.0", platforms: %i[windows jruby]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", "~> 1.17", require: false
 
+# Use Sass to process CSS
+gem "sassc-rails", "~> 2.1"
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
@@ -58,6 +61,8 @@ group :development, :test do
 end
 
 group :development do
+  gem "bundler-audit", "~> 0.9"
+
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console", "~> 4.2"
 
