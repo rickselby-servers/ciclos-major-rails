@@ -1,6 +1,11 @@
 <div class="footer mt-auto py-3">
   <div class="container">
     <footer>
+
+      <% if current_admin %>
+      <%= render "admin" %>
+      <% end %>
+
       <%== render "partners" %>
       <div class="row row-cols-1">
         <div class="col">

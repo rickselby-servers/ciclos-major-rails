@@ -49,6 +49,8 @@ gem "sassc-rails", "~> 2.1"
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+gem "devise", "~> 4.9"
+
 # Bootstrap for front end
 gem "bootstrap", "~> 5.3"
 gem "bootstrap_form", "~> 5.3"

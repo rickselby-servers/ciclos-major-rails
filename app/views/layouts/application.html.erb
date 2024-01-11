@@ -26,6 +26,9 @@
 </div>
 
 <main class="container flex-shrink-0 mb-3" role="main">
+  <% if notice %><div class="alert alert-info"><%= notice %></div><% end %>
+  <% if alert %><div class="alert alert-danger"><%= alert %></div><% end %>
+
   <%= yield %>
 </main>
 
