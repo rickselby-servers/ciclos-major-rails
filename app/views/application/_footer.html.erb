@@ -3,7 +3,7 @@
     <footer>
 
       <% if current_admin %>
-      <%= render "admin" %>
+        <%= render "admin" %>
       <% end %>
 
       <%== render "partners" %>
@@ -12,15 +12,15 @@
           <div class="card mb-3">
             <div class="card-body text-center">
               <%= link_to icon("fa-brands", "facebook-f", class: "fa-fw"), "https://www.facebook.com/groups/2431275356936386/",
-                          class: "btn btn-lg text-white", style: "background-color: #0a53be" %>
+                          class: %w[btn btn-lg text-white], style: "background-color: #0a53be" %>
               <%= link_to icon("fa-brands", "twitter", class: "fa-fw"), "https://twitter.com/ciclosmajor1",
-                          class: "btn btn-lg text-white", style: "background-color: rgb(85, 172, 238)" %>
+                          class: %w[btn btn-lg text-white], style: "background-color: rgb(85, 172, 238)" %>
               <%= link_to icon("fa-brands", "instagram", class: "fa-fw"), "https://twitter.com/www.instagram.com/ciclos_major_/",
-                          class: "btn btn-lg text-white", style: "background-color: rgb(172, 43, 172)" %>
+                          class: %w[btn btn-lg text-white], style: "background-color: rgb(172, 43, 172)" %>
               <%= mail_to "info@ciclosmajor.com", icon("fa-solid", "envelope", class: "fa-fw"),
-                          class: "btn btn-lg btn-primary" %>
+                          class: %w[btn btn-lg btn-primary] %>
               <%= link_to icon("fa-solid", "phone", class: "fa-fw"), "tel:00447557688309",
-                          class: "btn btn-lg btn-primary" %>
+                          class: %w[btn btn-lg btn-primary] %>
             </div>
           </div>
         </div>
@@ -34,10 +34,10 @@
               Call us
             </div>
             <div class="list-group list-group-flush">
-              <%= link_to "tel:00447557688309", class: "list-group-item list-group-item-action" do %>
+              <%= link_to "tel:00447557688309", class: %w[list-group-item list-group-item-action] do %>
                 <span class="fi fi-gb"></span> 00 44 7557 688309
               <% end %>
-              <%= link_to "tel:0031650228175", class: "list-group-item list-group-item-action" do %>
+              <%= link_to "tel:0031650228175", class: %w[list-group-item list-group-item-action] do %>
                 <span class="fi fi-nl"></span> 00 31 6 5022 8175
               <% end %>
             </div>

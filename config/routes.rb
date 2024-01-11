@@ -2,6 +2,11 @@
 
 Rails.application.routes.draw do
   devise_for :admins, controllers: { omniauth_callbacks: "omniauth" }
+  devise_scope :admin do
+    get "sign_in", to: "auth#sign_in", as: :new_admin_session
+    get "sign_out", to: "devise/sessions#destroy", as: :destroy_admin_session
+  end
+
   resource :home, only: %i[show edit update], controller: :home
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
