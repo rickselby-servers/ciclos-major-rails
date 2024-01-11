@@ -1,16 +1,37 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Ciclos Major</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<html lang="en" class="h-100">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Ciclos Major: Mallorcan Cycling Holidays</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body class="d-flex flex-column h-100">
+
+<div class="w-100 header mb-3">
+  <div class="container text-center">
+    <a href="/">
+      <img src="<%= image_path "logo-transparent.png" %>" alt="Ciclos Major">
+    </a>
+  </div>
+
+  <div class="chain d-none d-lg-block"></div>
+  <%= render "navbar" %>
+  <div class="chain"></div>
+</div>
+
+<main class="container flex-shrink-0 mb-3" role="main">
+  <%= yield %>
+</main>
+
+
+<%= render "footer" %>
+</body>
 </html>

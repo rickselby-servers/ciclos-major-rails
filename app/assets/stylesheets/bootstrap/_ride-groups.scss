@@ -1,0 +1,16 @@
+#ride-groups {
+  @extend .text-center, .mb-3;
+
+  > div.col {
+    @extend .mb-3;
+
+    > div.card {
+      @extend .text-white;
+      background: linear-gradient(180deg, $secondary 40%, $gradient-bottom 100%);
+
+      > div.card-body p {
+        @extend .fs-5;
+      }
+    }
+  }
+}

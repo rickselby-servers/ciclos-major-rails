@@ -3,5 +3,5 @@ import "@hotwired/turbo-rails"
 import "controllers"
 
 // These are required in this order!
-import "popper"
+import "@popperjs/core"
 import "bootstrap"

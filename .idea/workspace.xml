@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="12479528-eee4-499f-92d4-3c65018f9751" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/controllers/home_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ciclos-major-rails.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ciclos-major-rails.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/importmap.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/importmap.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,10 +25,10 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2angNrXKkibfj4iPGXjgO3FQRla" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -40,6 +40,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/rick/projects/rickselby-servers/ciclos-major-rails/public/img",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -49,6 +50,19 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/img" />
+      <recent name="$PROJECT_DIR$/app/assets/images" />
+      <recent name="$PROJECT_DIR$/app/assets/stylesheets" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/assets/images" />
+      <recent name="$PROJECT_DIR$/app/assets/stylesheets/bootstrap" />
+      <recent name="$PROJECT_DIR$/app/views/application" />
+      <recent name="$PROJECT_DIR$/app/views/layouts" />
+    </key>
+  </component>
   <component name="RunManager" selected="Rails.ciclos-major-rails">
     <configuration name="ciclos-major-rails" type="RailsRunConfigurationType" factoryName="Rails">
       <module name="ciclos-major-rails" />
@@ -135,14 +149,53 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1704959721430</updated>
-      <workItem from="1704959723944" duration="354000" />
+      <workItem from="1704959723944" duration="754000" />
+      <workItem from="1704960955008" duration="3337000" />
     </task>
+    <task id="LOCAL-00001" summary="Add home controller for homepage">
+      <option name="closed" value="true" />
+      <created>1704960108601</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1704960108601</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add home controller for homepage">
+      <option name="closed" value="true" />
+      <created>1704960119553</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1704960119553</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Set up layout, bootstrap, and fontawesome">
+      <option name="closed" value="true" />
+      <created>1704963954551</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1704963954551</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Set up layout, bootstrap, and fontawesome">
+      <option name="closed" value="true" />
+      <created>1704964236572</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1704964236572</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add home controller for homepage" />
+    <MESSAGE value="Set up layout, bootstrap, and fontawesome" />
+    <option name="LAST_COMMIT_MESSAGE" value="Set up layout, bootstrap, and fontawesome" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ciclos_major_rails@ciclos_major_rails.rcov" NAME="ciclos-major-rails Coverage Results" MODIFIED="1704959740369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
+    <SUITE FILE_PATH="coverage/ciclos_major_rails@ciclos_major_rails.rcov" NAME="ciclos-major-rails Coverage Results" MODIFIED="1704964149972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
   </component>
 </project>
