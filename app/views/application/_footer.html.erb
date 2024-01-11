@@ -6,21 +6,16 @@
         <div class="col">
           <div class="card mb-3">
             <div class="card-body text-center">
-              <a href="https://www.facebook.com/groups/2431275356936386/" class="btn btn-lg text-white" style="background-color: #0a53be">
-                <span class="fa-brands fa-fw fa-facebook-f" title="Facebook"></span>
-              </a>
-              <a href="https://twitter.com/ciclosmajor1" class="btn btn-lg text-white" style="background-color: rgb(85, 172, 238);">
-                <span class="fa-brands fa-fw fa-twitter" title="Twitter"></span>
-              </a>
-              <a href="https://www.instagram.com/ciclos_major_/" class="btn btn-lg text-white" style="background-color: rgb(172, 43, 172)">
-                <span class="fa-brands fa-fw fa-instagram" title="Instagram"></span>
-              </a>
-              <a href="mailto:info@ciclosmajor.com" class="btn btn-lg btn-primary">
-                <span class="fa-solid fa-fw fa-envelope" title="Email"></span>
-              </a>
-              <a href="tel:00447557688309" class="btn btn-lg btn-primary">
-                <span class="fa-solid fa-fw fa-phone" title="Phone"></span>
-              </a>
+              <%= link_to icon("fa-brands", "facebook-f", class: "fa-fw"), "https://www.facebook.com/groups/2431275356936386/",
+                          class: "btn btn-lg text-white", style: "background-color: #0a53be" %>
+              <%= link_to icon("fa-brands", "twitter", class: "fa-fw"), "https://twitter.com/ciclosmajor1",
+                          class: "btn btn-lg text-white", style: "background-color: rgb(85, 172, 238)" %>
+              <%= link_to icon("fa-brands", "instagram", class: "fa-fw"), "https://twitter.com/www.instagram.com/ciclos_major_/",
+                          class: "btn btn-lg text-white", style: "background-color: rgb(172, 43, 172)" %>
+              <%= mail_to "info@ciclosmajor.com", icon("fa-solid", "envelope", class: "fa-fw"),
+                          class: "btn btn-lg btn-primary" %>
+              <%= link_to icon("fa-solid", "phone", class: "fa-fw"), "tel:00447557688309",
+                          class: "btn btn-lg btn-primary" %>
             </div>
           </div>
         </div>
@@ -34,8 +29,8 @@
               Call us
             </div>
             <div class="list-group list-group-flush">
-              <a href="tel:0031650228175" class="list-group-item list-group-item-action">00 31 6 5022 8175</a>
-              <a href="tel:00447557688309" class="list-group-item list-group-item-action">00 44 7557 688309</a>
+              <%= link_to "00 31 6 5022 8175", "tel:0031650228175", class: "list-group-item list-group-item-action" %>
+              <%= link_to "00 44 7557 688309", "tel:00447557688309", class: "list-group-item list-group-item-action" %>
             </div>
           </div>
         </div>
