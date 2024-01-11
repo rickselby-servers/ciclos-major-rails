@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "rails_helper"
+
 RSpec.describe "Home" do
   describe "GET show" do
     it "returns http success" do
