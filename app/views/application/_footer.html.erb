@@ -29,8 +29,12 @@
               Call us
             </div>
             <div class="list-group list-group-flush">
-              <%= link_to "00 31 6 5022 8175", "tel:0031650228175", class: "list-group-item list-group-item-action" %>
-              <%= link_to "00 44 7557 688309", "tel:00447557688309", class: "list-group-item list-group-item-action" %>
+              <%= link_to "tel:00447557688309", class: "list-group-item list-group-item-action" do %>
+                <span class="fi fi-gb"></span> 00 44 7557 688309
+              <% end %>
+              <%= link_to "tel:0031650228175", class: "list-group-item list-group-item-action" do %>
+                <span class="fi fi-nl"></span> 00 31 6 5022 8175
+              <% end %>
             </div>
           </div>
         </div>
