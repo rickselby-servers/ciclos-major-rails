@@ -1,7 +1,6 @@
-require 'rails_helper'
+# frozen_string_literal: true
 
-RSpec.describe HomeController, type: :controller do
-
+RSpec.describe HomeController do
   describe "GET #show" do
     it "returns http success" do
       get :show
@@ -22,5 +21,4 @@ RSpec.describe HomeController, type: :controller do
       expect(response).to have_http_status(:success)
     end
   end
-
 end

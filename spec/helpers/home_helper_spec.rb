@@ -1,4 +1,4 @@
-require 'rails_helper'
+# frozen_string_literal: true
 
 # Specs in this file have access to a helper object that includes
 # the HomeHelper. For example:
@@ -10,6 +10,6 @@ require 'rails_helper'
 #     end
 #   end
 # end
-RSpec.describe HomeHelper, type: :helper do
+RSpec.describe HomeHelper do
   pending "add some examples to (or delete) #{__FILE__}"
 end

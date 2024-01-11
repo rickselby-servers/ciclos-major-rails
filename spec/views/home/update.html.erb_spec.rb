@@ -1,5 +1,5 @@
-require 'rails_helper'
+# frozen_string_literal: true
 
-RSpec.describe "home/update.html.erb", type: :view do
+RSpec.describe "home/update.html.erb" do
   pending "add some examples to (or delete) #{__FILE__}"
 end
