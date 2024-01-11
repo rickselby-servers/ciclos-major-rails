@@ -50,6 +50,7 @@ gem "sassc-rails", "~> 2.1"
 # gem "image_processing", "~> 1.2"
 
 gem "devise", "~> 4.9"
+gem "omniauth-rails_csrf_protection", "~> 1.0"
 
 # Bootstrap for front end
 gem "bootstrap", "~> 5.3"

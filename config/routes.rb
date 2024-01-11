@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  devise_for :admins
+  devise_for :admins, controllers: { omniauth_callbacks: "omniauth" }
   resource :home, only: %i[show edit update], controller: :home
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
