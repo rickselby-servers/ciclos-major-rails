@@ -11,6 +11,9 @@
 
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   <%= javascript_importmap_tags %>
+  <% if admin_signed_in? %>
+    <script src="https://cdn.tiny.cloud/1/a3qd3lp1ui2mloevh50tdnuhyoxwy5pc115vkcitclg5nyx5/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+  <% end %>
 </head>
 
 <body class="d-flex flex-column h-100">

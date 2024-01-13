@@ -15,7 +15,7 @@ class PageTextService
 
   def set_text(key, text)
     if all_text.key? key
-      PageText.where(key:).update(text:).save
+      PageText.where(key:).update(text:)
     else
       PageText.create key:, text:
     end
