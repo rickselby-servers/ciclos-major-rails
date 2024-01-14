@@ -20,11 +20,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_11_154050) do
     t.index ["email"], name: "index_admins_on_email", unique: true
   end
 
-  create_table "page_texts", id: false, force: :cascade do |t|
+  create_table "page_texts", force: :cascade do |t|
     t.string "key"
     t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["key"], name: "index_page_texts_on_key", unique: true
   end
 
 end

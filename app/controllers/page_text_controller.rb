@@ -4,6 +4,7 @@ class PageTextController < ApplicationController
   before_action :authenticate_admin!
 
   def update
-    PageTextService.set_text params[:id], params[params[:id]]
+    page_text = PageText.find params[:id]
+    PageTextService.set_text page_text, params[params[:id]]
   end
 end
