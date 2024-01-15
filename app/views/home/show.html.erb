@@ -15,5 +15,15 @@
         formats: {
             blockquote: { block: 'blockquote', classes: 'blockquote' }
         },
+        setup: function(editor) {
+            editor.on('keyup', function(e) {
+                console.log('Editor contents was modified. Contents: ' + editor.getContent());
+                console.log(
+                  editor.selection.getNode().closest('form').querySelector('input[type=submit]')
+                );
+
+                editor.selection.getNode().closest('form').querySelector('input[type=submit]').style.display = 'inline-block'
+            });
+        }
     });
 </script>

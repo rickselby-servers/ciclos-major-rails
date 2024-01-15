@@ -19,7 +19,7 @@ class EditableTextHelper
 
   def form
     context.bootstrap_form_with model: page_text do |form|
-      p_tag + form.submit
+      p_tag + submit_button(form)
     end
   end
 
@@ -31,6 +31,12 @@ class EditableTextHelper
 
   def page_text
     @page_text ||= PageText.find_or_create_by(key: @key)
+  end
+
+  def submit_button(form)
+    context.tag.div class: %w[text-end] do
+      form.submit extra_class: "mb-2", style: "display: none"
+    end
   end
 
   def tinymce_classes
