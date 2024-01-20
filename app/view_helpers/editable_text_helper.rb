@@ -18,13 +18,13 @@ class EditableTextHelper
   attr_reader :context
 
   def form
-    context.bootstrap_form_with model: page_text do |form|
+    context.bootstrap_form_with model: page_text, data: { controller: :tinymce } do |form|
       p_tag + submit_button(form)
     end
   end
 
   def p_tag
-    context.tag.p class: (tinymce_classes + @classes).uniq, id: page_text.id do
+    context.tag.p class: @classes, id: page_text.id, data: p_data do
       page_text.text
     end
   end
@@ -39,9 +39,9 @@ class EditableTextHelper
     end
   end
 
-  def tinymce_classes
-    return [] unless @signed_in
+  def p_data
+    return {} unless @signed_in
 
-    %w[tinymce-body]
+    { tinymce_target: :input }
   end
 end

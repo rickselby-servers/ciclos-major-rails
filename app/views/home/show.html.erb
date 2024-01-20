@@ -1,29 +1,3 @@
 <%= editable_text "header", classes: %w[p-3 fs-3 mb-0 fw-bold text-center] %>
 
 <%= editable_text "block", classes: %w[p-3 mb-3 text-bg-primary text-center] %>
-
-<!-- TODO - MOVE THIS TO A JS FILE -->
-<script type="text/javascript">
-    tinymce.init({
-        selector: '.tinymce-body',
-        menubar: false,
-        inline: true,
-        plugins: 'link lists',
-        toolbar: 'undo redo | styles bold italic | numlist bullist | link blockquote',
-        valid_elements: 'h?,p,br,strong,em,a[href],ul,li,blockquote[class]',
-        hidden_input: true,
-        formats: {
-            blockquote: { block: 'blockquote', classes: 'blockquote' }
-        },
-        setup: function(editor) {
-            editor.on('keyup', function(e) {
-                console.log('Editor contents was modified. Contents: ' + editor.getContent());
-                console.log(
-                  editor.selection.getNode().closest('form').querySelector('input[type=submit]')
-                );
-
-                editor.selection.getNode().closest('form').querySelector('input[type=submit]').style.display = 'inline-block'
-            });
-        }
-    });
-</script>
