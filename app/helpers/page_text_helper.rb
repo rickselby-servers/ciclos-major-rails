@@ -3,7 +3,10 @@
 # Helpers around editable page text
 module PageTextHelper
   def editable_text(key, classes: [])
-    full_key = "#{@virtual_path.gsub(%r{/_?}, ".")}.#{key}" # rubocop:disable Rails/HelperInstanceVariable
-    EditableTextHelper.new(self, full_key, classes:).html
+    EditableTextHelper.new(self, page_text_key(key), classes:).html
+  end
+
+  def page_text_key(key)
+    "#{@virtual_path.gsub(%r{/_?}, ".")}.#{key}" # rubocop:disable Rails/HelperInstanceVariable
   end
 end
