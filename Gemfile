@@ -5,13 +5,13 @@ source "https://rubygems.org"
 ruby "3.3.0"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.1.2"
+gem "rails", "~> 7.1.3"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails", "~> 3.4"
 
 # Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
+gem "sqlite3", "~> 1.7"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
@@ -41,7 +41,7 @@ gem "jbuilder", "~> 2.11"
 gem "tzinfo-data", "~> 2.0", platforms: %i[windows jruby]
 
 # Reduces boot times through caching; required in config/boot.rb
-gem "bootsnap", "~> 1.17", require: false
+gem "bootsnap", "~> 1.18", require: false
 
 # Use Sass to process CSS
 gem "sassc-rails", "~> 2.1"
@@ -62,7 +62,7 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", "~> 1.9.1", platforms: %i[mri windows]
   gem "rspec-rails", "~> 6.1"
-  gem "rubocop-rickselby", "~> 0.14"
+  gem "rubocop-rickselby", "~> 0.16"
 end
 
 group :development do
@@ -80,6 +80,6 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem "capybara", "~> 3.39"
-  gem "selenium-webdriver", "~> 4.16"
+  gem "capybara", "~> 3.40"
+  gem "selenium-webdriver", "~> 4.17"
 end
