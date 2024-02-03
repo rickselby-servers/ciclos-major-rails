@@ -3,14 +3,12 @@
 require "rails_helper"
 
 RSpec.describe PageTextHelper, ".editable_text" do
-  include Devise::Test::ControllerHelpers
-
   subject(:call_helper) { helper.editable_text key, classes: }
 
   around do |example|
     @virtual_path = "foo"
     example.run
-    @virtual_path = ""
+    remove_instance_variable :@virtual_path
   end
 
   before do

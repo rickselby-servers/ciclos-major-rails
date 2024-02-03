@@ -3,8 +3,6 @@
 require "rails_helper"
 
 RSpec.describe PageTextHelper, ".page_text_key" do
-  include Devise::Test::ControllerHelpers
-
   subject { helper.page_text_key key }
 
   around do |example|
