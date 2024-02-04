@@ -12,7 +12,7 @@ RSpec.describe PageTextHelper, ".page_text_key" do
   end
 
   let(:key)          { :index }
-  let(:virtual_path) { "foo" }
+  let(:virtual_path) { "foo"  }
 
   it { is_expected.to eq "foo.index" }
 
