@@ -2,4 +2,6 @@
 
 class PageText < ApplicationRecord
   validates :key, presence: true, uniqueness: true
+
+  audited
 end

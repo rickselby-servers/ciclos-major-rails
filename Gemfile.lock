@@ -78,6 +78,9 @@ GEM
     addressable (2.8.6)
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
+    audited (5.4.3)
+      activerecord (>= 5.0, < 7.2)
+      request_store (~> 1.2)
     autoprefixer-rails (10.4.16.0)
       execjs (~> 2)
     base64 (0.2.0)
@@ -260,6 +263,8 @@ GEM
     regexp_parser (2.9.0)
     reline (0.4.2)
       io-console (~> 0.5)
+    request_store (1.6.0)
+      rack (>= 1.4)
     responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
@@ -399,6 +404,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  audited (~> 5.4)
   bootsnap (~> 1.18)
   bootstrap (~> 5.3)
   bootstrap_form (~> 5.3)
