@@ -24,8 +24,8 @@ class EditableTextHelper
   end
 
   def p_tag
-    context.tag.p class: @classes, id: page_text.id, data: p_data do
-      page_text.text
+    context.tag.p class: @classes, id: @key, data: p_data do
+      PageTextService.get_text @key
     end
   end
 

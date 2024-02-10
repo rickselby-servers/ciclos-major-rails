@@ -5,7 +5,7 @@ class PageTextController < ApplicationController
 
   def update
     page_text = PageText.find params[:id]
-    PageTextService.set_text page_text, params[params[:id]]
+    PageTextService.set_text page_text, params[page_text.key]
     redirect_back fallback_location: :root_path
   end
 end
