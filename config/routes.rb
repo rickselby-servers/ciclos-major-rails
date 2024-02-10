@@ -7,7 +7,8 @@ Rails.application.routes.draw do
     get "sign_out", to: "devise/sessions#destroy", as: :destroy_admin_session
   end
 
-  resource :home, only: %i[show edit update], controller: :home
+  resource :home, only: :show, controller: :home
+  resources :page_text, only: :update
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

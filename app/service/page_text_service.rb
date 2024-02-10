@@ -10,22 +10,18 @@ class PageTextService
   end
 
   def get_text(key, default = key)
-    all_text[key] || default
+    all_text[key.to_s] || default
   end
 
-  def set_text(key, text)
-    if all_text.key? key
-      PageText.where(key:).update(text:).save
-    else
-      PageText.create key:, text:
-    end
+  def set_text(page_text, text)
+    page_text.update(text:)
     clear_cache
   end
 
   private
 
   def clear_cache
-    @text = nil
+    @all_text = nil
   end
 
   def all_text
