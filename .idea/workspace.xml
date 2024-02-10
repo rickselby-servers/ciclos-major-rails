@@ -5,35 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aac2a57f-6cfe-440c-8510-acda59a6794f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/controllers/pages_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/pages/about_us.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/pages/arrivals_and_transfers.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/pages/contact_us.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/pages/lunch_stops.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/pages/privacy_policy.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/pages/ride_groups.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/pages/routes.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/pages/safety.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/pages/terms_and_conditions.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/pages/videos.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/requests/pages_spec.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/views/pages/about_us.html.erb_spec.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/views/pages/arrivals_and_transfers.html.erb_spec.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/views/pages/basic_page.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/views/pages/contact_us.html.erb_spec.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/views/pages/lunch_stops.html.erb_spec.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/views/pages/privacy_policy.html.erb_spec.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/views/pages/ride_groups.html.erb_spec.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/views/pages/routes.html.erb_spec.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/views/pages/safety.html.erb_spec.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/views/pages/terms_and_conditions.html.erb_spec.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/views/pages/videos.html.erb_spec.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/home/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/home.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/requests/home_spec.rb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/spec/system/update_page_text_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/system/update_page_text_spec.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/views/home/show.html.erb_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/views/pages/home.html.erb_spec.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +124,7 @@
       <command value="rake rubocop:autocorrect_all" />
     </option>
   </component>
-  <component name="RunManager" selected="Rake.rubocop:autocorrect_all: ciclos-major-rails">
+  <component name="RunManager" selected="Rake.spec: ciclos-major-rails">
     <configuration name="All specs in pages: ciclos-major-rails" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
       <module name="ciclos-major-rails" />
       <predefined_log_file enabled="true" id="RUBY_RSPEC" />
@@ -415,7 +387,7 @@
       <workItem from="1707553568791" duration="13000" />
       <workItem from="1707553784620" duration="3180000" />
       <workItem from="1707560119850" duration="6155000" />
-      <workItem from="1707597170844" duration="4036000" />
+      <workItem from="1707597170844" duration="4345000" />
     </task>
     <task id="LOCAL-00001" summary="Start work on having editable inline text things">
       <option name="closed" value="true" />
@@ -585,7 +557,23 @@
       <option name="project" value="LOCAL" />
       <updated>1707598249676</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Add top-level basic pages">
+      <option name="closed" value="true" />
+      <created>1707601267647</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1707601267647</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Use underscore style by default, convert for routes">
+      <option name="closed" value="true" />
+      <created>1707601433432</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1707601433432</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -635,19 +623,21 @@
     <MESSAGE value="Add `auditable` gem" />
     <MESSAGE value="Add tests for auditing of models" />
     <MESSAGE value="Tidy up tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tidy up tests" />
+    <MESSAGE value="Add top-level basic pages" />
+    <MESSAGE value="Use underscore style by default, convert for routes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Use underscore style by default, convert for routes" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ciclos_major_rails@PageTextHelper_editable_text.rcov" NAME="PageTextHelper.editable_text Coverage Results" MODIFIED="1706981385073" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
     <SUITE FILE_PATH="coverage/ciclos_major_rails@EditableTextHelper_html.rcov" NAME="EditableTextHelper.html Coverage Results" MODIFIED="1707560915446" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
     <SUITE FILE_PATH="coverage/ciclos_major_rails@home_show_html_erb.rcov" NAME="home/show.html.erb Coverage Results" MODIFIED="1707563031909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
-    <SUITE FILE_PATH="coverage/ciclos_major_rails@rubocop_autocorrect_all__ciclos_major_rails.rcov" NAME="rubocop:autocorrect_all: ciclos-major-rails Coverage Results" MODIFIED="1707600503856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
+    <SUITE FILE_PATH="coverage/ciclos_major_rails@rubocop_autocorrect_all__ciclos_major_rails.rcov" NAME="rubocop:autocorrect_all: ciclos-major-rails Coverage Results" MODIFIED="1707601411414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
     <SUITE FILE_PATH="coverage/ciclos_major_rails@PageTextService_get_text.rcov" NAME="PageTextService.get_text Coverage Results" MODIFIED="1707563234969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
     <SUITE FILE_PATH="coverage/ciclos_major_rails@PageTextHelper_page_text_key.rcov" NAME="PageTextHelper page_text_key Coverage Results" MODIFIED="1706981194719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
     <SUITE FILE_PATH="coverage/ciclos_major_rails@Pages.rcov" NAME="Pages Coverage Results" MODIFIED="1707599315325" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
     <SUITE FILE_PATH="coverage/ciclos_major_rails@PageText.rcov" NAME="PageText Coverage Results" MODIFIED="1707598239967" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
     <SUITE FILE_PATH="coverage/ciclos_major_rails@EditableTextHelper_html_when_logged_in_the_form_contents.rcov" NAME="EditableTextHelper.html when logged in the form contents Coverage Results" MODIFIED="1707561352566" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
-    <SUITE FILE_PATH="coverage/ciclos_major_rails@All_specs_in_pages__ciclos_major_rails.rcov" NAME="All specs in pages: ciclos-major-rails Coverage Results" MODIFIED="1707601101645" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
+    <SUITE FILE_PATH="coverage/ciclos_major_rails@All_specs_in_pages__ciclos_major_rails.rcov" NAME="All specs in pages: ciclos-major-rails Coverage Results" MODIFIED="1707601207926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
     <SUITE FILE_PATH="coverage/ciclos_major_rails@rubocop__ciclos_major_rails.rcov" NAME="rubocop: ciclos-major-rails Coverage Results" MODIFIED="1707598786816" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
     <SUITE FILE_PATH="coverage/ciclos_major_rails@All_specs_in_page_text_service__ciclos_major_rails.rcov" NAME="All specs in page_text_service: ciclos-major-rails Coverage Results" MODIFIED="1707556226808" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
     <SUITE FILE_PATH="coverage/ciclos_major_rails@updating_page_text.rcov" NAME=" Coverage Results" MODIFIED="1707565035494" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
@@ -659,7 +649,7 @@
     <SUITE FILE_PATH="coverage/ciclos_major_rails@pages_home_html_erb.rcov" NAME="pages/home.html.erb Coverage Results" MODIFIED="1707600913789" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
     <SUITE FILE_PATH="coverage/ciclos_major_rails@updating_page_text_user_logs_in_and_updates_some_text.rcov" NAME="updating page text user logs in and updates some text Coverage Results" MODIFIED="1707563998347" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
     <SUITE FILE_PATH="coverage/ciclos_major_rails@PageTexts.rcov" NAME="PageTexts Coverage Results" MODIFIED="1707562827225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
-    <SUITE FILE_PATH="coverage/ciclos_major_rails@spec__ciclos_major_rails.rcov" NAME="spec: ciclos-major-rails Coverage Results" MODIFIED="1707600516842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
+    <SUITE FILE_PATH="coverage/ciclos_major_rails@spec__ciclos_major_rails.rcov" NAME="spec: ciclos-major-rails Coverage Results" MODIFIED="1707601504232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
     <SUITE FILE_PATH="coverage/ciclos_major_rails@EditableTextHelper_html_when_logged_in.rcov" NAME="EditableTextHelper.html when logged in Coverage Results" MODIFIED="1707561803122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
     <SUITE FILE_PATH="coverage/ciclos_major_rails@assets_clobber__ciclos_major_rails.rcov" NAME="assets:clobber: ciclos-major-rails Coverage Results" MODIFIED="1707564743092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
     <SUITE FILE_PATH="coverage/ciclos_major_rails@ciclos_major_rails.rcov" NAME="ciclos-major-rails Coverage Results" MODIFIED="1707599421592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
