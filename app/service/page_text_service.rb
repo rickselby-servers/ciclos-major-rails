@@ -10,7 +10,7 @@ class PageTextService
   end
 
   def get_text(key, default = key)
-    all_text[key] || default
+    all_text[key.to_s] || default
   end
 
   def set_text(page_text, text)
