@@ -3,5 +3,11 @@
 require "rails_helper"
 
 RSpec.describe "home/show.html.erb" do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject { render }
+
+  before do
+    PageText.create key: "home.show.header", text: "header text"
+  end
+
+  it { is_expected.to include "header text" }
 end

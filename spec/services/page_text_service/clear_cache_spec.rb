@@ -3,9 +3,8 @@
 require "rails_helper"
 
 RSpec.describe PageTextService, ".clear_cache" do
-  subject { instance.get_text key }
+  subject { described_class.get_text key }
 
-  let(:instance)   { Class.new(described_class).instance }
   let(:key)        { :foo                                }
   let!(:page_text) { PageText.create key:, text:         }
   let(:text)       { "bar"                               }
@@ -15,7 +14,7 @@ RSpec.describe PageTextService, ".clear_cache" do
   end
 
   context "when updating text" do
-    before { instance.set_text page_text, new_text }
+    before { described_class.set_text page_text, new_text }
 
     let(:new_text) { "baz" }
 

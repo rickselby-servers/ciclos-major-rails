@@ -3,10 +3,9 @@
 require "rails_helper"
 
 RSpec.describe PageTextService, ".get_text" do
-  subject(:get_text) { instance.get_text key }
+  subject(:get_text) { described_class.get_text key }
 
-  let(:instance) { Class.new(described_class).instance }
-  let(:key)      { :foo                                }
+  let(:key) { :foo }
 
   context "with no record" do
     it "does not create a new record" do
@@ -17,7 +16,7 @@ RSpec.describe PageTextService, ".get_text" do
     it { is_expected.to eq key }
 
     context "with a default value" do
-      subject(:get_text) { instance.get_text key, default }
+      subject(:get_text) { described_class.get_text key, default }
 
       let(:default) { :bar }
 
@@ -33,7 +32,7 @@ RSpec.describe PageTextService, ".get_text" do
     it { is_expected.to eq text }
 
     context "with a default value" do
-      subject(:get_text) { instance.get_text key, default }
+      subject(:get_text) { described_class.get_text key, default }
 
       let(:default) { :bar }
 

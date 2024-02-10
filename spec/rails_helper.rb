@@ -69,6 +69,10 @@ RSpec.configure do |config|
   config.include Devise::Test::IntegrationHelpers, type: :feature
   config.include Devise::Test::IntegrationHelpers, type: :request
   config.include Devise::Test::ControllerHelpers, type: :view
+
+  config.before do
+    Singleton.__init__(PageTextService)
+  end
 end
 
 Shoulda::Matchers.configure do |config|

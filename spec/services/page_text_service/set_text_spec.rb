@@ -3,9 +3,8 @@
 require "rails_helper"
 
 RSpec.describe PageTextService, ".set_text" do
-  subject(:set_text) { instance.set_text page_text, text }
+  subject(:set_text) { described_class.set_text page_text, text }
 
-  let(:instance)  { Class.new(described_class).instance }
   let(:key)       { :foo                                }
   let(:page_text) { PageText.new key:                   }
   let(:text)      { "bar"                               }

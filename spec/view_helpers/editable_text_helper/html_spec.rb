@@ -9,8 +9,6 @@ RSpec.describe EditableTextHelper, ".html" do
 
   subject(:html) { described_class.new(view, key, classes:).html }
 
-  before { Singleton.__init__(PageTextService) }
-
   let(:classes) { []        }
   let(:key)     { "foo.bar" }
   let(:text)    { key       }
