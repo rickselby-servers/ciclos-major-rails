@@ -9,10 +9,10 @@ RSpec.describe "PageTexts" do
       response
     end
 
-    let(:key)       { :foo                        }
+    let(:key) { :foo }
     let(:page_text) { PageText.create key:, text: }
-    let(:new_text)  { "baz"                       }
-    let(:text)      { "bar"                       }
+    let(:new_text) { "baz" }
+    let(:text) { "bar" }
 
     it { is_expected.to redirect_to new_admin_session_path }
 

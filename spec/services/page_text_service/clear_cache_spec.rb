@@ -5,9 +5,9 @@ require "rails_helper"
 RSpec.describe PageTextService, ".clear_cache" do
   subject { described_class.get_text key }
 
-  let(:key)        { :foo                                }
-  let!(:page_text) { PageText.create key:, text:         }
-  let(:text)       { "bar"                               }
+  let(:key) { :foo }
+  let!(:page_text) { PageText.create key:, text: }
+  let(:text) { "bar" }
 
   context "without an update" do
     it { is_expected.to eq text }

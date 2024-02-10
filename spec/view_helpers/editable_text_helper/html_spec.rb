@@ -9,9 +9,9 @@ RSpec.describe EditableTextHelper, ".html" do
 
   subject(:html) { described_class.new(view, key, classes:).html }
 
-  let(:classes) { []        }
-  let(:key)     { "foo.bar" }
-  let(:text)    { key       }
+  let(:classes) { [] }
+  let(:key) { "foo.bar" }
+  let(:text) { key }
 
   it { is_expected.to have_css "p#foo\\.bar", text: }
 

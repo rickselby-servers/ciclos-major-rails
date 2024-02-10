@@ -16,9 +16,9 @@ RSpec.describe PageTextHelper, ".editable_text" do
     allow(EditableTextHelper).to receive(:new).and_return mock_editable_text_helper
   end
 
-  let(:classes)                   { %i[one two] }
-  let(:key)                       { :index      }
-  let(:mock_editable_text_helper) { double      }
+  let(:classes) { %i[one two] }
+  let(:key) { :index }
+  let(:mock_editable_text_helper) { double }
 
   it { is_expected.to eq "html_output" }
 

@@ -11,8 +11,8 @@ RSpec.describe PageTextHelper, ".page_text_key" do
     remove_instance_variable :@virtual_path
   end
 
-  let(:key)          { :index }
-  let(:virtual_path) { "foo"  }
+  let(:key) { :index }
+  let(:virtual_path) { "foo" }
 
   it { is_expected.to eq "foo.index" }
 

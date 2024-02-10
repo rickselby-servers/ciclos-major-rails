@@ -5,9 +5,9 @@ require "rails_helper"
 RSpec.describe PageTextService, ".set_text" do
   subject(:set_text) { described_class.set_text page_text, text }
 
-  let(:key)       { :foo                                }
-  let(:page_text) { PageText.new key:                   }
-  let(:text)      { "bar"                               }
+  let(:key) { :foo }
+  let(:page_text) { PageText.new key: }
+  let(:text) { "bar" }
 
   context "with no existing record" do
     it "creates a new record" do
