@@ -11,9 +11,9 @@ RSpec.describe "Pages" do
   end
 
   PagesController::PAGES.each do |path|
-    describe "GET /#{path.underscore}" do
+    describe "GET /#{path}" do
       it "returns http success" do
-        get public_send(:"#{path.underscore}_path")
+        get public_send(:"#{path}_path")
         expect(response).to have_http_status(:success)
       end
     end

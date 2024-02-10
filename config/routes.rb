@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   root "pages#home"
 
   PagesController::PAGES.each do |path|
-    get path, to: "pages##{path.underscore}", as: :"#{path.underscore}"
+    get path.dasherize, to: "pages##{path}", as: path.to_sym
   end
 
   resources :page_text, only: :update

@@ -152,7 +152,7 @@
       <command value="rake rubocop:autocorrect_all" />
     </option>
   </component>
-  <component name="RunManager" selected="RSpec.All specs in pages: ciclos-major-rails">
+  <component name="RunManager" selected="Rake.rubocop:autocorrect_all: ciclos-major-rails">
     <configuration name="All specs in pages: ciclos-major-rails" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
       <module name="ciclos-major-rails" />
       <predefined_log_file enabled="true" id="RUBY_RSPEC" />
@@ -389,9 +389,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Rake.rubocop:autocorrect_all: ciclos-major-rails" />
         <item itemvalue="RSpec.All specs in pages: ciclos-major-rails" />
         <item itemvalue="RSpec.pages/home.html.erb" />
-        <item itemvalue="Rake.rubocop:autocorrect_all: ciclos-major-rails" />
         <item itemvalue="RSpec.Pages" />
         <item itemvalue="Rake.rubocop: ciclos-major-rails" />
       </list>

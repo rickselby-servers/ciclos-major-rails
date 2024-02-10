@@ -2,22 +2,22 @@
 
 class PagesController < ApplicationController
   PAGES = %w[
-    about-us
-    arrivals-and-transfers
-    contact-us
-    lunch-stops
-    privacy-policy
-    ride-groups
+    about_us
+    arrivals_and_transfers
+    contact_us
+    lunch_stops
+    privacy_policy
+    ride_groups
     routes
     safety
-    terms-and-conditions
+    terms_and_conditions
     videos
   ].freeze
 
   def home; end
 
   PAGES.each do |path|
-    define_method(path.underscore) do
+    define_method(path) do
       # empty
     end
   end
