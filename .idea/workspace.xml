@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aac2a57f-6cfe-440c-8510-acda59a6794f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/spec/system/update_page_text_spec.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/test.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/test.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ciclos-major-rails.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ciclos-major-rails.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/environments/test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/environments/test.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spec/rails_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/rails_helper.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/system/update_page_text_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/system/update_page_text_spec.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,16 +106,16 @@
       <command value="erblint --lint-all" />
       <command value="spec: ciclos-major-rails" />
       <command value="rake spec" />
-      <command value="bundle install" />
       <command value="rake rubocop" />
       <command value="rake routes" />
       <command value="rails routes" />
       <command value="rake rubocop:autocorrect_all" />
       <command value="rake assets:precompile" />
       <command value="rake assets:clobber" />
+      <command value="bundle install" />
     </option>
   </component>
-  <component name="RunManager" selected="RSpec.updating page text">
+  <component name="RunManager" selected="RSpec.update_page_text_spec">
     <configuration type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true" nameIsGenerated="true">
       <module name="ciclos-major-rails" />
       <predefined_log_file enabled="true" id="RUBY_RSPEC" />
@@ -356,8 +355,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="RSpec.updating page text" />
         <item itemvalue="RSpec.update_page_text_spec" />
+        <item itemvalue="RSpec.updating page text" />
         <item itemvalue="Rake.assets:clobber: ciclos-major-rails" />
         <item itemvalue="Rake.assets:precompile: ciclos-major-rails" />
         <item itemvalue="RSpec.updating page text user logs in and updates some text" />
@@ -381,7 +380,7 @@
       <workItem from="1707040930231" duration="130000" />
       <workItem from="1707553568791" duration="13000" />
       <workItem from="1707553784620" duration="3180000" />
-      <workItem from="1707560119850" duration="4890000" />
+      <workItem from="1707560119850" duration="5529000" />
     </task>
     <task id="LOCAL-00001" summary="Start work on having editable inline text things">
       <option name="closed" value="true" />
@@ -503,7 +502,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707563407382</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Add a system test for updating page text">
+      <option name="closed" value="true" />
+      <created>1707565109968</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1707565109968</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -537,7 +544,8 @@
     <MESSAGE value="Add request tests for endpoint to update page text" />
     <MESSAGE value="Add a basic" />
     <MESSAGE value="Add a basic view test for the home page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a basic view test for the home page" />
+    <MESSAGE value="Add a system test for updating page text" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a system test for updating page text" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ciclos_major_rails@assets_precompile__ciclos_major_rails.rcov" NAME="assets:precompile: ciclos-major-rails Coverage Results" MODIFIED="1707564605951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
@@ -558,8 +566,8 @@
     <SUITE FILE_PATH="coverage/ciclos_major_rails@All_specs_in_page_text_service__ciclos_major_rails.rcov" NAME="All specs in page_text_service: ciclos-major-rails Coverage Results" MODIFIED="1707556226808" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
     <SUITE FILE_PATH="coverage/ciclos_major_rails@EditableTextHelper_html_when_logged_in.rcov" NAME="EditableTextHelper.html when logged in Coverage Results" MODIFIED="1707561803122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
     <SUITE FILE_PATH="coverage/ciclos_major_rails@assets_clobber__ciclos_major_rails.rcov" NAME="assets:clobber: ciclos-major-rails Coverage Results" MODIFIED="1707564743092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
-    <SUITE FILE_PATH="coverage/ciclos_major_rails@update_page_text_spec.rcov" NAME="update_page_text_spec Coverage Results" MODIFIED="1707564827147" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
-    <SUITE FILE_PATH="coverage/ciclos_major_rails@updating_page_text.rcov" NAME=" Coverage Results" MODIFIED="1707565000251" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
+    <SUITE FILE_PATH="coverage/ciclos_major_rails@updating_page_text.rcov" NAME=" Coverage Results" MODIFIED="1707565035494" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
+    <SUITE FILE_PATH="coverage/ciclos_major_rails@update_page_text_spec.rcov" NAME="update_page_text_spec Coverage Results" MODIFIED="1707565640201" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
     <SUITE FILE_PATH="coverage/ciclos_major_rails@ciclos_major_rails.rcov" NAME="ciclos-major-rails Coverage Results" MODIFIED="1707562443465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
     <SUITE FILE_PATH="coverage/ciclos_major_rails@PageTextService_clear_cache.rcov" NAME="PageTextService.clear_cache Coverage Results" MODIFIED="1707563266132" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
   </component>

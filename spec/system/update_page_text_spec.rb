@@ -3,7 +3,7 @@
 require "rails_helper"
 
 RSpec.describe "updating page text" do
-  scenario "user logs in and updates some text" do
+  scenario "user logs in and updates some text", js: true do
     sign_in Admin.create
     visit home_path
 

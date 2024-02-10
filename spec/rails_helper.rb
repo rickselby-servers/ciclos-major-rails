@@ -73,6 +73,14 @@ RSpec.configure do |config|
   config.before do
     Singleton.__init__(PageTextService)
   end
+
+  config.before(:each, type: :system) do
+    driven_by :rack_test
+  end
+
+  config.before(:each, :js, type: :system) do
+    driven_by :selenium_chrome_headless
+  end
 end
 
 Shoulda::Matchers.configure do |config|
