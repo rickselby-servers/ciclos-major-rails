@@ -1,0 +1,23 @@
+<div class="accordion-item" id="<%= dom_id faq %>">
+  <h2 class="accordion-header row">
+    <div class="col">
+      <button class="accordion-button collapsed" id="question-<%= faq.id %>" type="button"
+              data-bs-toggle="collapse" data-bs-target="#answer-<%= faq.id %>"
+              aria-expanded="true" aria-controls="#collapse-<%= faq.id %>">
+        <%= faq.question %>
+      </button>
+    </div>
+    <% if admin_signed_in? %>
+      <div class="col-sm-2 col-lg-1 align-self-center">
+        <%= link_to icon("fa-solid", "pencil"), edit_faq_path(faq), class: %i[btn btn-secondary] %>
+      </div>
+    <% end %>
+  </h2>
+
+  <div id="answer-<%= faq.id %>" class="accordion-collapse collapse" aria-labelledby="question-<%= faq.id %>"
+       data-bs-parent="#faqs">
+    <div class="accordion-body">
+      <%= faq.answer %>
+    </div>
+  </div>
+</div>

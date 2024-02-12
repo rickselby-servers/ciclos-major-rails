@@ -18,5 +18,6 @@ Rails.application.routes.draw do
     get path.dasherize, to: "pages##{path}", as: path.to_sym
   end
 
+  resources :faqs, except: :show
   resources :page_text, only: :update
 end

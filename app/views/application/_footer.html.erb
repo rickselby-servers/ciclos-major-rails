@@ -2,7 +2,7 @@
   <div class="container">
     <footer>
 
-      <% if current_admin %>
+      <% if admin_signed_in? %>
         <%= render "admin" %>
       <% end %>
 

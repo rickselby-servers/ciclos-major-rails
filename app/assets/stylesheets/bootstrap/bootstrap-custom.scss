@@ -101,3 +101,8 @@ $secondary-link-hover-color: shift-color($secondary, $link-shade-percentage) !de
   transform: translate(-50%, -50%) rotate(-5deg);
   transform-origin: center
 }
+
+label.required:after {
+  content:" *";
+  color: red;
+}

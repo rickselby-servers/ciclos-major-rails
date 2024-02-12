@@ -1,0 +1,14 @@
+<h1>Frequently Asked Questions</h1>
+
+<% if admin_signed_in? %>
+  <p>
+    <%= link_to new_faq_path, class: %[btn btn-primary] do %>
+      <%= icon "fa-solid", "plus", class: "fa-fw" %>
+      New FAQ
+    <% end %>
+  </p>
+<% end %>
+
+<div class="accordion" id="faqs">
+  <%= render @faqs %>
+</div>
