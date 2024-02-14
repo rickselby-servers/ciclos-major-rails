@@ -1,0 +1,11 @@
+---
+en:
+  activerecord:
+    models:
+      faq:
+        one: "FAQ"
+        other: "FAQs"
+    attributes:
+      faq:
+        answer: "Answer"
+        question: "Question"

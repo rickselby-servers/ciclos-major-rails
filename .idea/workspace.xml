@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aac2a57f-6cfe-440c-8510-acda59a6794f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/config/locales/views.en.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/locales/activerecord.en.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/locales/helpers.en.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/faqs_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/faqs_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/faqs/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/faqs/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/faqs/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/faqs/edit.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/faqs/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/faqs/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/faqs/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/faqs/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/faqs/show.html.erb" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +135,7 @@
       <command value="rake rubocop:autocorrect_all" />
     </option>
   </component>
-  <component name="RunManager" selected="RSpec.faqs_spec">
+  <component name="RunManager" selected="Rails.ciclos-major-rails">
     <configuration name="/faqs" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true" nameIsGenerated="true">
       <module name="ciclos-major-rails" />
       <predefined_log_file enabled="true" id="RUBY_RSPEC" />
@@ -619,7 +614,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707772859473</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Basic localization">
+      <option name="closed" value="true" />
+      <created>1707896543737</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1707896543737</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -648,7 +651,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Start work on having editable inline text things" />
     <MESSAGE value="Add ID back to page_text model so we can update it properly" />
     <MESSAGE value="Hide submit button until text has changed" />
     <MESSAGE value="Add a stimulus controller (?) that sets up tinymce" />
@@ -673,7 +675,8 @@
     <MESSAGE value="Use underscore style by default, convert for routes" />
     <MESSAGE value="Fix page text update spec test" />
     <MESSAGE value="Add FAQs to the site" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add FAQs to the site" />
+    <MESSAGE value="Basic localization" />
+    <option name="LAST_COMMIT_MESSAGE" value="Basic localization" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ciclos_major_rails@PageTextHelper_editable_text.rcov" NAME="PageTextHelper.editable_text Coverage Results" MODIFIED="1706981385073" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
@@ -707,6 +710,6 @@
     <SUITE FILE_PATH="coverage/ciclos_major_rails@EditableTextHelper_html_when_logged_in.rcov" NAME="EditableTextHelper.html when logged in Coverage Results" MODIFIED="1707561803122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
     <SUITE FILE_PATH="coverage/ciclos_major_rails@assets_clobber__ciclos_major_rails.rcov" NAME="assets:clobber: ciclos-major-rails Coverage Results" MODIFIED="1707564743092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
     <SUITE FILE_PATH="coverage/ciclos_major_rails@faqs_edit.rcov" NAME="faqs/edit Coverage Results" MODIFIED="1707772285642" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
-    <SUITE FILE_PATH="coverage/ciclos_major_rails@ciclos_major_rails.rcov" NAME="ciclos-major-rails Coverage Results" MODIFIED="1707599421592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
+    <SUITE FILE_PATH="coverage/ciclos_major_rails@ciclos_major_rails.rcov" NAME="ciclos-major-rails Coverage Results" MODIFIED="1707897003266" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
   </component>
 </project>
