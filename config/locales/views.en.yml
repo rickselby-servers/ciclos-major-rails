@@ -1,0 +1,23 @@
+---
+en:
+  faqs:
+    back: "Back to FAQs"
+    create:
+      success: "FAQ was successfully created."
+    destroy:
+      success: "FAQ was successfully deleted."
+    edit:
+      title: "Editing Frequently Asked Question"
+    form:
+      delete: "Delete"
+      delete_confirm: "Are you sure you wish to delete this FAQ?"
+      errors:
+        one: "One error prevented this FAQ from being saved:"
+        other: "%{count} errors prevented this FAQ from being saved:"
+    index:
+      title: "Frequently Asked Questions"
+      new: "New FAQ"
+    new:
+      title: "New Frequently Asked Question"
+    update:
+      success: "FAQ was successfully updated."

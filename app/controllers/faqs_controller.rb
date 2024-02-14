@@ -18,7 +18,7 @@ class FaqsController < ApplicationController
     @faq = Faq.new(faq_params)
 
     if @faq.save
-      redirect_to faqs_path, notice: "Faq was successfully created."
+      redirect_to faqs_path, notice: t(".success")
     else
       render :new, status: :unprocessable_entity
     end
@@ -26,7 +26,7 @@ class FaqsController < ApplicationController
 
   def update
     if @faq.update(faq_params)
-      redirect_to faqs_path, notice: "Faq was successfully updated."
+      redirect_to faqs_path, notice: t(".success")
     else
       render :edit, status: :unprocessable_entity
     end
@@ -35,7 +35,7 @@ class FaqsController < ApplicationController
   def destroy
     @faq.destroy!
 
-    redirect_to faqs_path, notice: "Faq was successfully destroyed."
+    redirect_to faqs_path, notice: t(".success")
   end
 
   private

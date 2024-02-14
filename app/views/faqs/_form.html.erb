@@ -1,7 +1,7 @@
 <%= bootstrap_form_with(model: faq) do |form| %>
   <% if faq.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(faq.errors.count, "error") %> prohibited this faq from being saved:</h2>
+      <h2><%= t ".errors", count: faq.errors.count %></h2>
 
       <ul>
         <% faq.errors.each do |error| %>
@@ -17,7 +17,7 @@
   <div>
     <%= form.submit %>
     <% if faq.persisted? %>
-      <%= link_to "Delete", faq_path(faq), class: %i[btn btn-danger], data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+      <%= link_to t(".delete"), faq_path(faq), class: %i[btn btn-danger], data: { turbo_method: :delete, turbo_confirm: t(".delete_confirm") } %>
     <% end %>
   </div>
 <% end %>
