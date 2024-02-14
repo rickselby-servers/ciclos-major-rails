@@ -17,7 +17,8 @@
   <div>
     <%= form.submit %>
     <% if faq.persisted? %>
-      <%= link_to t(".delete"), faq_path(faq), class: %i[btn btn-danger], data: { turbo_method: :delete, turbo_confirm: t(".delete_confirm") } %>
+      <%= link_to t(".delete"), faq_path(faq), class: %i[btn btn-danger],
+                  data: { turbo_method: :delete, turbo_confirm: t(".delete_confirm") } %>
     <% end %>
   </div>
 <% end %>
