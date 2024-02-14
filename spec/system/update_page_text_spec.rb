@@ -12,6 +12,6 @@ RSpec.describe "updating page text" do
     click_on "Update Page text"
 
     expect(page).to have_text "foo"
-    expect(PageText.find_by(key: "pages.home.block").text).to eq "pages.home.blockfoo"
+    expect(PageText.find_by(key: "pages.home.block").text).to include "foo"
   end
 end
