@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="aac2a57f-6cfe-440c-8510-acda59a6794f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/faqs/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/faqs/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/faqs/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/faqs/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/views/faqs/show.html.erb_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/views/faqs/show.html.erb_spec.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,63 +52,63 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RSpec./faqs.executor": "Run",
-    "RSpec.All specs in page_text_service: ciclos-major-rails.executor": "Run",
-    "RSpec.All specs in pages: ciclos-major-rails.executor": "Run",
-    "RSpec.EditableTextHelper.html when logged in the form contents.executor": "Run",
-    "RSpec.EditableTextHelper.html when logged in.executor": "Run",
-    "RSpec.EditableTextHelper.html.executor": "Run",
-    "RSpec.Faq.executor": "Run",
-    "RSpec.FaqsController.executor": "Run",
-    "RSpec.PageText.executor": "Run",
-    "RSpec.PageTextHelper editable_text.executor": "Run",
-    "RSpec.PageTextHelper page_text_key.executor": "Run",
-    "RSpec.PageTextHelper.editable_text.executor": "Run",
-    "RSpec.PageTextService.clear_cache.executor": "Run",
-    "RSpec.PageTextService.executor": "Run",
-    "RSpec.PageTextService.get_text.executor": "Run",
-    "RSpec.PageTextService.set_text.executor": "Run",
-    "RSpec.PageTexts.executor": "Run",
-    "RSpec.Pages.executor": "Run",
-    "RSpec.faqs/edit.executor": "Run",
-    "RSpec.faqs/index renders a list of faqs.executor": "Run",
-    "RSpec.faqs_spec.executor": "Run",
-    "RSpec.home/show.html.erb.executor": "Run",
-    "RSpec.pages/home.html.erb.executor": "Run",
-    "RSpec.update_page_text_spec.executor": "Run",
-    "RSpec.updating page text user logs in and updates some text.executor": "Run",
-    "RSpec.updating page text.executor": "Run",
-    "Rails.ciclos-major-rails.executor": "Run",
-    "RailsCreateViewFileDialog.DEFAULT_TEMPLATE": "ERB File",
-    "Rake.assets:clobber: ciclos-major-rails.executor": "Run",
-    "Rake.assets:precompile: ciclos-major-rails.executor": "Run",
-    "Rake.db:migrate: ciclos-major-rails.executor": "Run",
-    "Rake.rubocop: ciclos-major-rails.executor": "Run",
-    "Rake.rubocop:autocorrect_all: ciclos-major-rails.executor": "Run",
-    "Rake.spec: ciclos-major-rails.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "faqs",
-    "last_opened_file_path": "/home/rick/projects/rickselby-servers/ciclos-major-rails/spec/views/pages",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ruby.i18n.create.property.last_used_locale_file": "English [devise.en.yml]",
-    "ruby.structure.view.model.defaults.configured": "true",
-    "settings.editor.selected.configurable": "editor.preferences.folding",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RSpec./faqs.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.All specs in page_text_service: ciclos-major-rails.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.All specs in pages: ciclos-major-rails.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.EditableTextHelper.html when logged in the form contents.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.EditableTextHelper.html when logged in.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.EditableTextHelper.html.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.Faq.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.FaqsController.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.PageText.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.PageTextHelper editable_text.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.PageTextHelper page_text_key.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.PageTextHelper.editable_text.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.PageTextService.clear_cache.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.PageTextService.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.PageTextService.get_text.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.PageTextService.set_text.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.PageTexts.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.Pages.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.faqs/edit.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.faqs/index renders a list of faqs.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.faqs_spec.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.home/show.html.erb.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.pages/home.html.erb.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.update_page_text_spec.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.updating page text user logs in and updates some text.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.updating page text.executor&quot;: &quot;Run&quot;,
+    &quot;Rails.ciclos-major-rails.executor&quot;: &quot;Run&quot;,
+    &quot;RailsCreateViewFileDialog.DEFAULT_TEMPLATE&quot;: &quot;ERB File&quot;,
+    &quot;Rake.assets:clobber: ciclos-major-rails.executor&quot;: &quot;Run&quot;,
+    &quot;Rake.assets:precompile: ciclos-major-rails.executor&quot;: &quot;Run&quot;,
+    &quot;Rake.db:migrate: ciclos-major-rails.executor&quot;: &quot;Run&quot;,
+    &quot;Rake.rubocop: ciclos-major-rails.executor&quot;: &quot;Run&quot;,
+    &quot;Rake.rubocop:autocorrect_all: ciclos-major-rails.executor&quot;: &quot;Run&quot;,
+    &quot;Rake.spec: ciclos-major-rails.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;faqs&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/rick/projects/rickselby-servers/ciclos-major-rails/spec/views/pages&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ruby.i18n.create.property.last_used_locale_file&quot;: &quot;English [devise.en.yml]&quot;,
+    &quot;ruby.structure.view.model.defaults.configured&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.folding&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlite"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/spec/views/pages" />
@@ -131,8 +131,8 @@
       <command value="rake assets:clobber" />
       <command value="rake assets:precompile" />
       <command value="rake rubocop:autocorrect_all" />
-      <command value="rake rubocop" />
       <command value="erblint --lint-all" />
+      <command value="rake rubocop" />
     </option>
   </component>
   <component name="RunManager" selected="Rake.rubocop: ciclos-major-rails">
@@ -678,15 +678,15 @@
     <SUITE FILE_PATH="coverage/ciclos_major_rails@Faq.rcov" NAME="Faq Coverage Results" MODIFIED="1707771451842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
     <SUITE FILE_PATH="coverage/ciclos_major_rails@EditableTextHelper_html.rcov" NAME="EditableTextHelper.html Coverage Results" MODIFIED="1707560915446" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
     <SUITE FILE_PATH="coverage/ciclos_major_rails@home_show_html_erb.rcov" NAME="home/show.html.erb Coverage Results" MODIFIED="1707563031909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
-    <SUITE FILE_PATH="coverage/ciclos_major_rails@rubocop_autocorrect_all__ciclos_major_rails.rcov" NAME="rubocop:autocorrect_all: ciclos-major-rails Coverage Results" MODIFIED="1707601411414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
     <SUITE FILE_PATH="coverage/ciclos_major_rails@db_migrate__ciclos_major_rails.rcov" NAME="db:migrate: ciclos-major-rails Coverage Results" MODIFIED="1707768921708" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
+    <SUITE FILE_PATH="coverage/ciclos_major_rails@rubocop_autocorrect_all__ciclos_major_rails.rcov" NAME="rubocop:autocorrect_all: ciclos-major-rails Coverage Results" MODIFIED="1707601411414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
     <SUITE FILE_PATH="coverage/ciclos_major_rails@PageTextService_get_text.rcov" NAME="PageTextService.get_text Coverage Results" MODIFIED="1707563234969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
     <SUITE FILE_PATH="coverage/ciclos_major_rails@PageTextHelper_page_text_key.rcov" NAME="PageTextHelper page_text_key Coverage Results" MODIFIED="1706981194719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
     <SUITE FILE_PATH="coverage/ciclos_major_rails@Pages.rcov" NAME="Pages Coverage Results" MODIFIED="1707599315325" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
     <SUITE FILE_PATH="coverage/ciclos_major_rails@PageText.rcov" NAME="PageText Coverage Results" MODIFIED="1707598239967" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
     <SUITE FILE_PATH="coverage/ciclos_major_rails@EditableTextHelper_html_when_logged_in_the_form_contents.rcov" NAME="EditableTextHelper.html when logged in the form contents Coverage Results" MODIFIED="1707561352566" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
     <SUITE FILE_PATH="coverage/ciclos_major_rails@All_specs_in_pages__ciclos_major_rails.rcov" NAME="All specs in pages: ciclos-major-rails Coverage Results" MODIFIED="1707601207926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
-    <SUITE FILE_PATH="coverage/ciclos_major_rails@rubocop__ciclos_major_rails.rcov" NAME="rubocop: ciclos-major-rails Coverage Results" MODIFIED="1707897441870" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
+    <SUITE FILE_PATH="coverage/ciclos_major_rails@rubocop__ciclos_major_rails.rcov" NAME="rubocop: ciclos-major-rails Coverage Results" MODIFIED="1708632699732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
     <SUITE FILE_PATH="coverage/ciclos_major_rails@All_specs_in_page_text_service__ciclos_major_rails.rcov" NAME="All specs in page_text_service: ciclos-major-rails Coverage Results" MODIFIED="1707556226808" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
     <SUITE FILE_PATH="coverage/ciclos_major_rails@faqs_spec.rcov" NAME="faqs_spec Coverage Results" MODIFIED="1707773441467" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
     <SUITE FILE_PATH="coverage/ciclos_major_rails@update_page_text_spec.rcov" NAME="update_page_text_spec Coverage Results" MODIFIED="1707565650355" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />

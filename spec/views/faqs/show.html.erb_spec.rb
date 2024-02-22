@@ -3,16 +3,13 @@
 require "rails_helper"
 
 RSpec.describe "faqs/show" do
-  before do
-    assign(:faq, Faq.create!(
-                   question: "Question",
-                   answer:   "MyText",
-                 ),)
+  subject do
+    render
+    rendered
   end
 
-  it "renders attributes in <p>" do
-    render
-    expect(rendered).to match(/Question/)
-    expect(rendered).to match(/MyText/)
-  end
+  before { assign(:faq, Faq.create!(question: "Question", answer: "MyText")) }
+
+  it { is_expected.to match(/Question/) }
+  it { is_expected.to match(/MyText/) }
 end
