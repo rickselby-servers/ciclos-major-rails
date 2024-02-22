@@ -3,10 +3,6 @@
 require "rails_helper"
 
 RSpec.describe EditableTextHelper, ".html" do
-  include ActionView::TestCase::Behavior
-  include Capybara::RSpecMatchers
-  include Devise::Test::ControllerHelpers
-
   subject(:html) { described_class.new(view, key, classes:).html }
 
   let(:classes) { [] }

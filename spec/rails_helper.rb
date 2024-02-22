@@ -45,42 +45,40 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
 
-  # You can uncomment this line to turn off ActiveRecord support entirely.
-  # config.use_active_record = false
-
-  # RSpec Rails can automatically mix in different behaviours to your tests
-  # based on their file location, for example enabling you to call `get` and
-  # `post` in specs under `spec/controllers`.
-  #
-  # You can disable this behaviour by removing the line below, and instead
-  # explicitly tag your specs with their type, e.g.:
-  #
-  #     RSpec.describe UsersController, type: :controller do
-  #       # ...
-  #     end
-  #
-  # The different available types are documented in the features, such as in
-  # https://rspec.info/features/6-0/rspec-rails
   config.infer_spec_type_from_file_location!
+
+  # Add view_helper spec test type
+  config.define_derived_metadata(file_path: Regexp.new("/spec/view_helpers/")) do |metadata|
+    metadata[:type] = :view_helper
+  end
 
   # Filter lines from Rails gems in backtraces.
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
+  # Set up view helper spec tests
+  config.include ActionView::TestCase::Behavior, type: :view_helper
+  config.include Capybara::RSpecMatchers, type: :view_helper
+
+  # Add devise helpers where required
   config.include Devise::Test::ControllerHelpers, type: :controller
   config.include Devise::Test::IntegrationHelpers, type: :request
   config.include Devise::Test::IntegrationHelpers, type: :system
   config.include Devise::Test::ControllerHelpers, type: :view
+  config.include Devise::Test::ControllerHelpers, type: :view_helper
 
+  # Add our local helpers
   config.include RequestHelpers, type: :request
   config.include ViewHelpers, type: :view
   config.include_context "with view rendering", type: :view
 
+  # Reset the PageTextService singleton for each test
   config.before do
     Singleton.__init__(PageTextService)
   end
 
+  # Set up drivers for different browser-esque tests
   config.before(:each, type: :system) do
     driven_by :rack_test
   end
