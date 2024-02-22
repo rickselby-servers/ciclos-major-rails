@@ -9,7 +9,7 @@ RSpec.describe "updating page text" do
 
     page.find("p#pages\\.home\\.block").send_keys "foo"
 
-    click_on "Update Page text"
+    click_on "Update"
 
     expect(page).to have_text "foo"
     expect(PageText.find_by(key: "pages.home.block").text).to include "foo"

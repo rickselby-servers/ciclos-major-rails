@@ -39,7 +39,7 @@ RSpec.describe EditableTextHelper, ".html" do
       subject { Capybara.string(html).find "form" }
 
       it { is_expected.to have_css "p#foo\\.bar", text: }
-      it { is_expected.to have_button "Update Page text", visible: :hidden }
+      it { is_expected.to have_button "Update", visible: :hidden }
     end
   end
 end

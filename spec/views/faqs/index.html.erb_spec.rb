@@ -1,24 +1,24 @@
 # frozen_string_literal: true
 
 require "rails_helper"
+require_relative "../../support/view_helpers"
 
 RSpec.describe "faqs/index" do
-  before do
-    assign(:faqs, [
-             Faq.create!(
-               question: "Question",
-               answer:   "MyText",
-             ),
-             Faq.create!(
-               question: "Question",
-               answer:   "MyText",
-             ),
-           ],)
-  end
+  include_context "with view rendering"
 
-  it "renders a list of faqs" do
-    render
-    assert_select "div>div>h2>div>button", text: Regexp.new("Question".to_s), count: 2
-    assert_select "div>div>div>div", text: Regexp.new("MyText".to_s), count: 2
+  let(:faq) { Faq.create! question: "Question", answer: "MyText" }
+  let(:faq2) { Faq.create! question: "Question", answer: "MyText" }
+
+  before { assign(:faqs, [faq, faq2]) }
+
+  it { is_expected.to have_css "div > div > h2 > div > button", text: "Question", count: 2 }
+  it { is_expected.to have_css "div > div > div > div", text: "MyText", count: 2 }
+
+  it { is_expected.to have_no_link href: new_faq_path }
+
+  context "when logged in" do
+    before { sign_in Admin.create }
+
+    it { is_expected.to have_link href: new_faq_path }
   end
 end

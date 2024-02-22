@@ -1,26 +1,23 @@
 # frozen_string_literal: true
 
 require "rails_helper"
+require_relative "../../support/view_helpers"
 
 RSpec.describe "faqs/edit" do
-  let(:faq) do
-    Faq.create!(
-      question: "MyString",
-      answer:   "MyText",
-    )
-  end
+  include_context "with view rendering"
 
-  before do
-    assign(:faq, faq)
-  end
+  let(:faq) { Faq.create! question: "MyString", answer: "MyText" }
 
-  it "renders the edit faq form" do
-    render
+  before { assign(:faq, faq) }
 
-    assert_select "form[action=?][method=?]", faq_path(faq), "post" do
-      assert_select "input[name=?]", "faq[question]"
+  it { is_expected.to have_link href: faqs_path }
+  it { is_expected.to have_css "form[action='#{faq_path(faq)}'][method='post']" }
 
-      assert_select "textarea[name=?]", "faq[answer]"
-    end
+  context "with the form" do
+    subject { page.find("form") }
+
+    it { is_expected.to have_field "faq[question]" }
+    it { is_expected.to have_field "faq[answer]" }
+    it { is_expected.to have_button "commit" }
   end
 end

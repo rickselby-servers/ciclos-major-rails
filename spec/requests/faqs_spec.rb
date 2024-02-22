@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "rails_helper"
+require_relative "../support/request_helpers"
 
 RSpec.describe "/faqs" do
   let(:faq) { Faq.create! valid_attributes }
@@ -26,9 +27,7 @@ RSpec.describe "/faqs" do
       response
     end
 
-    context "when not logged in" do
-      it { is_expected.to redirect_to new_admin_session_path }
-    end
+    it_behaves_like "it redirects to login if not logged in"
 
     context "when logged in", :logged_in do
       it { is_expected.to be_successful }
@@ -41,9 +40,7 @@ RSpec.describe "/faqs" do
       response
     end
 
-    context "when not logged in" do
-      it { is_expected.to redirect_to new_admin_session_path }
-    end
+    it_behaves_like "it redirects to login if not logged in"
 
     context "when logged in", :logged_in do
       it { is_expected.to be_successful }
@@ -56,9 +53,7 @@ RSpec.describe "/faqs" do
       response
     end
 
-    context "when not logged in" do
-      it { is_expected.to redirect_to new_admin_session_path }
-    end
+    it_behaves_like "it redirects to login if not logged in"
 
     context "when logged in", :logged_in do
       context "with valid parameters" do
@@ -92,9 +87,7 @@ RSpec.describe "/faqs" do
 
     let(:new_attributes) { { question: "bar", answer: "baz" } }
 
-    context "when not logged in" do
-      it { is_expected.to redirect_to new_admin_session_path }
-    end
+    it_behaves_like "it redirects to login if not logged in"
 
     context "when logged in", :logged_in do
       context "with valid parameters" do
@@ -132,9 +125,7 @@ RSpec.describe "/faqs" do
       response
     end
 
-    context "when not logged in" do
-      it { is_expected.to redirect_to new_admin_session_path }
-    end
+    it_behaves_like "it redirects to login if not logged in"
 
     context "when logged in", :logged_in do
       it "destroys the requested faq" do
