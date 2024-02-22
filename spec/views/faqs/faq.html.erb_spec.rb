@@ -1,11 +1,8 @@
 # frozen_string_literal: true
 
 require "rails_helper"
-require_relative "../../support/view_helpers"
 
 RSpec.describe "faqs/_faq" do
-  include_context "with view rendering"
-
   let(:faq) { Faq.create! question: "Question", answer: "MyText" }
   let(:locals) { { faq: } }
 

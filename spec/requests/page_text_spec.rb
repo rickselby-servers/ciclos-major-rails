@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require "rails_helper"
-require_relative "../support/request_helpers"
 
 RSpec.describe "PageTexts" do
   describe "PUT /update" do

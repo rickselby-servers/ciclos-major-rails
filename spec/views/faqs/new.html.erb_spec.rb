@@ -1,11 +1,8 @@
 # frozen_string_literal: true
 
 require "rails_helper"
-require_relative "../../support/view_helpers"
 
 RSpec.describe "faqs/new" do
-  include_context "with view rendering"
-
   let(:faq) { Faq.new }
 
   before { assign(:faq, faq) }

@@ -10,6 +10,8 @@ require "rspec/rails"
 # Add additional requires below this line. Rails is not loaded until this point!
 require "audited-rspec"
 
+Dir["./spec/support/**/*.rb"].each { |f| require f }
+
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end
@@ -70,6 +72,10 @@ RSpec.configure do |config|
   config.include Devise::Test::IntegrationHelpers, type: :request
   config.include Devise::Test::IntegrationHelpers, type: :system
   config.include Devise::Test::ControllerHelpers, type: :view
+
+  config.include RequestHelpers, type: :request
+  config.include ViewHelpers, type: :view
+  config.include_context "with view rendering", type: :view
 
   config.before do
     Singleton.__init__(PageTextService)
