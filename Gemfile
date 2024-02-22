@@ -57,13 +57,13 @@ gem "omniauth-rails_csrf_protection", "~> 1.0"
 gem "bootstrap", "~> 5.3"
 gem "bootstrap_form", "~> 5.3"
 gem "font-awesome-sass", "~> 6.5.1"
-gem "tinymce-rails", "~> 6.8.2"
+gem "tinymce-rails", "~> 6.8.3"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", "~> 1.9.1", platforms: %i[mri windows]
   gem "rspec-rails", "~> 6.1"
-  gem "rubocop-rickselby", "~> 0.17"
+  gem "rubocop-rickselby", "~> 0.19"
 end
 
 group :development do
