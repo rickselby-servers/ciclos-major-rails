@@ -25,7 +25,7 @@ class EditableTextHelper
 
   def p_tag
     context.tag.p class: @classes, id: @key, data: p_data do
-      PageTextService.get_text @key
+      PageTextService.get_text(@key).html_safe # rubocop:disable Rails/OutputSafety
     end
   end
 

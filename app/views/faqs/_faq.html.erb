@@ -20,7 +20,7 @@
   <div id="answer-<%= faq.id %>" class="accordion-collapse collapse" aria-labelledby="question-<%= faq.id %>"
        data-bs-parent="#faqs">
     <div class="accordion-body">
-      <%= faq.answer %>
+      <%= faq.answer.html_safe %>
     </div>
   </div>
 </div>

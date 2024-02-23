@@ -19,6 +19,15 @@ RSpec.describe EditableTextHelper, ".html" do
     it { is_expected.to have_css "p#foo\\.bar", text: }
   end
 
+  context "with HTML" do
+    before { PageText.create key:, text: text_html }
+
+    let(:text) { "foo bar baz" }
+    let(:text_html) { "<strong>#{text}</strong>" }
+
+    it { is_expected.to have_css "p#foo\\.bar strong", text: }
+  end
+
   context "with given classes" do
     let(:classes) { %i[foo bar] }
 
