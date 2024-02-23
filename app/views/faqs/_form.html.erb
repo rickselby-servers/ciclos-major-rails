@@ -12,7 +12,7 @@
   <% end %>
 
   <%= form.text_field :question %>
-  <%= form.text_area :answer, data: { tinymce_target: :input } %>
+  <%= form.text_area :answer, data: { tinymce_target: :input }, required: false %>
 
   <div>
     <%= form.submit %>

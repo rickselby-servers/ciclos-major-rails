@@ -12,16 +12,16 @@ export default class extends Controller {
             hidden_input: true,
             formats: {
                 blockquote: {block: "blockquote", classes: "blockquote"},
-            },
-            setup: function (editor) {
-                editor.on("keyup", function (e) {
-                    editor.selection.getNode().closest("form").querySelector("input[type=submit]").style.display = "inline-block";
-                });
-            },
+            }
         }
 
         if (this.inputTarget.nodeName.toLowerCase() === "div") {
             this.defaults["inline"] = true;
+            this.defaults["setup"] = function (editor) {
+                editor.on("keyup", function (e) {
+                    editor.selection.getNode().closest("form").querySelector("input[type=submit]").style.display = "inline-block";
+                });
+            }
         }
     }
 
