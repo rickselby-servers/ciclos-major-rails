@@ -7,7 +7,6 @@ export default class extends Controller {
     initialize() {
         this.defaults = {
             menubar: false,
-            inline: true,
             plugins: "link lists",
             toolbar: "undo redo | styles bold italic | numlist bullist | link blockquote",
             valid_elements: "h?,p,br,strong,em,a[href],ul,li,blockquote[class]",
@@ -20,6 +19,10 @@ export default class extends Controller {
                     editor.selection.getNode().closest("form").querySelector("input[type=submit]").style.display = "inline-block";
                 });
             },
+        }
+
+        if (this.inputTarget.nodeName.toLowerCase() === "p") {
+            this.defaults["inline"] = true;
         }
     }
 
