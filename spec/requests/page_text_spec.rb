@@ -14,7 +14,7 @@ RSpec.describe "PageTexts" do
     let(:new_text) { "baz" }
     let(:text) { "bar" }
 
-    it { is_expected.to redirect_to new_admin_session_path }
+    it_behaves_like "it redirects to login if not logged in"
 
     context "when logged in" do
       before { sign_in Admin.create }

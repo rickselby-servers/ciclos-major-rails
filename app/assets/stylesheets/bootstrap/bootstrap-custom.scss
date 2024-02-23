@@ -70,6 +70,7 @@ $secondary-link-hover-color: shift-color($secondary, $link-shade-percentage) !de
 // 8. Add additional custom code here
 @import "_layout";
 @import "_camps";
+@import "_home";
 @import "_partners";
 @import "_ride-groups";
 
@@ -100,4 +101,9 @@ $secondary-link-hover-color: shift-color($secondary, $link-shade-percentage) !de
 .banner-rotated {
   transform: translate(-50%, -50%) rotate(-5deg);
   transform-origin: center
+}
+
+label.required:after {
+  content:" *";
+  color: red;
 }

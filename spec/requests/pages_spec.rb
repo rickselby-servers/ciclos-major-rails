@@ -6,7 +6,7 @@ RSpec.describe "Pages" do
   describe "GET /" do
     it "returns http success" do
       get root_path
-      expect(response).to have_http_status(:success)
+      expect(response).to be_successful
     end
   end
 
@@ -14,7 +14,7 @@ RSpec.describe "Pages" do
     describe "GET /#{path}" do
       it "returns http success" do
         get public_send(:"#{path}_path")
-        expect(response).to have_http_status(:success)
+        expect(response).to be_successful
       end
     end
   end
