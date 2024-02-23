@@ -9,7 +9,6 @@ export default class extends Controller {
             menubar: false,
             plugins: "link lists",
             toolbar: "undo redo | styles bold italic | numlist bullist | link blockquote",
-            valid_elements: "h?,p,br,strong,em,a[href],ul,li,blockquote[class]",
             hidden_input: true,
             formats: {
                 blockquote: {block: "blockquote", classes: "blockquote"},

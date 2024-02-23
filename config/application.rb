@@ -27,5 +27,9 @@ module CiclosMajorRails
     # config.eager_load_paths << Rails.root.join("extras")
 
     config.tinymce.install = :copy
+
+    # Allow `style` attribute through sanitized HTML
+    config.action_view.sanitized_allowed_attributes =
+      Rails::HTML::SafeListSanitizer::DEFAULT_ALLOWED_ATTRIBUTES.to_a + %w[style]
   end
 end
