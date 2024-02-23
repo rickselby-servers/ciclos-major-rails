@@ -21,7 +21,7 @@ export default class extends Controller {
             },
         }
 
-        if (this.inputTarget.nodeName.toLowerCase() === "p") {
+        if (this.inputTarget.nodeName.toLowerCase() === "div") {
             this.defaults["inline"] = true;
         }
     }

@@ -1,0 +1,11 @@
+.home-header-block {
+  @extend .m-3, .fs-3, .fw-bold, .text-center;
+}
+
+.home-highlight-block {
+  @extend .p-3, .mb-3, .text-bg-primary, .text-center;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}

@@ -10,7 +10,7 @@ class EditableTextHelper
   end
 
   def html
-    @signed_in ? form : p_tag
+    @signed_in ? form : div_tag
   end
 
   private
@@ -19,13 +19,13 @@ class EditableTextHelper
 
   def form
     context.bootstrap_form_with model: page_text, data: { controller: :tinymce } do |form|
-      p_tag + submit_button(form)
+      div_tag + submit_button(form)
     end
   end
 
-  def p_tag
-    context.tag.p class: @classes, id: @key, data: p_data do
-      PageTextService.get_text(@key).html_safe # rubocop:disable Rails/OutputSafety
+  def div_tag
+    context.tag.div class: @classes, id: @key, data: div_data do
+      context.sanitize PageTextService.get_text(@key)
     end
   end
 
@@ -39,7 +39,7 @@ class EditableTextHelper
     end
   end
 
-  def p_data
+  def div_data
     return {} unless @signed_in
 
     { tinymce_target: :input }
