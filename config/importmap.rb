@@ -14,3 +14,4 @@ pin "font-awesome", to: "font-awesome-sass", preload: true
 pin "tinymce", preload: true
 
 pin_all_from "app/javascript/controllers", under: "controllers"
+pin "sortablejs" # @1.15.2

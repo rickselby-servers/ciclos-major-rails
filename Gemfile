@@ -59,6 +59,10 @@ gem "bootstrap_form", "~> 5.3"
 gem "font-awesome-sass", "~> 6.5.1"
 gem "tinymce-rails", "~> 6.8.3"
 
+# Other things...
+gem "acts_as_list", "~> 1.1"
+gem "requestjs-rails", "~> 0.0.11"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", "~> 1.9.1", platforms: %i[mri windows]

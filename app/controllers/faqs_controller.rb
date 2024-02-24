@@ -5,7 +5,7 @@ class FaqsController < ApplicationController
   before_action :set_faq, only: %i[edit update destroy]
 
   def index
-    @faqs = Faq.all
+    @faqs = Faq.ordered
   end
 
   def new
@@ -36,6 +36,13 @@ class FaqsController < ApplicationController
     @faq.destroy!
 
     redirect_to faqs_path, notice: t(".success")
+  end
+
+  def move
+    faq = Faq.find_by(position: params[:from])
+    faq.insert_at params[:to].to_i
+
+    head :ok
   end
 
   private

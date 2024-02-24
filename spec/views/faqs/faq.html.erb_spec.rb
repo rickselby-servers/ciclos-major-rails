@@ -20,6 +20,7 @@ RSpec.describe "faqs/_faq" do
   context "when logged in" do
     before { sign_in Admin.create }
 
+    it { is_expected.to have_css ".sortable-handle" }
     it { is_expected.to have_link href: edit_faq_path(faq) }
   end
 end

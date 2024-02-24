@@ -5,3 +5,4 @@ import "controllers"
 // These are required in this order!
 import "@popperjs/core"
 import "bootstrap"
+import "@rails/request.js"

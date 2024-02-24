@@ -44,4 +44,26 @@ RSpec.describe "FAQs" do
       expect(page).to have_no_text "Initial question"
     end
   end
+
+  context "with a few FAQs", :js do
+    # rubocop:disable RSpec/IndexedLet
+    let!(:faq1) { Faq.create! question: "Question 1", answer: "foo" }
+    let!(:faq2) { Faq.create! question: "Question 2", answer: "foo" }
+    # rubocop:enable RSpec/IndexedLet
+
+    it "allows the order to be changed" do
+      visit faqs_path
+
+      element = find("##{dom_id faq1} .sortable-handle")
+      target = find("##{dom_id faq2}")
+
+      element.drag_to target
+
+      expect(page.find("#faqs > div:first-child")).to have_text "Question 2"
+      expect(page.find("#faqs > div:nth-child(2)")).to have_text "Question 1"
+
+      expect(faq1.reload.position).to eq 1
+      expect(faq2.reload.position).to eq 0
+    end
+  end
 end
