@@ -1,7 +1,5 @@
 <%= editable_text "title" %>
 
-# TODO - FIX LAYERED ICONS #
-
 <div id="ride-groups" class="row row-cols-2 row-cols-md-3 row-cols-lg-5">
   <div class="col">
     <div class="card h-100 text-bg-primary">
@@ -12,8 +10,8 @@
       </div>
       <div class="card-footer">
         <span class="fa-layers fa-fw fa-4x">
-          <span class="fa-solid fa-mountain" data-fa-transform="shrink-4 right-4 down-1.8"></span>
-          <span class="fa-solid fa-mountain" data-fa-transform="left-2"></span>
+          <%= fa_icon "mountain", data: { "fa-transform": "shrink-4 right-4 down-1.8" } %>
+          <%= fa_icon "mountain", data: { "fa-transform": "left-2" } %>
         </span>
       </div>
     </div>
@@ -27,8 +25,8 @@
       </div>
       <div class="card-footer">
         <span class="fa-layers fa-fw fa-4x">
-          <span class="fa-solid fa-mountain" data-fa-transform="shrink-4 right-4 down-1.8"></span>
-          <span class="fa-solid fa-mountain" data-fa-transform="left-2"></span>
+          <%= fa_icon "mountain", data: { "fa-transform": "shrink-4 right-4 down-1.8" } %>
+          <%= fa_icon "mountain", data: { "fa-transform": "left-2" } %>
         </span>
       </div>
     </div>
@@ -40,7 +38,9 @@
         <p>100-130km</p>
         <p>25km/h</p>
       </div>
-      <div class="card-footer"><span class="fas fa-fw fa-mountain fa-4x"></span></div>
+      <div class="card-footer">
+        <%= fa_icon "mountain", class: "fa-4x" %>
+      </div>
     </div>
   </div>
   <div class="col">
@@ -50,7 +50,9 @@
         <p>80-100km</p>
         <p>22-23km/h</p>
       </div>
-      <div class="card-footer"><span class="fas fa-fw fa-mountain fa-4x"></span></div>
+      <div class="card-footer">
+        <%= fa_icon "mountain", class: "fa-4x" %>
+      </div>
     </div>
   </div>
   <div class="col">
@@ -61,7 +63,9 @@
         <p>15-18km/h</p>
         <%= t ".affogato_description_html" %>
       </div>
-      <div class="card-footer"><span class="fas fa-fw fa-person-biking fa-4x"></span></div>
+      <div class="card-footer">
+        <%= fa_icon "person-biking", class: "fa-4x" %>
+      </div>
     </div>
   </div>
 </div>

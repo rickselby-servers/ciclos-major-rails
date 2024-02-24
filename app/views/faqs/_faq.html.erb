@@ -5,16 +5,15 @@
               data-bs-toggle="collapse" data-bs-target="#answer-<%= faq.id %>"
               aria-expanded="true" aria-controls="#collapse-<%= faq.id %>">
         <% if admin_signed_in? %>
-          <%= icon("fa-solid", "grip-lines", class: "fa-fw me-2 sortable-handle") %>
+          <%= fa_icon "grip-lines", class: "me-2 sortable-handle" %>
         <% end %>
         <%= faq.question %>
       </button>
     </div>
     <% if admin_signed_in? %>
       <div class="col-sm-2 col-lg-1 align-self-center">
-        <%= link_to edit_faq_path(faq), class: %i[btn btn-secondary] do %>
-          <%= icon("fa-solid", "pencil") %>
-          <span class="fa-sr-only"><%= t ".edit" %></span>
+        <%= link_to edit_faq_path(faq), class: %i[btn btn-secondary], title: t(".edit") do %>
+          <%= fa_icon "pencil" %>
         <% end %>
       </div>
     <% end %>
