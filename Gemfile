@@ -56,7 +56,6 @@ gem "omniauth-rails_csrf_protection", "~> 1.0"
 # Bootstrap for front end
 gem "bootstrap", "~> 5.3"
 gem "bootstrap_form", "~> 5.3"
-gem "font-awesome-sass", "~> 6.5.1"
 gem "tinymce-rails", "~> 6.8.3"
 
 # Other things...
