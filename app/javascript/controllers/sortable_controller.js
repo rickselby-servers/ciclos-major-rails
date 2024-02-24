@@ -6,22 +6,19 @@ import { FetchRequest } from '@rails/request.js';
 export default class extends Controller {
   static values = {
     url: String,
-    test: String
+    handle: String
   }
 
   connect() {
-    console.log("Sortable controller connected");
     this.sortable = Sortable.create(this.element, {
       animation: 150,
+      handle: this.handleValue,
       onEnd: this.end.bind(this)
     })
   }
 
   async end(event) {
-    console.log("Sortable onEnd triggered")
-
     const request = new FetchRequest('patch', `${this.urlValue}?old_position=${event.oldIndex + 1}&new_position=${event.newIndex + 1}`)
-    const response = await request.perform()
-    console.log(response)
+    await request.perform()
   }
 }

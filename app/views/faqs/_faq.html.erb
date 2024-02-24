@@ -4,6 +4,9 @@
       <button class="accordion-button collapsed" id="question-<%= faq.id %>" type="button"
               data-bs-toggle="collapse" data-bs-target="#answer-<%= faq.id %>"
               aria-expanded="true" aria-controls="#collapse-<%= faq.id %>">
+        <% if admin_signed_in? %>
+          <%= icon("fa-solid", "grip-lines", class: "fa-fw me-2 sortable-handle") %>
+        <% end %>
         <%= faq.question %>
       </button>
     </div>

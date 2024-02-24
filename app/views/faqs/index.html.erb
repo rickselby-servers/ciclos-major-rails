@@ -9,6 +9,9 @@
   </p>
 <% end %>
 
-<div class="accordion" id="faqs" data-controller="sortable" data-sortable-url-value="<%= move_position_faqs_path %>">
+<div class="accordion" id="faqs"
+     data-controller="sortable"
+     data-sortable-url-value="<%= move_position_faqs_path %>"
+     data-sortable-handle-value=".sortable-handle">
   <%= render @faqs %>
 </div>
