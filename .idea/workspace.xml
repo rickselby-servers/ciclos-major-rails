@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aac2a57f-6cfe-440c-8510-acda59a6794f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/ciclos-major-rails.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ciclos-major-rails.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/auth/sign_in.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/auth/sign_in.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/faqs/_faq.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/faqs/_faq.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/application/_navbar.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/application/_navbar.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/pages/about_us.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/about_us.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/pages/arrivals_and_transfers.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/arrivals_and_transfers.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/pages/home.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/home.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/pages/ride_groups.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/ride_groups.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/pages/videos.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/videos.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/locales/views.en.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/locales/views.en.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +39,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="basic-pages" />
+        <entry key="$PROJECT_DIR$" value="sortablejs" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -116,7 +120,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;sortablejs&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;localization&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/rick/projects/rickselby-servers/ciclos-major-rails/spec/views/pages&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -153,13 +157,13 @@
       <command value="erblint --lint-all" />
       <command value="rake rubocop" />
       <command value="rake assets:precompile" />
-      <command value="bundle install" />
       <command value="rake db:migrate" />
       <command value="rake assets:clobber" />
       <command value="rake rubocop:autocorrect_all" />
       <command value="rake routes" />
       <command value="rake route" />
       <command value="rails routes" />
+      <command value="bundle install" />
     </option>
   </component>
   <component name="RunManager" selected="Rails.ciclos-major-rails">
@@ -444,7 +448,8 @@
       <workItem from="1708690772125" duration="1431000" />
       <workItem from="1708700184268" duration="231000" />
       <workItem from="1708776792259" duration="2972000" />
-      <workItem from="1708786414910" duration="5885000" />
+      <workItem from="1708786414910" duration="6011000" />
+      <workItem from="1708801258968" duration="822000" />
     </task>
     <task id="LOCAL-00001" summary="Start work on having editable inline text things">
       <option name="closed" value="true" />
@@ -774,7 +779,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708796323694</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="More localization">
+      <option name="closed" value="true" />
+      <created>1708797236407</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1708797236407</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -804,7 +817,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add a basic view test for the home page" />
     <MESSAGE value="Add a system test for updating page text" />
     <MESSAGE value="Set up headless chrome" />
     <MESSAGE value="Add `auditable` gem" />
@@ -829,7 +841,8 @@
     <MESSAGE value="Refactor old/new sorting values" />
     <MESSAGE value="Add spec tests for sorting FAQs" />
     <MESSAGE value="Start work on localization" />
-    <option name="LAST_COMMIT_MESSAGE" value="Start work on localization" />
+    <MESSAGE value="More localization" />
+    <option name="LAST_COMMIT_MESSAGE" value="More localization" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ciclos_major_rails@All_specs_in_faqs__ciclos_major_rails.rcov" NAME="All specs in faqs: ciclos-major-rails Coverage Results" MODIFIED="1708635504070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
@@ -877,6 +890,6 @@
     <SUITE FILE_PATH="coverage/ciclos_major_rails@EditableTextHelper_html_when_logged_in.rcov" NAME="EditableTextHelper.html when logged in Coverage Results" MODIFIED="1707561803122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
     <SUITE FILE_PATH="coverage/ciclos_major_rails@faqs_edit.rcov" NAME="faqs/edit Coverage Results" MODIFIED="1708636090554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
     <SUITE FILE_PATH="coverage/ciclos_major_rails@assets_clobber__ciclos_major_rails.rcov" NAME="assets:clobber: ciclos-major-rails Coverage Results" MODIFIED="1708719406537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
-    <SUITE FILE_PATH="coverage/ciclos_major_rails@ciclos_major_rails.rcov" NAME="ciclos-major-rails Coverage Results" MODIFIED="1708786915929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
+    <SUITE FILE_PATH="coverage/ciclos_major_rails@ciclos_major_rails.rcov" NAME="ciclos-major-rails Coverage Results" MODIFIED="1708801631082" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
   </component>
 </project>

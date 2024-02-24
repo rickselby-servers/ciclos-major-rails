@@ -33,12 +33,10 @@ en:
       lunch_stops: "Lunch Stops"
       mallorca: "Mallorca"
       muro: "Muro"
-      ride_groups: "Ride Groups"
       ride_groups_and_routes: "Riding Groups and Routes"
       routes: "Routes"
       safety: "Safety"
       testimonials: "Testimonials"
-      videos: "Videos"
       zafiro_palace: "Zafiro Palace"
       zafiro_tropic: "Zafiro Tropic"
   auth:
@@ -70,3 +68,18 @@ en:
   layouts:
     application:
       title: "Ciclos Major: Mallorcan Cycling Holidays"
+  pages:
+    about_us:
+      img_alt: "Darryl and Liz in Ciclos Major cycling kit"
+    arrivals_and_transfers:
+      img_alt: "A large 9 seater minivan with a large trailer for carrying bikes"
+    ride_groups:
+      affogato: "Affogato"
+      affogato_description_html: "<p>1 or 2 cafe stops</p><p>Easy ride around the area</p>"
+      americano: "Americano"
+      cafe_latte: "Cafe Latte"
+      cappuccino: "Cappuccino"
+      espresso_html: "Espresso / <br> Double Espresso"
+      title: "Ride Groups"
+    videos:
+      title: "Videos"
