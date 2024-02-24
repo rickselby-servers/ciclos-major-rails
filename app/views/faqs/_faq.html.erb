@@ -12,8 +12,8 @@
     </div>
     <% if admin_signed_in? %>
       <div class="col-sm-2 col-lg-1 align-self-center">
-        <%= link_to edit_faq_path(faq), class: %i[btn btn-secondary] do %>
-          <%= fa_icon "pencil", title: t(".edit") %>
+        <%= link_to edit_faq_path(faq), class: %i[btn btn-secondary], title: t(".edit") do %>
+          <%= fa_icon "pencil" %>
         <% end %>
       </div>
     <% end %>
