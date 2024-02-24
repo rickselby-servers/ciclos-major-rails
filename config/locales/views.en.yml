@@ -1,5 +1,46 @@
 ---
 en:
+  application:
+    admin:
+      logged_in: "Logged in as %{user}"
+      logoout: "Logout"
+    footer:
+      call_us: "Call Us"
+      email: "Email"
+      facebook: "Facebook"
+      faqs: "FAQs"
+      instagram: "Instagram"
+      phone: "Phone"
+      privacy: "Privacy Policy"
+      ts_cs: "Terms & Conditions"
+      twitter: "Twitter"
+    navbar:
+      312: "312 Mallorca"
+      about_us: "About Us"
+      alcudia: "Alcudia"
+      arrivals: "Arrivals and Transfers"
+      bespoke_camps: "Bespoke Camps"
+      bike_rental: "Bike Rental"
+      camps: "Camps"
+      can_ribera: "Can Ribera Rural Hotel by Zafiro - Muro"
+      climate: "Climate"
+      contact_us: "Contact Us"
+      cycling_and_tri: "Cycling and Triathlon"
+      gallery: "Gallery"
+      guides: "Guides"
+      home: "Home"
+      hotels: "Hotels and Locations"
+      lunch_stops: "Lunch Stops"
+      mallorca: "Mallorca"
+      muro: "Muro"
+      ride_groups: "Ride Groups"
+      ride_groups_and_routes: "Riding Groups and Routes"
+      routes: "Routes"
+      safety: "Safety"
+      testimonials: "Testimonials"
+      videos: "Videos"
+      zafiro_palace: "Zafiro Palace"
+      zafiro_tropic: "Zafiro Tropic"
   faqs:
     back: "Back to FAQs"
     create:

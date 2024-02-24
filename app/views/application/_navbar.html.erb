@@ -2,73 +2,80 @@
   <div class="container justify-content-center">
     <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="fa-solid fa-fw fa-bars text-white"></span>
+      <%= icon "fa-solid", "bars", class: "fa-fw text-white" %>
     </button>
     <ul class="navbar-nav me-auto mb-2 mb-lg-0 collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
       <li class="nav-item">
-        <a class="nav-link active" href="<%= root_path %>">Home</a>
+        <%= link_to t(".home"), root_path, class: %i[nav-link active] %>
       </li>
+
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Camps
+          <%= t ".camps" %>
         </a>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="/camps/cycling-and-triathlon">Cycling and Triathlon</a></li>
-          <li><a class="dropdown-item" href="/camps/bespoke">Bespoke Camps</a></li>
-          <li><a class="dropdown-item" href="/camps/312">312 Mallorca</a></li>
-        </ul>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Hotels and Locations
-        </a>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="/hotels/zafiro-tropic">Zafiro Tropic</a></li>
-          <li><a class="dropdown-item" href="/hotels/zafiro-palace">Zafiro Palace</a></li>
-          <li><a class="dropdown-item" href="/hotels/can-ribera">Can Ribera Rural Hotel by Zafiro - Muro</a></li>
-          <li><a class="dropdown-item" href="/arrivals-and-transfers">Arrivals and Transfers</a></li>
-          <li><a class="dropdown-item" href="/locations/mallorca">Mallorca</a></li>
-          <li><a class="dropdown-item" href="/locations/alcudia">Alcudia</a></li>
-          <li><a class="dropdown-item" href="/locations/muro">Muro</a></li>
-          <li><a class="dropdown-item" href="/locations/climate">Climate</a></li>
+          <li><a class="dropdown-item" href="/camps/cycling-and-triathlon"><%= t ".cycling_and_tri" %></a></li>
+          <li><a class="dropdown-item" href="/camps/bespoke"><%= t ".bespoke_camps" %></a></li>
+          <li><a class="dropdown-item" href="/camps/312"><%= t ".312" %></a></li>
         </ul>
       </li>
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Riding Groups and Routes
+          <%= t ".hotels" %>
         </a>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="/ride-groups">Ride Groups</a></li>
-          <li><a class="dropdown-item" href="/routes">Routes</a></li>
-          <li><a class="dropdown-item" href="/lunch-stops">Lunch Stops</a></li>
-          <li><a class="dropdown-item" href="/safety">Safety</a></li>
+          <li><a class="dropdown-item" href="/hotels/zafiro-tropic"><%= t ".zafiro_tropic" %></a></li>
+          <li><a class="dropdown-item" href="/hotels/zafiro-palace"><%= t ".zafiro_palace" %></a></li>
+          <li><a class="dropdown-item" href="/hotels/can-ribera"><%= t ".can_ribera" %></a></li>
+          <li><a class="dropdown-item" href="/arrivals-and-transfers"><%= t ".arrivals" %></a></li>
+          <li><a class="dropdown-item" href="/locations/mallorca"><%= t ".mallorca" %></a></li>
+          <li><a class="dropdown-item" href="/locations/alcudia"><%= t ".alcudia" %></a></li>
+          <li><a class="dropdown-item" href="/locations/muro"><%= t ".muro" %></a></li>
+          <li><a class="dropdown-item" href="/locations/climate"><%= t ".climate" %></a></li>
         </ul>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/bike-rental">Bike Rental</a>
       </li>
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          About Us
+          <%= t ".ride_groups_and_routes" %>
         </a>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="/about-us">About Us</a></li>
-          <li><a class="dropdown-item" href="/guides">Guides</a></li>
+          <li><%= link_to t(".ride_groups"), ride_groups_path, class: :"dropdown-item" %></li>
+          <li><%= link_to t(".routes"), routes_path, class: :"dropdown-item" %></li>
+          <li><%= link_to t(".lunch_stops"), lunch_stops_path, class: :"dropdown-item" %></li>
+          <li><%= link_to t(".safety"), safety_path, class: :"dropdown-item" %></li>
         </ul>
       </li>
+
       <li class="nav-item">
-        <a class="nav-link" href="/gallery">Gallery</a>
+        <a class="nav-link" href="/bike-rental"><%= t ".bike_rental" %></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/videos">Videos</a>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <%= t ".about_us" %>
+        </a>
+        <ul class="dropdown-menu">
+          <li><%= link_to t(".about_us"), about_us_path, class: :"dropdown-item" %></li>
+          <li><a class="dropdown-item" href="/guides"><%= t ".guides" %></a></li>
+        </ul>
       </li>
+
       <li class="nav-item">
-        <a class="nav-link" href="/testimonials">Testimonials</a>
+        <a class="nav-link" href="/gallery"><%= t ".gallery" %></a>
       </li>
+
       <li class="nav-item">
-        <a class="nav-link" href="/contact-us">Contact Us</a>
+        <%= link_to t(".videos"), videos_path, class: :"nav-link" %>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/testimonials"><%= t ".testimonials" %></a>
+      </li>
+
+      <li class="nav-item">
+        <%= link_to t(".contact_us"), contact_us_path, class: :"nav-link" %>
       </li>
     </ul>
   </div>

@@ -1,26 +1,36 @@
 <div class="footer mt-auto py-3">
   <div class="container">
     <footer>
-
       <% if admin_signed_in? %>
         <%= render "admin" %>
       <% end %>
 
       <%== render "partners" %>
+
       <div class="row row-cols-1">
         <div class="col">
           <div class="card mb-3">
             <div class="card-body text-center">
-              <%= link_to icon("fa-brands", "facebook-f", class: "fa-fw"), "https://www.facebook.com/groups/2431275356936386/",
-                          class: %w[btn btn-lg text-white], style: "background-color: #0a53be" %>
-              <%= link_to icon("fa-brands", "twitter", class: "fa-fw"), "https://twitter.com/ciclosmajor1",
-                          class: %w[btn btn-lg text-white], style: "background-color: rgb(85, 172, 238)" %>
-              <%= link_to icon("fa-brands", "instagram", class: "fa-fw"), "https://twitter.com/www.instagram.com/ciclos_major_/",
-                          class: %w[btn btn-lg text-white], style: "background-color: rgb(172, 43, 172)" %>
-              <%= mail_to "info@ciclosmajor.com", icon("fa-solid", "envelope", class: "fa-fw"),
-                          class: %w[btn btn-lg btn-primary] %>
-              <%= link_to icon("fa-solid", "phone", class: "fa-fw"), "tel:00447557688309",
-                          class: %w[btn btn-lg btn-primary] %>
+              <%= link_to "https://www.facebook.com/groups/2431275356936386/", class: %w[btn btn-lg text-white], style: "background-color: #0a53be" do %>
+                <%= icon("fa-brands", "facebook-f", class: "fa-fw", title: t(".facebook")) %>
+                <span class="fa-sr-only"><%= t ".facebook" %></span>
+              <% end %>
+              <%= link_to "https://twitter.com/ciclosmajor1", class: %w[btn btn-lg text-white], style: "background-color: rgb(85, 172, 238)" do %>
+                <%= icon("fa-brands", "twitter", class: "fa-fw", title: t(".twitter")) %>
+                <span class="fa-sr-only"><%= t ".twitter" %></span>
+              <% end %>
+              <%= link_to "https://twitter.com/www.instagram.com/ciclos_major_/", class: %w[btn btn-lg text-white], style: "background-color: rgb(172, 43, 172)" do %>
+                <%= icon "fa-brands", "instagram", class: "fa-fw", title: t(".instagram") %>
+                <span class="fa-sr-only"><%= t ".instagram" %></span>
+              <% end %>
+              <%= mail_to "info@ciclosmajor.com", class: %w[btn btn-lg btn-primary] do %>
+                <%= icon("fa-solid", "envelope", class: "fa-fw", title: t(".email")) %>
+                <span class="fa-sr-only"><%= t ".email" %></span>
+              <% end %>
+              <%= link_to "tel:00447557688309", class: %w[btn btn-lg btn-primary] do %>
+                <%= icon("fa-solid", "phone", class: "fa-fw", title: t(".phone")) %>
+                <span class="fa-sr-only"><%= t ".phone" %></span>
+              <% end %>
             </div>
           </div>
         </div>
@@ -30,8 +40,8 @@
         <div class="col">
           <div class="card mb-3">
             <div class="card-header">
-              <span class="fa-solid fa-fw fa-phone"></span>
-              Call us
+              <%= icon "fa-solid", "phone", class: "fa-fw" %>
+              <%= t ".call_us" %>
             </div>
             <div class="list-group list-group-flush">
               <%= link_to "tel:00447557688309", class: %w[list-group-item list-group-item-action] do %>
@@ -46,9 +56,9 @@
         <div class="col">
           <div class="card mb-3">
             <div class="list-group list-group-flush">
-              <a href="/privacy-policy" class="list-group-item list-group-item-action">Privacy Policy</a>
-              <a href="/terms-and-conditions" class="list-group-item list-group-item-action">Terms & Conditions</a>
-              <a href="/faqs" class="list-group-item list-group-item-action">FAQs</a>
+              <%= link_to t(".privacy"), privacy_policy_path, class: %i[list-group-item list-group-item-action] %>
+              <%= link_to t(".ts_cs"), terms_and_conditions_path, class: %i[list-group-item list-group-item-action] %>
+              <%= link_to Faq.model_name.human(count: 2), faqs_path, class: %i[list-group-item list-group-item-action] %>
             </div>
           </div>
         </div>
