@@ -3,7 +3,7 @@
 <% if admin_signed_in? %>
   <p>
     <%= link_to new_faq_path, class: %i[btn btn-primary] do %>
-      <%= icon "fa-solid", "plus", class: "fa-fw" %>
+      <%= fa_icon "plus" %>
       <%= t ".new" %>
     <% end %>
   </p>

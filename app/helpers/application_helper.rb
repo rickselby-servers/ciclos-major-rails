@@ -2,16 +2,12 @@
 
 # General application-level helpers
 module ApplicationHelper
-  def icon(style, name, text = nil, html_options = {})
-    text, html_options = nil, text if text.is_a?(Hash)
+  def fa_icon(name, fa_style = "fa-solid", **html_options)
+    classes = [fa_style, "fa-#{name}"]
+    classes << "fa-fw" unless html_options.key? :no_fw
+    classes += Array(html_options[:class]) if html_options.key? :class
+    html_options[:class] = classes.join " "
 
-    content_class = "#{style} fa-#{name}"
-    content_class << " #{html_options[:class]}" if html_options.key?(:class)
-    html_options[:class] = content_class
-    html_options['aria-hidden'] ||= true
-
-    html = content_tag(:i, nil, html_options)
-    html << ' ' << text.to_s unless text.blank?
-    html
+    content_tag :span, nil, html_options
   end
 end

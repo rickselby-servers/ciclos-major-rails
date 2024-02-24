@@ -13,25 +13,22 @@
             <div class="card-body text-center">
               <%= link_to "https://www.facebook.com/groups/2431275356936386/", class: %w[btn btn-lg text-white],
                           style: "background-color: #0a53be" do %>
-                <%= icon("fa-brands", "facebook-f", class: "fa-fw", title: t(".facebook")) %>
-                <span class="fa-sr-only"><%= t ".facebook" %></span>
+                <%= fa_icon("facebook-f", "fa-brands", title: t(".facebook")) %>
               <% end %>
               <%= link_to "https://twitter.com/ciclosmajor1", class: %w[btn btn-lg text-white],
                           style: "background-color: rgb(85, 172, 238)" do %>
-                <%= icon("fa-brands", "twitter", class: "fa-fw", title: t(".twitter")) %>
-                <span class="fa-sr-only"><%= t ".twitter" %></span>
+                <%= fa_icon("twitter", "fa-brands", title: t(".twitter")) %>
               <% end %>
               <%= link_to "https://twitter.com/www.instagram.com/ciclos_major_/", class: %w[btn btn-lg text-white],
                           style: "background-color: rgb(172, 43, 172)" do %>
-                <%= icon "fa-brands", "instagram", class: "fa-fw", title: t(".instagram") %>
-                <span class="fa-sr-only"><%= t ".instagram" %></span>
+                <%= fa_icon "instagram", "fa-brands", title: t(".instagram") %>
               <% end %>
               <%= mail_to "info@ciclosmajor.com", class: %w[btn btn-lg btn-primary] do %>
-                <%= icon("fa-solid", "envelope", class: "fa-fw", title: t(".email")) %>
+                <%= fa_icon("envelope", title: t(".email")) %>
                 <span class="fa-sr-only"><%= t ".email" %></span>
               <% end %>
               <%= link_to "tel:00447557688309", class: %w[btn btn-lg btn-primary] do %>
-                <%= icon("fa-solid", "phone", class: "fa-fw", title: t(".phone")) %>
+                <%= fa_icon("phone", title: t(".phone")) %>
                 <span class="fa-sr-only"><%= t ".phone" %></span>
               <% end %>
             </div>
@@ -43,7 +40,7 @@
         <div class="col">
           <div class="card mb-3">
             <div class="card-header">
-              <%= icon "fa-solid", "phone", class: "fa-fw" %>
+              <%= fa_icon "phone" %>
               <%= t ".call_us" %>
             </div>
             <div class="list-group list-group-flush">
