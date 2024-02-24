@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="aac2a57f-6cfe-440c-8510-acda59a6794f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/application/_admin.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/application/_admin.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/application/_footer.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/application/_footer.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/application/_navbar.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/application/_navbar.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/auth/sign_in.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/auth/sign_in.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/faqs/_faq.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/faqs/_faq.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/locales/views.en.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/locales/views.en.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -444,7 +444,7 @@
       <workItem from="1708690772125" duration="1431000" />
       <workItem from="1708700184268" duration="231000" />
       <workItem from="1708776792259" duration="2972000" />
-      <workItem from="1708786414910" duration="4930000" />
+      <workItem from="1708786414910" duration="5885000" />
     </task>
     <task id="LOCAL-00001" summary="Start work on having editable inline text things">
       <option name="closed" value="true" />
@@ -766,7 +766,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708779498402</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Start work on localization">
+      <option name="closed" value="true" />
+      <created>1708796323694</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1708796323694</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -796,7 +804,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add a basic" />
     <MESSAGE value="Add a basic view test for the home page" />
     <MESSAGE value="Add a system test for updating page text" />
     <MESSAGE value="Set up headless chrome" />
@@ -821,7 +828,8 @@
     <MESSAGE value="Add sortable handle to FAQs" />
     <MESSAGE value="Refactor old/new sorting values" />
     <MESSAGE value="Add spec tests for sorting FAQs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add spec tests for sorting FAQs" />
+    <MESSAGE value="Start work on localization" />
+    <option name="LAST_COMMIT_MESSAGE" value="Start work on localization" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ciclos_major_rails@All_specs_in_faqs__ciclos_major_rails.rcov" NAME="All specs in faqs: ciclos-major-rails Coverage Results" MODIFIED="1708635504070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />

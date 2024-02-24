@@ -41,6 +41,9 @@ en:
       videos: "Videos"
       zafiro_palace: "Zafiro Palace"
       zafiro_tropic: "Zafiro Tropic"
+  auth:
+    sign_in:
+      sign_in: "Sign in with %{name}"
   faqs:
     back: "Back to FAQs"
     create:
@@ -49,6 +52,8 @@ en:
       success: "FAQ was successfully deleted."
     edit:
       title: "Editing Frequently Asked Question"
+    faq:
+      edit: "Edit FAQ"
     form:
       delete: "Delete"
       delete_confirm: "Are you sure you wish to delete this FAQ?"
@@ -62,3 +67,6 @@ en:
       title: "New Frequently Asked Question"
     update:
       success: "FAQ was successfully updated."
+  layouts:
+    application:
+      title: "Ciclos Major: Mallorcan Cycling Holidays"
