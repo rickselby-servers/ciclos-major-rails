@@ -2,7 +2,7 @@
   <% resource_class.omniauth_providers.each do |provider| %>
     <%= button_to omniauth_authorize_path(resource_name, provider), class: %w[btn btn-primary], data: { turbo: false } do %>
       <%= icon "fa-solid", "arrow-right-to-bracket", class: "fa-fw" %>
-      Sign in with <%= OmniAuth::Utils.camelize(provider) %>
+      <%= t ".sign_in", name: OmniAuth::Utils.camelize(provider) %>
     <% end %>
     <br>
   <% end %>

@@ -1,5 +1,47 @@
 ---
 en:
+  application:
+    admin:
+      logged_in: "Logged in as %{user}"
+      logoout: "Logout"
+    footer:
+      call_us: "Call Us"
+      email: "Email"
+      facebook: "Facebook"
+      faqs: "FAQs"
+      instagram: "Instagram"
+      phone: "Phone"
+      privacy: "Privacy Policy"
+      ts_cs: "Terms & Conditions"
+      twitter: "Twitter"
+    navbar:
+      312: "312 Mallorca"
+      about_us: "About Us"
+      alcudia: "Alcudia"
+      arrivals: "Arrivals and Transfers"
+      bespoke_camps: "Bespoke Camps"
+      bike_rental: "Bike Rental"
+      camps: "Camps"
+      can_ribera: "Can Ribera Rural Hotel by Zafiro - Muro"
+      climate: "Climate"
+      contact_us: "Contact Us"
+      cycling_and_tri: "Cycling and Triathlon"
+      gallery: "Gallery"
+      guides: "Guides"
+      home: "Home"
+      hotels: "Hotels and Locations"
+      lunch_stops: "Lunch Stops"
+      mallorca: "Mallorca"
+      muro: "Muro"
+      ride_groups_and_routes: "Riding Groups and Routes"
+      routes: "Routes"
+      safety: "Safety"
+      testimonials: "Testimonials"
+      zafiro_palace: "Zafiro Palace"
+      zafiro_tropic: "Zafiro Tropic"
+  auth:
+    sign_in:
+      sign_in: "Sign in with %{name}"
   faqs:
     back: "Back to FAQs"
     create:
@@ -8,6 +50,8 @@ en:
       success: "FAQ was successfully deleted."
     edit:
       title: "Editing Frequently Asked Question"
+    faq:
+      edit: "Edit FAQ"
     form:
       delete: "Delete"
       delete_confirm: "Are you sure you wish to delete this FAQ?"
@@ -21,3 +65,21 @@ en:
       title: "New Frequently Asked Question"
     update:
       success: "FAQ was successfully updated."
+  layouts:
+    application:
+      title: "Ciclos Major: Mallorcan Cycling Holidays"
+  pages:
+    about_us:
+      img_alt: "Darryl and Liz in Ciclos Major cycling kit"
+    arrivals_and_transfers:
+      img_alt: "A large 9 seater minivan with a large trailer for carrying bikes"
+    ride_groups:
+      affogato: "Affogato"
+      affogato_description_html: "<p>1 or 2 cafe stops</p><p>Easy ride around the area</p>"
+      americano: "Americano"
+      cafe_latte: "Cafe Latte"
+      cappuccino: "Cappuccino"
+      espresso_html: "Espresso / <br> Double Espresso"
+      title: "Ride Groups"
+    videos:
+      title: "Videos"
