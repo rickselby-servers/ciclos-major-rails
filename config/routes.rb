@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   resources :faqs, except: :show do
     collection do
-      patch :move_position
+      patch :move
     end
   end
   resources :page_text, only: :update

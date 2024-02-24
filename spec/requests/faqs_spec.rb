@@ -118,6 +118,32 @@ RSpec.describe "/faqs" do
     end
   end
 
+  describe "PATCH /move" do
+    subject(:do_move) do
+      patch move_faqs_path from: 0, to: 1
+      response
+    end
+
+    let!(:faq) { Faq.create! valid_attributes }
+    let!(:faq2) { Faq.create! valid_attributes }
+
+    it_behaves_like "it redirects to login if not logged in"
+
+    context "when logged in", :logged_in do
+      it { is_expected.to be_ok }
+
+      it "moves the first faq to position 1" do
+        do_move
+        expect(faq.reload.position).to eq 1
+      end
+
+      it "moves the second faq to position 0" do
+        do_move
+        expect(faq2.reload.position).to eq 0
+      end
+    end
+  end
+
   describe "DELETE /destroy" do
     subject(:do_delete) do
       delete faq_url faq
