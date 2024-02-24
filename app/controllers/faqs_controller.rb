@@ -39,8 +39,8 @@ class FaqsController < ApplicationController
   end
 
   def move_position
-    faq = Faq.find_by(position: params[:old_position])
-    faq.insert_at params[:new_position].to_i
+    faq = Faq.find_by(position: params[:from].to_i + 1)
+    faq.insert_at params[:to].to_i + 1
 
     head :ok
   end
