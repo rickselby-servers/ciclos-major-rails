@@ -25,11 +25,9 @@
               <% end %>
               <%= mail_to "info@ciclosmajor.com", class: %w[btn btn-lg btn-primary] do %>
                 <%= fa_icon("envelope", title: t(".email")) %>
-                <span class="fa-sr-only"><%= t ".email" %></span>
               <% end %>
               <%= link_to "tel:00447557688309", class: %w[btn btn-lg btn-primary] do %>
                 <%= fa_icon("phone", title: t(".phone")) %>
-                <span class="fa-sr-only"><%= t ".phone" %></span>
               <% end %>
             </div>
           </div>

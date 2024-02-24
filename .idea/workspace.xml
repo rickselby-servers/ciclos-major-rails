@@ -6,13 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="aac2a57f-6cfe-440c-8510-acda59a6794f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/application_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/application_helper.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/application/_footer.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/application/_footer.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/application/_navbar.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/application/_navbar.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/auth/sign_in.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/auth/sign_in.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/faqs/_faq.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/faqs/_faq.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/faqs/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/faqs/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/pages/ride_groups.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/ride_groups.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -435,7 +429,7 @@
       <workItem from="1708700184268" duration="231000" />
       <workItem from="1708776792259" duration="2972000" />
       <workItem from="1708786414910" duration="6011000" />
-      <workItem from="1708801258968" duration="6001000" />
+      <workItem from="1708801258968" duration="6375000" />
     </task>
     <task id="LOCAL-00001" summary="Start work on having editable inline text things">
       <option name="closed" value="true" />
@@ -797,7 +791,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708804938952</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Update font awesome icon helper">
+      <option name="closed" value="true" />
+      <created>1708808374315</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1708808374315</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -827,7 +829,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add `auditable` gem" />
     <MESSAGE value="Add tests for auditing of models" />
     <MESSAGE value="Tidy up tests" />
     <MESSAGE value="Add top-level basic pages" />
@@ -852,7 +853,8 @@
     <MESSAGE value="More localization" />
     <MESSAGE value="Fix cops" />
     <MESSAGE value="Switch font awesome from sass to svg/js" />
-    <option name="LAST_COMMIT_MESSAGE" value="Switch font awesome from sass to svg/js" />
+    <MESSAGE value="Update font awesome icon helper" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update font awesome icon helper" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ciclos_major_rails@All_specs_in_faqs__ciclos_major_rails.rcov" NAME="All specs in faqs: ciclos-major-rails Coverage Results" MODIFIED="1708635504070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />
