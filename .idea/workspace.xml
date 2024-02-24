@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aac2a57f-6cfe-440c-8510-acda59a6794f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/ciclos-major-rails.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ciclos-major-rails.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/application/_navbar.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/application/_navbar.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/pages/about_us.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/about_us.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/pages/arrivals_and_transfers.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/arrivals_and_transfers.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/pages/home.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/home.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/pages/ride_groups.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/ride_groups.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/pages/videos.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/videos.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/locales/views.en.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/locales/views.en.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/application/_footer.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/application/_footer.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +147,6 @@
       <command value="spec: ciclos-major-rails" />
       <command value="rake spec" />
       <command value="rails generate controller" />
-      <command value="erblint --lint-all" />
       <command value="rake rubocop" />
       <command value="rake assets:precompile" />
       <command value="rake db:migrate" />
@@ -164,6 +156,7 @@
       <command value="rake route" />
       <command value="rails routes" />
       <command value="bundle install" />
+      <command value="erblint --lint-all" />
     </option>
   </component>
   <component name="RunManager" selected="Rails.ciclos-major-rails">
@@ -449,7 +442,7 @@
       <workItem from="1708700184268" duration="231000" />
       <workItem from="1708776792259" duration="2972000" />
       <workItem from="1708786414910" duration="6011000" />
-      <workItem from="1708801258968" duration="822000" />
+      <workItem from="1708801258968" duration="1422000" />
     </task>
     <task id="LOCAL-00001" summary="Start work on having editable inline text things">
       <option name="closed" value="true" />
@@ -787,7 +780,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708797236407</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="More localization">
+      <option name="closed" value="true" />
+      <created>1708802117184</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1708802117184</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
