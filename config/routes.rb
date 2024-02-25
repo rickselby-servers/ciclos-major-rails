@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :guides
   devise_for :admins, controllers: { omniauth_callbacks: "omniauth" }
   devise_scope :admin do
     get "sign_in", to: "auth#sign_in", as: :new_admin_session

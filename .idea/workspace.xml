@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aac2a57f-6cfe-440c-8510-acda59a6794f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/db/migrate/20240225215918_create_active_storage_tables.active_storage.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
-    </list>
+    <list default="true" id="aac2a57f-6cfe-440c-8510-acda59a6794f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -155,11 +150,11 @@
       <command value="rake route" />
       <command value="rails routes" />
       <command value="erblint --lint-all" />
-      <command value="bundle install" />
       <command value="rake assets:clobber" />
       <command value="rake assets:precompile" />
       <command value="rake rubocop:autocorrect_all" />
       <command value="rake rubocop" />
+      <command value="bundle install" />
     </option>
   </component>
   <component name="RunManager" selected="Rake.rubocop: ciclos-major-rails">
@@ -411,7 +406,7 @@
       <workItem from="1708786414910" duration="6011000" />
       <workItem from="1708801258968" duration="7320000" />
       <workItem from="1708882832024" duration="73000" />
-      <workItem from="1708898148609" duration="374000" />
+      <workItem from="1708898148609" duration="682000" />
     </task>
     <task id="LOCAL-00001" summary="Start work on having editable inline text things">
       <option name="closed" value="true" />
@@ -797,7 +792,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708809292076</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Set up active storage">
+      <option name="closed" value="true" />
+      <created>1708898773569</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1708898773569</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -827,7 +830,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add top-level basic pages" />
     <MESSAGE value="Use underscore style by default, convert for routes" />
     <MESSAGE value="Fix page text update spec test" />
     <MESSAGE value="Add FAQs to the site" />
@@ -852,7 +854,8 @@
     <MESSAGE value="Update font awesome icon helper" />
     <MESSAGE value="Remove more sr-only blocks" />
     <MESSAGE value="Move title to link" />
-    <option name="LAST_COMMIT_MESSAGE" value="Move title to link" />
+    <MESSAGE value="Set up active storage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Set up active storage" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ciclos_major_rails@All_specs_in_faqs__ciclos_major_rails.rcov" NAME="All specs in faqs: ciclos-major-rails Coverage Results" MODIFIED="1708635504070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ciclos-major-rails" />

@@ -1,0 +1,17 @@
+<div id="<%= dom_id guide %>">
+  <p>
+    <strong>Name:</strong>
+    <%= guide.name %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= guide.description %>
+  </p>
+
+  <p>
+    <strong>Photo:</strong>
+    <%= link_to guide.photo.filename, guide.photo if guide.photo.attached? %>
+  </p>
+
+</div>
