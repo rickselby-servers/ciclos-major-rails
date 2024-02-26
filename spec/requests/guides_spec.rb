@@ -2,10 +2,11 @@
 
 require "rails_helper"
 
-RSpec.describe "/faqs" do
-  let(:faq) { Faq.create! valid_attributes }
-  let(:invalid_attributes) { { question: "", answer: "" } }
-  let(:valid_attributes) { { question: "foo", answer: "bar" } }
+RSpec.describe "/guides" do
+  let(:guide) { Guide.create! valid_attributes }
+  let(:invalid_attributes) { { name: "", description: "", photo: "" } }
+  let(:photo) { file_fixture_upload("example.jpg") }
+  let(:valid_attributes) { { name: "Bob", description: "is person", photo: } }
 
   before(:each, :logged_in) do
     sign_in Admin.create
@@ -13,7 +14,7 @@ RSpec.describe "/faqs" do
 
   describe "GET /index" do
     subject do
-      get faqs_url
+      get guides_path
       response
     end
 
@@ -22,7 +23,7 @@ RSpec.describe "/faqs" do
 
   describe "GET /new" do
     subject do
-      get new_faq_url
+      get new_guide_path
       response
     end
 
@@ -35,7 +36,7 @@ RSpec.describe "/faqs" do
 
   describe "GET /edit" do
     subject do
-      get edit_faq_url faq
+      get edit_guide_path guide
       response
     end
 
@@ -48,7 +49,7 @@ RSpec.describe "/faqs" do
 
   describe "POST /create" do
     subject(:do_post) do
-      post faqs_url, params: { faq: valid_attributes }
+      post guides_path, params: { guide: valid_attributes }
       response
     end
 
@@ -56,21 +57,21 @@ RSpec.describe "/faqs" do
 
     context "when logged in", :logged_in do
       context "with valid parameters" do
-        it "creates a new FAQ" do
-          expect { do_post }.to change(Faq, :count).by(1)
+        it "creates a new Guide" do
+          expect { do_post }.to change(Guide, :count).by(1)
         end
 
-        it { is_expected.to redirect_to faqs_url }
+        it { is_expected.to redirect_to guides_path }
       end
 
       context "with invalid parameters" do
         subject(:do_post) do
-          post faqs_url, params: { faq: invalid_attributes }
+          post guides_path, params: { guide: invalid_attributes }
           response
         end
 
-        it "does not create a new FAQ" do
-          expect { do_post }.not_to change(Faq, :count)
+        it "does not create a new Guide" do
+          expect { do_post }.not_to change(Guide, :count)
         end
 
         it { is_expected.to have_http_status :unprocessable_entity }
@@ -80,37 +81,37 @@ RSpec.describe "/faqs" do
 
   describe "PATCH /update" do
     subject(:do_patch) do
-      patch faq_url(faq), params: { faq: new_attributes }
+      patch guide_path(guide), params: { guide: new_attributes }
       response
     end
 
-    let(:new_attributes) { { question: "bar", answer: "baz" } }
+    let(:new_attributes) { { name: "Robert", description: "is still person", photo: } }
 
     it_behaves_like "it redirects to login if not logged in"
 
     context "when logged in", :logged_in do
       context "with valid parameters" do
-        let(:expected_attributes) { new_attributes.transform_keys(&:to_s) }
+        let(:expected_attributes) { new_attributes.except(:photo).transform_keys(&:to_s) }
 
-        it "updates the requested faq" do
+        it "updates the requested guide" do
           do_patch
-          expect(faq.reload.attributes.slice(*expected_attributes.keys)).to eq expected_attributes
+          expect(guide.reload.attributes.slice(*expected_attributes.keys)).to eq expected_attributes
         end
 
-        it { is_expected.to redirect_to faqs_url }
+        it { is_expected.to redirect_to guides_path }
       end
 
       context "with invalid parameters" do
         subject(:do_patch) do
-          patch faq_url(faq), params: { faq: invalid_attributes }
+          patch guide_path(guide), params: { guide: invalid_attributes }
           response
         end
 
-        let(:expected_attributes) { valid_attributes.transform_keys(&:to_s) }
+        let(:expected_attributes) { valid_attributes.except(:photo).transform_keys(&:to_s) }
 
-        it "does not update the requested faq" do
+        it "does not update the requested guide" do
           do_patch
-          expect(faq.attributes.slice(*expected_attributes.keys)).to eq expected_attributes
+          expect(guide.attributes.slice(*expected_attributes.keys)).to eq expected_attributes
         end
 
         it { is_expected.to have_http_status :unprocessable_entity }
@@ -120,45 +121,45 @@ RSpec.describe "/faqs" do
 
   describe "PATCH /move" do
     subject(:do_move) do
-      patch move_faqs_path from: 0, to: 1
+      patch move_guides_path from: 0, to: 1
       response
     end
 
-    let!(:faq) { Faq.create! valid_attributes }
-    let!(:faq2) { Faq.create! valid_attributes }
+    let!(:guide) { Guide.create! valid_attributes }
+    let!(:guide2) { Guide.create! valid_attributes }
 
     it_behaves_like "it redirects to login if not logged in"
 
     context "when logged in", :logged_in do
       it { is_expected.to be_ok }
 
-      it "moves the first faq to position 1" do
+      it "moves the first guide to position 1" do
         do_move
-        expect(faq.reload.position).to eq 1
+        expect(guide.reload.position).to eq 1
       end
 
-      it "moves the second faq to position 0" do
+      it "moves the second guide to position 0" do
         do_move
-        expect(faq2.reload.position).to eq 0
+        expect(guide2.reload.position).to eq 0
       end
     end
   end
 
   describe "DELETE /destroy" do
     subject(:do_delete) do
-      delete faq_url faq
+      delete guide_path guide
       response
     end
 
     it_behaves_like "it redirects to login if not logged in"
 
     context "when logged in", :logged_in do
-      it "destroys the requested faq" do
-        faq # load the FAQ before the check that we delete it
-        expect { do_delete }.to change(Faq, :count).by(-1)
+      it "destroys the requested guide" do
+        guide # load the guide before the check that we delete it
+        expect { do_delete }.to change(Guide, :count).by(-1)
       end
 
-      it { is_expected.to redirect_to faqs_url }
+      it { is_expected.to redirect_to guides_path }
     end
   end
 end

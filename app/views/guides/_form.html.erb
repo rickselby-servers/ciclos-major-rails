@@ -1,0 +1,30 @@
+<%= bootstrap_form_with(model: guide, data: { controller: :tinymce }) do |form| %>
+  <% if guide.errors.any? %>
+    <div style="color: red">
+      <h2><%= t ".errors", count: guide.errors.count %></h2>
+
+      <ul>
+        <% guide.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.text_field :name %>
+  <%= form.text_area :description, data: { tinymce_target: :input }, required: false %>
+  <%= form.file_field :photo, required: guide.photo.blank? %>
+  <% if guide.photo.present? %>
+    <div class="mb-3">
+      <%= image_tag url_for(guide.photo), alt: t("guides.img_alt", name: guide.name) %>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.submit %>
+    <% if guide.persisted? %>
+      <%= link_to t(".delete"), guide_path(guide), class: %i[btn btn-danger],
+                  data: { turbo_method: :delete, turbo_confirm: t(".delete_confirm") } %>
+    <% end %>
+  </div>
+<% end %>

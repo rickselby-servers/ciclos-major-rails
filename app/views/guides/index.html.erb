@@ -1,0 +1,14 @@
+<%= t ".title" %>
+
+<% if admin_signed_in? %>
+  <p>
+    <%= link_to new_guide_path, class: %i[btn btn-primary] do %>
+      <%= fa_icon "plus" %>
+      <%= t ".new" %>
+    <% end %>
+  </p>
+<% end %>
+
+<div id="guides">
+  <%= render @guides %>
+</div>

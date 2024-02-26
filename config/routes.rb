@@ -23,5 +23,10 @@ Rails.application.routes.draw do
       patch :move
     end
   end
+  resources :guides, except: :show do
+    collection do
+      patch :move
+    end
+  end
   resources :page_text, only: :update
 end

@@ -17,14 +17,4 @@ RSpec.describe "faqs/new" do
     it { is_expected.to have_field "faq[answer]" }
     it { is_expected.to have_button "commit" }
   end
-
-  it "renders new faq form" do
-    p render
-
-    assert_select "form[action=?][method=?]", faqs_path, "post" do
-      assert_select "input[name=?]", "faq[question]"
-
-      assert_select "textarea[name=?]", "faq[answer]"
-    end
-  end
 end

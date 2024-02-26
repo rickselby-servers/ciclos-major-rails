@@ -65,6 +65,30 @@ en:
       title: "New Frequently Asked Question"
     update:
       success: "FAQ was successfully updated."
+  guides:
+    back: "Back to Guides"
+    img_alt: "Photo of %{name}"
+    create:
+      success: "Guide was successfully created."
+    destroy:
+      success: "Guide was successfully deleted."
+    edit:
+      title: "Editing Guide"
+    form:
+      delete: "Delete"
+      delete_confirm: "Are you sure you wish to delete this guide?"
+      errors:
+        one: "One error prevented this guide from being saved:"
+        other: "%{count} errors prevented this guide from being saved:"
+    guide:
+      edit: "Edit Guide"
+    index:
+      title: "Guides"
+      new: "New Guide"
+    new:
+      title: "New Guide"
+    update:
+      success: "Guide was successfully updated."
   layouts:
     application:
       title: "Ciclos Major: Mallorcan Cycling Holidays"
