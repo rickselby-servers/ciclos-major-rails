@@ -3,27 +3,20 @@
 require "rails_helper"
 
 RSpec.describe "guides/edit" do
-  let(:guide) do
-    Guide.create!(
-      name:        "MyString",
-      description: "MyText",
-      photo:       nil,
-    )
-  end
+  let(:guide) { Guide.create! name: "Bob", description: "is person", photo: }
+  let(:photo) { Rack::Test::UploadedFile.new("spec/fixtures/example.jpg", "image/jpg") }
 
-  before do
-    assign(:guide, guide)
-  end
+  before { assign(:guide, guide) }
 
-  it "renders the edit guide form" do
-    render
+  it { is_expected.to have_link href: guides_path }
+  it { is_expected.to have_css "form[action='#{guide_path(guide)}'][method='post']" }
 
-    assert_select "form[action=?][method=?]", guide_path(guide), "post" do
-      assert_select "input[name=?]", "guide[name]"
+  context "with the form" do
+    subject { page.find("form") }
 
-      assert_select "textarea[name=?]", "guide[description]"
-
-      assert_select "input[name=?]", "guide[photo]"
-    end
+    it { is_expected.to have_field "guide[name]" }
+    it { is_expected.to have_field "guide[description]" }
+    it { is_expected.to have_field "guide[photo]" }
+    it { is_expected.to have_button "commit" }
   end
 end

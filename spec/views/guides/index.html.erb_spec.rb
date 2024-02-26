@@ -3,26 +3,20 @@
 require "rails_helper"
 
 RSpec.describe "guides/index" do
-  before do
-    assign(:guides, [
-             Guide.create!(
-               name:        "Name",
-               description: "MyText",
-               photo:       nil,
-             ),
-             Guide.create!(
-               name:        "Name",
-               description: "MyText",
-               photo:       nil,
-             ),
-           ],)
-  end
+  let(:guide) { Guide.create! name: "Bob", description: "is person", photo: }
+  let(:guide2) { Guide.create! name: "Bob", description: "is person", photo: }
+  let(:photo) { Rack::Test::UploadedFile.new("spec/fixtures/example.jpg", "image/jpg") }
 
-  it "renders a list of guides" do
-    render
-    cell_selector = (Rails::VERSION::STRING >= "7") ? "div>p" : "tr>td"
-    assert_select cell_selector, text: Regexp.new("Name".to_s), count: 2
-    assert_select cell_selector, text: Regexp.new("MyText".to_s), count: 2
-    assert_select cell_selector, text: Regexp.new(nil.to_s), count: 2
+  before { assign(:guides, [guide, guide2]) }
+
+  it { is_expected.to have_css "div > div > h2", text: "Bob", count: 2 }
+  it { is_expected.to have_css "div > div", text: "is person", count: 2 }
+
+  it { is_expected.to have_no_link href: new_guide_path }
+
+  context "when logged in" do
+    before { sign_in Admin.create }
+
+    it { is_expected.to have_link href: new_guide_path }
   end
 end

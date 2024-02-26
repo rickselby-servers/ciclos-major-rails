@@ -3,5 +3,10 @@
 require "rails_helper"
 
 RSpec.describe Guide do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { is_expected.to validate_presence_of :name }
+  it { is_expected.to validate_presence_of :description }
+  it { is_expected.to validate_presence_of :photo }
+
+  it { is_expected.to be_audited }
+  it { is_expected.to have_one_attached :photo }
 end

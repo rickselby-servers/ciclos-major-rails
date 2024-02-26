@@ -1,10 +1,9 @@
-<h1>Editing guide</h1>
+<h1><%= t ".title" %></h1>
 
 <%= render "form", guide: @guide %>
 
 <br>
 
 <div>
-  <%= link_to "Show this guide", @guide %> |
-  <%= link_to "Back to guides", guides_path %>
+  <%= link_to t("guides.back"), guides_path %>
 </div>

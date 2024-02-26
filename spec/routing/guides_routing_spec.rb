@@ -12,10 +12,6 @@ RSpec.describe GuidesController do
       expect(get: "/guides/new").to route_to("guides#new")
     end
 
-    it "routes to #show" do
-      expect(get: "/guides/1").to route_to("guides#show", id: "1")
-    end
-
     it "routes to #edit" do
       expect(get: "/guides/1/edit").to route_to("guides#edit", id: "1")
     end
@@ -30,6 +26,10 @@ RSpec.describe GuidesController do
 
     it "routes to #update via PATCH" do
       expect(patch: "/guides/1").to route_to("guides#update", id: "1")
+    end
+
+    it "routes to #move via PATCH" do
+      expect(patch: "/guides/move").to route_to("guides#move")
     end
 
     it "routes to #destroy" do

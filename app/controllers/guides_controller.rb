@@ -1,67 +1,55 @@
 # frozen_string_literal: true
 
 class GuidesController < ApplicationController
-  before_action :set_guide, only: %i[show edit update destroy]
+  before_action :authenticate_admin!, except: :index
+  before_action :set_guide, only: %i[edit update destroy]
 
-  # GET /guides or /guides.json
   def index
-    @guides = Guide.all
+    @guides = Guide.ordered
   end
 
-  # GET /guides/1 or /guides/1.json
-  def show; end
-
-  # GET /guides/new
   def new
     @guide = Guide.new
   end
 
-  # GET /guides/1/edit
   def edit; end
 
-  # POST /guides or /guides.json
   def create
     @guide = Guide.new(guide_params)
 
-    respond_to do |format|
-      if @guide.save
-        format.html { redirect_to guide_url(@guide), notice: "Guide was successfully created." }
-        format.json { render :show, status: :created, location: @guide }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @guide.errors, status: :unprocessable_entity }
-      end
+    if @guide.save
+      redirect_to guides_path, notice: t(".success")
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
-  # PATCH/PUT /guides/1 or /guides/1.json
   def update
-    respond_to do |format|
-      if @guide.update(guide_params)
-        format.html { redirect_to guide_url(@guide), notice: "Guide was successfully updated." }
-        format.json { render :show, status: :ok, location: @guide }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @guide.errors, status: :unprocessable_entity }
-      end
+    if @guide.update(guide_params)
+      redirect_to guides_path, notice: t(".success")
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
-  # DELETE /guides/1 or /guides/1.json
   def destroy
     @guide.destroy!
 
-    respond_to do |format|
-      format.html { redirect_to guides_url, notice: "Guide was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    redirect_to guides_path, notice: t(".success")
+  end
+
+  def move
+    guide = Guide.find_by position: params[:from]
+    guide.insert_at params[:to].to_i
+
+    head :ok
   end
 
   private
 
   # Use callbacks to share common setup or constraints between actions.
   def set_guide
-    @guide = Guide.find(params[:id])
+    @guide = Guide.find params[:id]
   end
 
   # Only allow a list of trusted parameters through.

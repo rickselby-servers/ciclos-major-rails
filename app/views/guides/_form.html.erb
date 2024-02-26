@@ -1,7 +1,7 @@
-<%= form_with(model: guide) do |form| %>
+<%= bootstrap_form_with(model: guide, data: { controller: :tinymce }) do |form| %>
   <% if guide.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(guide.errors.count, "error") %> prohibited this guide from being saved:</h2>
+      <h2><%= t ".errors", count: guide.errors.count %></h2>
 
       <ul>
         <% guide.errors.each do |error| %>
@@ -11,22 +11,15 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div>
-    <%= form.label :photo, style: "display: block" %>
-    <%= form.file_field :photo %>
-  </div>
+  <%= form.text_field :name %>
+  <%= form.text_area :description, data: { tinymce_target: :input }, required: false %>
+  <%= form.file_field :photo %>
 
   <div>
     <%= form.submit %>
+    <% if guide.persisted? %>
+      <%= link_to t(".delete"), guide_path(guide), class: %i[btn btn-danger],
+                  data: { turbo_method: :delete, turbo_confirm: t(".delete_confirm") } %>
+    <% end %>
   </div>
 <% end %>

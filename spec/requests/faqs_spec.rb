@@ -56,7 +56,7 @@ RSpec.describe "/faqs" do
 
     context "when logged in", :logged_in do
       context "with valid parameters" do
-        it "creates a new Faq" do
+        it "creates a new FAQ" do
           expect { do_post }.to change(Faq, :count).by(1)
         end
 
@@ -69,7 +69,7 @@ RSpec.describe "/faqs" do
           response
         end
 
-        it "does not create a new Faq" do
+        it "does not create a new FAQ" do
           expect { do_post }.not_to change(Faq, :count)
         end
 

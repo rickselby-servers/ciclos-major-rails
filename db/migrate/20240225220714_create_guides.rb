@@ -5,6 +5,7 @@ class CreateGuides < ActiveRecord::Migration[7.1]
     create_table :guides do |t|
       t.string :name
       t.text :description
+      t.integer :position
 
       t.timestamps
     end

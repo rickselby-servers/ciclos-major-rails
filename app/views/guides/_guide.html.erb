@@ -1,17 +1,16 @@
-<div id="<%= dom_id guide %>">
-  <p>
-    <strong>Name:</strong>
-    <%= guide.name %>
-  </p>
+<div id="<%= dom_id guide %>" class="clearfix">
+  <img class="float-end ms-3 mb-3">
 
-  <p>
-    <strong>Description:</strong>
-    <%= guide.description %>
-  </p>
+  <h2><%= guide.name %></h2>
 
-  <p>
-    <strong>Photo:</strong>
-    <%= link_to guide.photo.filename, guide.photo if guide.photo.attached? %>
-  </p>
+  <%= sanitize guide.description %>
 
+  <% if admin_signed_in? %>
+    <div>
+      <%= link_to edit_guide_path(guide), class: %i[btn btn-secondary] do %>
+        <%= fa_icon "pencil" %>
+        <%= t ".edit" %>
+      <% end %>
+    </div>
+  <% end %>
 </div>

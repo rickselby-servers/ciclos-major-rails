@@ -39,7 +39,7 @@ class FaqsController < ApplicationController
   end
 
   def move
-    faq = Faq.find_by(position: params[:from])
+    faq = Faq.find_by position: params[:from]
     faq.insert_at params[:to].to_i
 
     head :ok
@@ -48,7 +48,7 @@ class FaqsController < ApplicationController
   private
 
   def set_faq
-    @faq = Faq.find(params[:id])
+    @faq = Faq.find params[:id]
   end
 
   def faq_params

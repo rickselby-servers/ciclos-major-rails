@@ -1,14 +1,14 @@
-<p style="color: green"><%= notice %></p>
+<%= t ".title" %>
 
-<h1>Guides</h1>
+<% if admin_signed_in? %>
+  <p>
+    <%= link_to new_guide_path, class: %i[btn btn-primary] do %>
+      <%= fa_icon "plus" %>
+      <%= t ".new" %>
+    <% end %>
+  </p>
+<% end %>
 
 <div id="guides">
-  <% @guides.each do |guide| %>
-    <%= render guide %>
-    <p>
-      <%= link_to "Show this guide", guide %>
-    </p>
-  <% end %>
+  <%= render @guides %>
 </div>
-
-<%= link_to "New guide", new_guide_path %>

@@ -3,23 +3,19 @@
 require "rails_helper"
 
 RSpec.describe "guides/new" do
-  before do
-    assign(:guide, Guide.new(
-                     name:        "MyString",
-                     description: "MyText",
-                     photo:       nil,
-                   ),)
-  end
+  let(:guide) { Guide.new }
 
-  it "renders new guide form" do
-    render
+  before { assign(:guide, guide) }
 
-    assert_select "form[action=?][method=?]", guides_path, "post" do
-      assert_select "input[name=?]", "guide[name]"
+  it { is_expected.to have_link href: guides_path }
+  it { is_expected.to have_css "form[action='#{guides_path}'][method='post']" }
 
-      assert_select "textarea[name=?]", "guide[description]"
+  context "with the form" do
+    subject { page.find("form") }
 
-      assert_select "input[name=?]", "guide[photo]"
-    end
+    it { is_expected.to have_field "guide[name]" }
+    it { is_expected.to have_field "guide[description]" }
+    it { is_expected.to have_field "guide[photo]" }
+    it { is_expected.to have_button "commit" }
   end
 end
