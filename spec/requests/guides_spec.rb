@@ -85,7 +85,7 @@ RSpec.describe "/guides" do
       response
     end
 
-    let(:new_attributes) { { name: "Robert", description: "is still person", photo: photo } }
+    let(:new_attributes) { { name: "Robert", description: "is still person", photo: } }
 
     it_behaves_like "it redirects to login if not logged in"
 
