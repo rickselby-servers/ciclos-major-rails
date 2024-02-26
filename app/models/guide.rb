@@ -22,8 +22,14 @@ class Guide < ApplicationRecord
     return unless can_resize_photo?
 
     attachable = attachment_changes[:photo.to_s].attachable
-    attachable.tempfile = ImageProcessing::Vips.source(attachable.tempfile.path).resize_to_limit!(PHOTO_MAX_WIDTH, nil)
-    self.photo = attachable
+    tempfile = ImageProcessing::Vips.source(attachable.tempfile.path).resize_to_limit!(PHOTO_MAX_WIDTH, nil)
+
+    self.photo = if attachable.is_a? Rack::Test::UploadedFile
+                   Rack::Test::UploadedFile.new tempfile.path
+                 else
+                   attachable.tempfile = tempfile
+                   attachable
+                 end
   end
 
   def can_resize_photo?
