@@ -5,7 +5,7 @@ require "rails_helper"
 RSpec.describe "/guides" do
   let(:guide) { Guide.create! valid_attributes }
   let(:invalid_attributes) { { name: "", description: "", photo: "" } }
-  let(:photo) { Rack::Test::UploadedFile.new("spec/fixtures/example.jpg", "image/jpg") }
+  let(:photo) { file_fixture_upload("example.jpg") }
   let(:valid_attributes) { { name: "Bob", description: "is person", photo: } }
 
   before(:each, :logged_in) do

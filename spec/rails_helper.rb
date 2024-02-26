@@ -73,6 +73,9 @@ RSpec.configure do |config|
   config.include ViewHelpers, type: :view
   config.include_context "with view rendering", type: :view
 
+  # Add other helpers...
+  config.include ActionDispatch::TestProcess::FixtureFile, type: :request
+
   # Reset the PageTextService singleton for each test
   config.before do
     Singleton.__init__(PageTextService)
