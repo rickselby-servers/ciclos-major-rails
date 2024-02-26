@@ -5,7 +5,7 @@ require "rails_helper"
 RSpec.describe "guides/_guide" do
   let(:guide) { Guide.create! name: "Bob", description: "is person", photo: }
   let(:locals) { { guide: } }
-  let(:photo) { Rack::Test::UploadedFile.new("spec/fixtures/example.jpg", "image/jpg") }
+  let(:photo) { file_fixture_upload("example.jpg") }
 
   it { is_expected.to have_content "Bob" }
   it { is_expected.to have_content "is person" }

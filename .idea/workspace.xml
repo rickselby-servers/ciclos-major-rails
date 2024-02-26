@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="aac2a57f-6cfe-440c-8510-acda59a6794f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/guide.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/guide.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/views/guides/edit.html.erb_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/views/guides/edit.html.erb_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/views/guides/guide.html.erb_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/views/guides/guide.html.erb_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/views/guides/index.html.erb_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/views/guides/index.html.erb_spec.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +172,7 @@
       <command value="rake assets:precompile" />
     </option>
   </component>
-  <component name="RunManager" selected="RSpec./guides">
+  <component name="RunManager" selected="Rake.spec: ciclos-major-rails">
     <configuration name="/guides" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true" nameIsGenerated="true">
       <module name="ciclos-major-rails" />
       <predefined_log_file enabled="true" id="RUBY_RSPEC" />
@@ -448,14 +450,6 @@
       <workItem from="1708898148609" duration="682000" />
       <workItem from="1708952010745" duration="1568000" />
       <workItem from="1708961444183" duration="2837000" />
-    </task>
-    <task id="LOCAL-00007" summary="Use full key when looking up text">
-      <option name="closed" value="true" />
-      <created>1705749684321</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1705749684321</updated>
     </task>
     <task id="LOCAL-00008" summary="Add spec tests for helper methods">
       <option name="closed" value="true" />
@@ -841,7 +835,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708971507603</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="Update photo resizing for test environment">
+      <option name="closed" value="true" />
+      <created>1708973487345</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1708973487345</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -871,7 +873,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Update spec tests and rubocop" />
     <MESSAGE value="Update more tests" />
     <MESSAGE value="Refactor shared examples for tests" />
     <MESSAGE value="Add missing routing tests" />
@@ -896,7 +897,8 @@
     <MESSAGE value="Update spec tests" />
     <MESSAGE value="Fix cops" />
     <MESSAGE value="Fix erb issues" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix erb issues" />
+    <MESSAGE value="Update photo resizing for test environment" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update photo resizing for test environment" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

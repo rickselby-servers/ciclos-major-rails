@@ -4,7 +4,7 @@ require "rails_helper"
 
 RSpec.describe "guides/edit" do
   let(:guide) { Guide.create! name: "Bob", description: "is person", photo: }
-  let(:photo) { Rack::Test::UploadedFile.new("spec/fixtures/example.jpg", "image/jpg") }
+  let(:photo) { file_fixture_upload("example.jpg") }
 
   before { assign(:guide, guide) }
 
