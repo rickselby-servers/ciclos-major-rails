@@ -3,7 +3,6 @@
 class GuidesController < ApplicationController
   before_action :authenticate_admin!, except: :index
   before_action :set_guide, only: %i[edit update destroy]
-  before_action :process_photo, only: %i[create update]
 
   def index
     @guides = Guide.ordered
@@ -47,13 +46,6 @@ class GuidesController < ApplicationController
   end
 
   private
-
-  def process_photo
-    return unless guide_params.key? :photo
-
-    image = ImageProcessing::Vips.source(params[:guide][:photo].tempfile.path)
-    params[:guide][:photo].tempfile = image.resize_to_limit!(200, nil)
-  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_guide
