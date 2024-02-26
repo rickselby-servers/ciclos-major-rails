@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aac2a57f-6cfe-440c-8510-acda59a6794f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/requests/guides_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/requests/guides_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/guides/_guide.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/guides/_guide.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/locales/views.en.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/locales/views.en.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +159,6 @@
       <command value="rake spec" />
       <command value="rails generate controller" />
       <command value="rake route" />
-      <command value="erblint --lint-all" />
       <command value="rake assets:clobber" />
       <command value="rake rubocop:autocorrect_all" />
       <command value="bundle install" />
@@ -169,6 +167,7 @@
       <command value="rake routes" />
       <command value="rails routes" />
       <command value="rake rubocop" />
+      <command value="erblint --lint-all" />
     </option>
   </component>
   <component name="RunManager" selected="Rake.rubocop: ciclos-major-rails">
@@ -459,14 +458,6 @@
       <workItem from="1708898148609" duration="682000" />
       <workItem from="1708952010745" duration="1568000" />
       <workItem from="1708961444183" duration="2837000" />
-    </task>
-    <task id="LOCAL-00005" summary="Add a stimulus controller (?) that sets up tinymce">
-      <option name="closed" value="true" />
-      <created>1705747403104</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1705747403104</updated>
     </task>
     <task id="LOCAL-00006" summary="Use tinymce gem!">
       <option name="closed" value="true" />
@@ -852,7 +843,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708963343121</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Fix cops">
+      <option name="closed" value="true" />
+      <created>1708971302343</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1708971302343</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -897,7 +896,6 @@
     <MESSAGE value="Add spec tests for sorting FAQs" />
     <MESSAGE value="Start work on localization" />
     <MESSAGE value="More localization" />
-    <MESSAGE value="Fix cops" />
     <MESSAGE value="Switch font awesome from sass to svg/js" />
     <MESSAGE value="Update font awesome icon helper" />
     <MESSAGE value="Remove more sr-only blocks" />
@@ -907,7 +905,8 @@
     <MESSAGE value="Show guide photos" />
     <MESSAGE value="Resize photos when uploaded" />
     <MESSAGE value="Update spec tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update spec tests" />
+    <MESSAGE value="Fix cops" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix cops" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
