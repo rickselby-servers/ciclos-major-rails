@@ -31,5 +31,7 @@ module CiclosMajorRails
     # Allow `style` attribute through sanitized HTML
     config.action_view.sanitized_allowed_attributes =
       Rails::HTML::SafeListSanitizer::DEFAULT_ALLOWED_ATTRIBUTES.to_a + %w[style]
+
+    config.active_storage.draw_routes = false
   end
 end
