@@ -67,6 +67,7 @@ en:
       success: "FAQ was successfully updated."
   guides:
     back: "Back to Guides"
+    img_alt: "Photo of %{name}"
     create:
       success: "Guide was successfully created."
     destroy:
@@ -81,7 +82,6 @@ en:
         other: "%{count} errors prevented this guide from being saved:"
     guide:
       edit: "Edit Guide"
-      img_alt: "Photo of %{name}"
     index:
       title: "Guides"
       new: "New Guide"
