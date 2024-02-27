@@ -1,5 +1,10 @@
 
 <div data-controller="cropper">
+  <% if form.object.send(identifier).present? %>
+    Current image:
+    <%= image_tag url_for(form.object.send(identifier)) %>
+  <% end %>
+
   <%= form.file_field identifier, required: required, data: { "cropper-upload": true } %>
   <%= form.hidden_field :"#{identifier}_crop_data", data: { "cropper-data": true } %>
 
