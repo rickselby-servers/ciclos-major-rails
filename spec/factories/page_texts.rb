@@ -3,14 +3,10 @@
 FactoryBot.define do
   factory :page_text do
     key { :foo }
-    text { text_content }
+    text { generate(:text_content) }
 
     trait :html do
-      text { "<strong>#{text_content}</strong>" }
-    end
-
-    transient do
-      sequence(:text_content, "aaa") { |t| "some text with the letters #{t}" }
+      text { "<strong>#{generate(:text_content)}</strong>" }
     end
   end
 end
