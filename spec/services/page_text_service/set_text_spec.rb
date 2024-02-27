@@ -6,7 +6,7 @@ RSpec.describe PageTextService, ".set_text" do
   subject(:set_text) { described_class.set_text page_text, text }
 
   let(:key) { :foo }
-  let(:page_text) { PageText.new key: }
+  let(:page_text) { build(:page_text, key:) }
   let(:text) { "bar" }
 
   context "with no existing record" do

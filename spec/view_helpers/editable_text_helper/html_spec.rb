@@ -12,20 +12,15 @@ RSpec.describe EditableTextHelper, ".html" do
   it { is_expected.to have_css "div#foo\\.bar", text: }
 
   context "with some content" do
-    before { PageText.create key:, text: }
+    let!(:page_text) { create :page_text, key: }
 
-    let(:text) { "foo bar baz" }
-
-    it { is_expected.to have_css "div#foo\\.bar", text: }
+    it { is_expected.to have_css "div#foo\\.bar", text: page_text.text }
   end
 
   context "with HTML" do
-    before { PageText.create key:, text: text_html }
+    let!(:page_text) { create :page_text, :html, key: }
 
-    let(:text) { "foo bar baz" }
-    let(:text_html) { "<strong>#{text}</strong>" }
-
-    it { is_expected.to have_css "div#foo\\.bar strong", text: }
+    it { is_expected.to have_css "div#foo\\.bar strong", text: strip_tags(page_text.text) }
   end
 
   context "with given classes" do
@@ -35,9 +30,7 @@ RSpec.describe EditableTextHelper, ".html" do
     it { is_expected.to have_css "div.bar", text: }
   end
 
-  context "when logged in" do
-    before { sign_in Admin.create }
-
+  context "when logged in", :logged_in do
     it { is_expected.to have_css "form" }
 
     describe "the form contents" do

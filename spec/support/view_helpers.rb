@@ -14,10 +14,8 @@ module ViewHelpers
   end
 
   shared_examples "it contains a page_text block" do |key|
-    before { PageText.create key:, text: }
+    let!(:page_text) { create :page_text, key: }
 
-    let(:text) { SecureRandom.alphanumeric 32 }
-
-    it { is_expected.to have_content text }
+    it { is_expected.to have_content page_text.text }
   end
 end

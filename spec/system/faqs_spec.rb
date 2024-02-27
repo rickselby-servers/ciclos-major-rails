@@ -2,10 +2,8 @@
 
 require "rails_helper"
 
-RSpec.describe "FAQs" do
+RSpec.describe "FAQs", :logged_in do
   include ActionView::RecordIdentifier
-
-  before { sign_in Admin.create }
 
   it "allows the user to create a new FAQ" do
     visit faqs_path
@@ -18,12 +16,12 @@ RSpec.describe "FAQs" do
   end
 
   context "with an existing FAQ" do
-    before { Faq.create! question: "Initial question", answer: "foo" }
+    let!(:faq) { create :faq }
 
     it "allows editing of the FAQ" do
       visit faqs_path
 
-      expect(page).to have_text "Initial question"
+      expect(page).to have_text faq.question
 
       click_on "Edit FAQ"
       fill_in "Question", with: "A test question"
@@ -36,19 +34,19 @@ RSpec.describe "FAQs" do
     it "allows deleting of the FAQ" do
       visit faqs_path
 
-      expect(page).to have_text "Initial question"
+      expect(page).to have_text faq.question
 
       click_on "Edit FAQ"
       click_on "Delete"
 
-      expect(page).to have_no_text "Initial question"
+      expect(page).to have_no_text faq.question
     end
   end
 
   context "with a few FAQs", :js do
     # rubocop:disable RSpec/IndexedLet
-    let!(:faq1) { Faq.create! question: "Question 1", answer: "foo" }
-    let!(:faq2) { Faq.create! question: "Question 2", answer: "foo" }
+    let!(:faq1) { create :faq, question: "Question 1" }
+    let!(:faq2) { create :faq, question: "Question 2" }
     # rubocop:enable RSpec/IndexedLet
 
     it "allows the order to be changed" do
@@ -59,8 +57,8 @@ RSpec.describe "FAQs" do
 
       element.drag_to target
 
-      expect(page.find("#faqs > div:first-child")).to have_text "Question 2"
-      expect(page.find("#faqs > div:nth-child(2)")).to have_text "Question 1"
+      expect(page.find("#faqs > div:first-child")).to have_text faq2.question
+      expect(page.find("#faqs > div:nth-child(2)")).to have_text faq1.question
 
       expect(faq1.reload.position).to eq 1
       expect(faq2.reload.position).to eq 0

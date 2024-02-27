@@ -3,8 +3,8 @@
 require "rails_helper"
 
 RSpec.describe "faqs/index" do
-  let(:faq) { Faq.create! question: "Question", answer: "MyText" }
-  let(:faq2) { Faq.create! question: "Question", answer: "MyText" }
+  let(:faq) { create :faq, question: "Question", answer: "MyText" }
+  let(:faq2) { create :faq, question: "Question", answer: "MyText" }
 
   before { assign(:faqs, [faq, faq2]) }
 
@@ -13,9 +13,7 @@ RSpec.describe "faqs/index" do
 
   it { is_expected.to have_no_link href: new_faq_path }
 
-  context "when logged in" do
-    before { sign_in Admin.create }
-
+  context "when logged in", :logged_in do
     it { is_expected.to have_link href: new_faq_path }
   end
 end
