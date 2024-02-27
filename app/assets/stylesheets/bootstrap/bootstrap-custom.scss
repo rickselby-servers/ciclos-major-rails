@@ -111,3 +111,7 @@ label.required:after {
 .sortable-handle {
   cursor: grab;
 }
+
+.sortable-ghost {
+  border: 1px solid black !important;
+}

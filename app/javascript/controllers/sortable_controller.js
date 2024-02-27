@@ -12,6 +12,7 @@ export default class extends Controller {
     this.sortable = Sortable.create(this.element, {
       animation: 150,
       handle: this.handleValue,
+      ghostClass: "sortable-ghost",
       onEnd: this.end.bind(this)
     })
   }
