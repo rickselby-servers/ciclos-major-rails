@@ -3,6 +3,7 @@
 class GuidesController < ApplicationController
   before_action :authenticate_admin!, except: :index
   before_action :set_guide, only: %i[edit update destroy]
+  before_action :process_photo, only: %i[create update]
 
   def index
     @guides = Guide.ordered
@@ -46,6 +47,14 @@ class GuidesController < ApplicationController
   end
 
   private
+
+  def process_photo
+    return unless guide_params.key? :photo
+
+    image = ImageProcessing::Vips.source(params[:guide][:photo].tempfile.path)
+    crop_data = JSON.parse(params[:guide][:photo_crop_data]).fetch_values("x", "y", "width", "height")
+    params[:guide][:photo].tempfile = image.crop!(*crop_data)
+  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_guide
