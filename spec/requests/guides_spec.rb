@@ -3,14 +3,7 @@
 require "rails_helper"
 
 RSpec.describe "/guides" do
-  let(:guide) { Guide.create! valid_attributes }
-  let(:invalid_attributes) { { name: "", description: "", photo: "" } }
-  let(:photo) { file_fixture_upload("example.jpg") }
-  let(:valid_attributes) { { name: "Bob", description: "is person", photo: } }
-
-  before(:each, :logged_in) do
-    sign_in Admin.create
-  end
+  let(:guide) { create(:guide) }
 
   describe "GET /index" do
     subject do
@@ -49,7 +42,7 @@ RSpec.describe "/guides" do
 
   describe "POST /create" do
     subject(:do_post) do
-      post guides_path, params: { guide: valid_attributes }
+      post guides_path, params: { guide: attributes_for(:guide) }
       response
     end
 
@@ -66,7 +59,7 @@ RSpec.describe "/guides" do
 
       context "with invalid parameters" do
         subject(:do_post) do
-          post guides_path, params: { guide: invalid_attributes }
+          post guides_path, params: { guide: attributes_for(:guide, :invalid) }
           response
         end
 
@@ -85,7 +78,7 @@ RSpec.describe "/guides" do
       response
     end
 
-    let(:new_attributes) { { name: "Robert", description: "is still person", photo: } }
+    let(:new_attributes) { attributes_for(:guide, name: "Robert", description: "is still person") }
 
     it_behaves_like "it redirects to login if not logged in"
 
@@ -103,15 +96,15 @@ RSpec.describe "/guides" do
 
       context "with invalid parameters" do
         subject(:do_patch) do
-          patch guide_path(guide), params: { guide: invalid_attributes }
+          patch guide_path(guide), params: { guide: attributes_for(:guide, :invalid) }
           response
         end
 
-        let(:expected_attributes) { valid_attributes.except(:photo).transform_keys(&:to_s) }
+        let(:expected_attributes) { guide.attributes.except(:photo).transform_keys(&:to_s) }
 
         it "does not update the requested guide" do
           do_patch
-          expect(guide.attributes.slice(*expected_attributes.keys)).to eq expected_attributes
+          expect(guide.reload.attributes.slice(*expected_attributes.keys)).to eq expected_attributes
         end
 
         it { is_expected.to have_http_status :unprocessable_entity }
@@ -125,8 +118,8 @@ RSpec.describe "/guides" do
       response
     end
 
-    let!(:guide) { Guide.create! valid_attributes }
-    let!(:guide2) { Guide.create! valid_attributes }
+    let!(:guide) { create(:guide) }
+    let!(:guide2) { create(:guide) }
 
     it_behaves_like "it redirects to login if not logged in"
 

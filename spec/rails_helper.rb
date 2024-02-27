@@ -69,6 +69,9 @@ RSpec.configure do |config|
   config.include Devise::Test::ControllerHelpers, type: :view_helper
 
   # Add our local helpers
+  config.include AuthHelpers
+  config.include_context "when logged in", :logged_in
+
   config.include RequestHelpers, type: :request
   config.include ViewHelpers, type: :view
   config.include_context "with view rendering", type: :view

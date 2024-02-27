@@ -5,6 +5,7 @@ require "rails_helper"
 RSpec.describe PageTextService, ".get_text" do
   subject(:get_text) { described_class.get_text key }
 
+  let(:default) { :bar }
   let(:key) { :foo }
 
   context "with no record" do
@@ -25,18 +26,14 @@ RSpec.describe PageTextService, ".get_text" do
   end
 
   context "with a record for the key" do
-    before { PageText.create key:, text: }
+    let!(:page_text) { create(:page_text) }
 
-    let(:text) { "some text" }
-
-    it { is_expected.to eq text }
+    it { is_expected.to eq page_text.text }
 
     context "with a default value" do
-      subject(:get_text) { described_class.get_text key, default }
+      subject(:get_text) { described_class.get_text page_text.key, default }
 
-      let(:default) { :bar }
-
-      it { is_expected.to eq text }
+      it { is_expected.to eq page_text.text }
     end
   end
 end

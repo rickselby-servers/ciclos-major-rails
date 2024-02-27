@@ -3,8 +3,7 @@
 require "rails_helper"
 
 RSpec.describe "updating page text" do
-  it "allows the user logs in and update some text", :js do
-    sign_in Admin.create
+  it "allows the user logs in and update some text", :js, :logged_in do
     visit root_path
 
     page.find("div#pages\\.home\\.block").send_keys "foo"

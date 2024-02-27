@@ -5,20 +5,16 @@ require "rails_helper"
 RSpec.describe "PageTexts" do
   describe "PUT /update" do
     subject(:page_response) do
-      put page_text_path page_text, { key => new_text }
+      put page_text_path page_text, { page_text.key => new_text }
       response
     end
 
-    let(:key) { :foo }
-    let(:page_text) { PageText.create key:, text: }
+    let(:page_text) { create(:page_text) }
     let(:new_text) { "baz" }
-    let(:text) { "bar" }
 
     it_behaves_like "it redirects to login if not logged in"
 
-    context "when logged in" do
-      before { sign_in Admin.create }
-
+    context "when logged in", :logged_in do
       it { is_expected.to redirect_to root_path }
 
       it "updates the text" do

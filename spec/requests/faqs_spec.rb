@@ -3,13 +3,7 @@
 require "rails_helper"
 
 RSpec.describe "/faqs" do
-  let(:faq) { Faq.create! valid_attributes }
-  let(:invalid_attributes) { { question: "", answer: "" } }
-  let(:valid_attributes) { { question: "foo", answer: "bar" } }
-
-  before(:each, :logged_in) do
-    sign_in Admin.create
-  end
+  let(:faq) { create(:faq) }
 
   describe "GET /index" do
     subject do
@@ -48,7 +42,7 @@ RSpec.describe "/faqs" do
 
   describe "POST /create" do
     subject(:do_post) do
-      post faqs_url, params: { faq: valid_attributes }
+      post faqs_url, params: { faq: attributes_for(:faq) }
       response
     end
 
@@ -65,7 +59,7 @@ RSpec.describe "/faqs" do
 
       context "with invalid parameters" do
         subject(:do_post) do
-          post faqs_url, params: { faq: invalid_attributes }
+          post faqs_url, params: { faq: attributes_for(:faq, :invalid) }
           response
         end
 
@@ -102,15 +96,15 @@ RSpec.describe "/faqs" do
 
       context "with invalid parameters" do
         subject(:do_patch) do
-          patch faq_url(faq), params: { faq: invalid_attributes }
+          patch faq_url(faq), params: { faq: attributes_for(:faq, :invalid) }
           response
         end
 
-        let(:expected_attributes) { valid_attributes.transform_keys(&:to_s) }
+        let(:expected_attributes) { faq.attributes.transform_keys(&:to_s) }
 
         it "does not update the requested faq" do
           do_patch
-          expect(faq.attributes.slice(*expected_attributes.keys)).to eq expected_attributes
+          expect(faq.reload.attributes.slice(*expected_attributes.keys)).to eq expected_attributes
         end
 
         it { is_expected.to have_http_status :unprocessable_entity }
@@ -124,8 +118,8 @@ RSpec.describe "/faqs" do
       response
     end
 
-    let!(:faq) { Faq.create! valid_attributes }
-    let!(:faq2) { Faq.create! valid_attributes }
+    let!(:faq) { create(:faq) }
+    let!(:faq2) { create(:faq) }
 
     it_behaves_like "it redirects to login if not logged in"
 

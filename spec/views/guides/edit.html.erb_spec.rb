@@ -3,8 +3,7 @@
 require "rails_helper"
 
 RSpec.describe "guides/edit" do
-  let(:guide) { Guide.create! name: "Bob", description: "is person", photo: }
-  let(:photo) { file_fixture_upload("example.jpg") }
+  let(:guide) { create(:guide) }
 
   before { assign(:guide, guide) }
 

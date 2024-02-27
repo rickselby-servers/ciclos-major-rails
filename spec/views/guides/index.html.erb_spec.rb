@@ -3,9 +3,8 @@
 require "rails_helper"
 
 RSpec.describe "guides/index" do
-  let(:guide) { Guide.create! name: "Bob", description: "is person", photo: }
-  let(:guide2) { Guide.create! name: "Bob", description: "is person", photo: }
-  let(:photo) { file_fixture_upload("example.jpg") }
+  let(:guide) { create(:guide, name: "Bob", description: "is person") }
+  let(:guide2) { create(:guide, name: "Bob", description: "is person") }
 
   before { assign(:guides, [guide, guide2]) }
 
@@ -14,9 +13,7 @@ RSpec.describe "guides/index" do
 
   it { is_expected.to have_no_link href: new_guide_path }
 
-  context "when logged in" do
-    before { sign_in Admin.create }
-
+  context "when logged in", :logged_in do
     it { is_expected.to have_link href: new_guide_path }
   end
 end
