@@ -13,57 +13,18 @@
 
   <%= form.text_field :name %>
   <%= form.text_area :description, data: { tinymce_target: :input }, required: false %>
-  <%= form.file_field :photo, required: guide.photo.blank? %>
-  <%= form.hidden_field :photo_crop_data %>
 
-  <div style="max-height: 500px; min-height: 500px">
-    <img id="croppable-image">
+  <div data-controller="cropper">
+    <%= form.file_field :photo, required: guide.photo.blank? %>
+    <%= form.hidden_field :photo_crop_data %>
 
+    <div style="max-height: 500px; min-height: 500px">
+      <img id="croppable-image">
+    </div>
+
+    <button type=button onclick="cropper.rotate(90)">rotate</button>
+    <button type=button onclick="cropper.crop()">rotate</button>
   </div>
-  <button type=button onclick="cropper.rotate(90)">rotate</button>
-  <button type=button onclick="cropper.crop()">rotate</button>
-
-  <script type="text/javascript">
-      // Import image
-
-      let cropper;
-      let hiddenInput;
-
-      window.addEventListener('DOMContentLoaded', (event) => {
-
-          var inputImage = document.getElementById("guide_photo");
-          var croppableImage = document.getElementById("croppable-image");
-          hiddenInput = document.getElementById("guide_photo_crop_data");
-
-          inputImage.onchange = function () {
-              var files = this.files;
-              var file;
-
-              if (files && files.length) {
-                  file = files[0];
-
-                  if (/^image\/\w+/.test(file.type)) {
-
-                      croppableImage.src = uploadedImageURL = URL.createObjectURL(file);
-
-                      if (cropper) {
-                          cropper.destroy();
-                      }
-
-                      cropper = new Cropper(croppableImage, {
-                          crop: function (event) {
-                              hiddenInput.value = JSON.stringify(event.detail)
-                              console.log(hiddenInput.value);
-                          }
-                      });
-                  } else {
-                      window.alert("Please choose an image file.");
-                  }
-              }
-          }
-      });
-  </script>
-
 
   <div>
     <%= form.submit %>

@@ -15,6 +15,3 @@ import {config as faconfig, library} from "@fortawesome/fontawesome-svg-core"
 import "@fortawesome/fontawesome-free"
 library.add(far, fas, fab)
 faconfig.mutateApproach = 'sync'
-
-import Cropper from "cropperjs";
-window.Cropper = Cropper
