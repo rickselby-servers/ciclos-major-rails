@@ -75,6 +75,7 @@ RSpec.configure do |config|
 
   # Add other helpers...
   config.include ActionDispatch::TestProcess::FixtureFile, type: :request
+  config.include ActionDispatch::TestProcess::FixtureFile, type: :system
 
   # Reset the PageTextService singleton for each test
   config.before do
