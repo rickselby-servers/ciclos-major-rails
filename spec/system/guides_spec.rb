@@ -22,7 +22,7 @@ RSpec.describe "Guides" do
   end
 
   context "with an existing guide" do
-    before { Guide.create! name: "Bob", description: "is person", photo: photo }
+    before { Guide.create! name: "Bob", description: "is person", photo: }
 
     it "allows editing of the guide" do
       visit guides_path
@@ -52,8 +52,8 @@ RSpec.describe "Guides" do
 
   context "with a few guides", :js do
     # rubocop:disable RSpec/IndexedLet
-    let!(:guide1) { Guide.create! name: "Bob", description: "is person", photo: photo }
-    let!(:guide2) { Guide.create! name: "Bill", description: "is also person", photo: photo }
+    let!(:guide1) { Guide.create! name: "Bob", description: "is person", photo: }
+    let!(:guide2) { Guide.create! name: "Bill", description: "is also person", photo: }
     # rubocop:enable RSpec/IndexedLet
 
     it "allows the order to be changed" do
