@@ -1,17 +1,40 @@
 
 <div data-controller="cropper">
-  <% if form.object.send(identifier).present? %>
-    Current image:
-    <%= image_tag url_for(form.object.send(identifier)) %>
-  <% end %>
-
-  <%= form.file_field identifier, required: required, data: { "cropper-upload": true } %>
-  <%= form.hidden_field :"#{identifier}_crop_data", data: { "cropper-data": true } %>
-
-  <div style="max-height: 500px; min-height: 500px">
-    <img data-cropper-image>
+  <div class="previews" style="width: 200px; height: 200px; display: inline-block; overflow: hidden;">
+    <% if form.object.send(identifier).present? %>
+      <%= image_tag url_for(form.object.send(identifier)) %>
+    <% end %>
   </div>
 
-  <button type=button onclick="cropper.rotate(90)">rotate</button>
-  <button type=button onclick="cropper.crop()">rotate</button>
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cropper-<%= identifier %>-modal">
+    Change image
+  </button>
+
+  <div class="modal fade" id="cropper-<%= identifier %>-modal" tabindex="-1" aria-labelledby="cropper-<%= identifier %>-modal-label" aria-hidden="true"
+       data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="cropper-<%= identifier %>-modal-label">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <%= form.file_field identifier, required: required, data: { "cropper-upload": true } %>
+          <%= form.hidden_field :"#{identifier}_crop_data", data: { "cropper-data": true } %>
+
+          <div style="max-height: 500px; min-height: 500px">
+            <img data-cropper-image>
+          </div>
+
+          <button type=button onclick="cropper.rotate(90)">rotate</button>
+          <button type=button onclick="cropper.crop()">rotate</button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-cropper-cancel="true">Cancel</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" data-cropper-save="true">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
