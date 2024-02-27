@@ -3,7 +3,7 @@
 require "rails_helper"
 
 RSpec.describe "faqs/_faq" do
-  let(:faq) { create(:faq) }
+  let(:faq) { create :faq }
   let(:locals) { { faq: } }
 
   it { is_expected.to have_content faq.question }
@@ -12,7 +12,7 @@ RSpec.describe "faqs/_faq" do
   it { is_expected.to have_no_link href: edit_faq_path(faq) }
 
   context "with html" do
-    let(:faq) { create(:faq, :html) }
+    let(:faq) { create :faq, :html }
 
     it { is_expected.to have_css "strong", text: strip_tags(faq.answer) }
   end

@@ -3,7 +3,7 @@
 require "rails_helper"
 
 RSpec.describe "guides/_guide" do
-  let(:guide) { create(:guide) }
+  let(:guide) { create :guide }
   let(:locals) { { guide: } }
 
   it { is_expected.to have_content guide.name }
@@ -12,7 +12,7 @@ RSpec.describe "guides/_guide" do
   it { is_expected.to have_no_link href: edit_guide_path(guide) }
 
   context "with html" do
-    let(:guide) { create(:guide, :html) }
+    let(:guide) { create :guide, :html }
 
     it { is_expected.to have_css "strong", text: strip_tags(guide.description) }
   end

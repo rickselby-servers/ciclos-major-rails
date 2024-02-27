@@ -3,7 +3,7 @@
 require "rails_helper"
 
 RSpec.describe "faqs/edit" do
-  let(:faq) { create(:faq) }
+  let(:faq) { create :faq }
 
   before { assign(:faq, faq) }
 

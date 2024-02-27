@@ -2,11 +2,11 @@
 
 FactoryBot.define do
   factory :faq do
-    question { generate(:text_content) }
-    answer { generate(:text_content) }
+    question { generate :text_content }
+    answer { generate :text_content }
 
     trait :html do
-      answer { "<strong>#{generate(:text_content)}</strong>" }
+      answer { "<strong>#{generate :text_content}</strong>" }
     end
 
     trait :invalid do

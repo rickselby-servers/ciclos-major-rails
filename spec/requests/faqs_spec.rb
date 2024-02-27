@@ -3,7 +3,7 @@
 require "rails_helper"
 
 RSpec.describe "/faqs" do
-  let(:faq) { create(:faq) }
+  let(:faq) { create :faq }
 
   describe "GET /index" do
     subject do
@@ -118,8 +118,8 @@ RSpec.describe "/faqs" do
       response
     end
 
-    let!(:faq) { create(:faq) }
-    let!(:faq2) { create(:faq) }
+    let!(:faq) { create :faq }
+    let!(:faq2) { create :faq }
 
     it_behaves_like "it redirects to login if not logged in"
 

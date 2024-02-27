@@ -9,7 +9,7 @@ RSpec.describe "PageTexts" do
       response
     end
 
-    let(:page_text) { create(:page_text) }
+    let(:page_text) { create :page_text }
     let(:new_text) { "baz" }
 
     it_behaves_like "it redirects to login if not logged in"

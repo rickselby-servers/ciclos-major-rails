@@ -16,7 +16,7 @@ RSpec.describe "FAQs", :logged_in do
   end
 
   context "with an existing FAQ" do
-    let!(:faq) { create(:faq) }
+    let!(:faq) { create :faq }
 
     it "allows editing of the FAQ" do
       visit faqs_path
@@ -45,8 +45,8 @@ RSpec.describe "FAQs", :logged_in do
 
   context "with a few FAQs", :js do
     # rubocop:disable RSpec/IndexedLet
-    let!(:faq1) { create(:faq, question: "Question 1") }
-    let!(:faq2) { create(:faq, question: "Question 2") }
+    let!(:faq1) { create :faq, question: "Question 1" }
+    let!(:faq2) { create :faq, question: "Question 2" }
     # rubocop:enable RSpec/IndexedLet
 
     it "allows the order to be changed" do

@@ -14,7 +14,7 @@ module ViewHelpers
   end
 
   shared_examples "it contains a page_text block" do |key|
-    let!(:page_text) { create(:page_text, key:) }
+    let!(:page_text) { create :page_text, key: }
 
     it { is_expected.to have_content page_text.text }
   end

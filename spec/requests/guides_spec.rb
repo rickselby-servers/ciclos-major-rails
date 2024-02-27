@@ -3,7 +3,7 @@
 require "rails_helper"
 
 RSpec.describe "/guides" do
-  let(:guide) { create(:guide) }
+  let(:guide) { create :guide }
 
   describe "GET /index" do
     subject do
@@ -78,7 +78,7 @@ RSpec.describe "/guides" do
       response
     end
 
-    let(:new_attributes) { attributes_for(:guide, name: "Robert", description: "is still person") }
+    let(:new_attributes) { attributes_for :guide, name: "Robert", description: "is still person" }
 
     it_behaves_like "it redirects to login if not logged in"
 
@@ -118,8 +118,8 @@ RSpec.describe "/guides" do
       response
     end
 
-    let!(:guide) { create(:guide) }
-    let!(:guide2) { create(:guide) }
+    let!(:guide) { create :guide }
+    let!(:guide2) { create :guide }
 
     it_behaves_like "it redirects to login if not logged in"
 

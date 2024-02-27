@@ -26,7 +26,7 @@ RSpec.describe PageTextService, ".get_text" do
   end
 
   context "with a record for the key" do
-    let!(:page_text) { create(:page_text) }
+    let!(:page_text) { create :page_text }
 
     it { is_expected.to eq page_text.text }
 

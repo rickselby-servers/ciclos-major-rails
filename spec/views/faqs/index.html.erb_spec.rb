@@ -3,8 +3,8 @@
 require "rails_helper"
 
 RSpec.describe "faqs/index" do
-  let(:faq) { create(:faq, question: "Question", answer: "MyText") }
-  let(:faq2) { create(:faq, question: "Question", answer: "MyText") }
+  let(:faq) { create :faq, question: "Question", answer: "MyText" }
+  let(:faq2) { create :faq, question: "Question", answer: "MyText" }
 
   before { assign(:faqs, [faq, faq2]) }
 

@@ -3,7 +3,7 @@
 require "rails_helper"
 
 RSpec.describe "guides/edit" do
-  let(:guide) { create(:guide) }
+  let(:guide) { create :guide }
 
   before { assign(:guide, guide) }
 

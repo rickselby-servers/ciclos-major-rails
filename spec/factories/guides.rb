@@ -2,12 +2,12 @@
 
 FactoryBot.define do
   factory :guide do
-    name { generate(:text_content) }
-    description { generate(:text_content) }
+    name { generate :text_content }
+    description { generate :text_content }
     photo { Rack::Test::UploadedFile.new "spec/fixtures/files/example.jpg", "image/jpg" }
 
     trait :html do
-      description { "<strong>#{generate(:text_content)}</strong>" }
+      description { "<strong>#{generate :text_content}</strong>" }
     end
 
     trait :invalid do

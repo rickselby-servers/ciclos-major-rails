@@ -20,7 +20,7 @@ RSpec.describe "Guides", :logged_in do
   end
 
   context "with an existing guide" do
-    let!(:guide) { create(:guide) }
+    let!(:guide) { create :guide }
 
     it "allows editing of the guide" do
       visit guides_path
@@ -50,8 +50,8 @@ RSpec.describe "Guides", :logged_in do
 
   context "with a few guides", :js do
     # rubocop:disable RSpec/IndexedLet
-    let!(:guide1) { create(:guide) }
-    let!(:guide2) { create(:guide) }
+    let!(:guide1) { create :guide }
+    let!(:guide2) { create :guide }
     # rubocop:enable RSpec/IndexedLet
 
     it "allows the order to be changed" do
