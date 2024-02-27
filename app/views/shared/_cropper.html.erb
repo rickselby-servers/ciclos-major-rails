@@ -1,8 +1,8 @@
 
 <div data-controller="cropper">
   <div class="previews" style="width: 200px; height: 200px; display: inline-block; overflow: hidden;">
-    <% if form.object.send(identifier).present? %>
-      <%= image_tag url_for(form.object.send(identifier)) %>
+    <% if form.object.public_send(identifier).present? %>
+      <%= image_tag url_for(form.object.public_send(identifier)), alt: "Preview" %>
     <% end %>
   </div>
 
@@ -20,7 +20,7 @@
         </div>
         <div class="modal-body">
 
-          <%= form.file_field identifier, required: required, data: { "cropper-upload": true } %>
+          <%= form.file_field identifier, required:, data: { "cropper-upload": true } %>
           <%= form.hidden_field :"#{identifier}_crop_data", data: { "cropper-data": true } %>
 
           <div style="max-height: 500px; min-height: 500px">
