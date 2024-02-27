@@ -14,17 +14,7 @@
   <%= form.text_field :name %>
   <%= form.text_area :description, data: { tinymce_target: :input }, required: false %>
 
-  <div data-controller="cropper">
-    <%= form.file_field :photo, required: guide.photo.blank? %>
-    <%= form.hidden_field :photo_crop_data %>
-
-    <div style="max-height: 500px; min-height: 500px">
-      <img id="croppable-image">
-    </div>
-
-    <button type=button onclick="cropper.rotate(90)">rotate</button>
-    <button type=button onclick="cropper.crop()">rotate</button>
-  </div>
+  <%= render partial: "shared/cropper", locals: { form:, identifier: :photo, required: guide.photo.blank? } %>
 
   <div>
     <%= form.submit %>

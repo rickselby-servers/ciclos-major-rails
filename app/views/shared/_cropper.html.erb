@@ -1,0 +1,12 @@
+
+<div data-controller="cropper">
+  <%= form.file_field identifier, required: required, data: { "cropper-upload": true } %>
+  <%= form.hidden_field :"#{identifier}_crop_data", data: { "cropper-data": true } %>
+
+  <div style="max-height: 500px; min-height: 500px">
+    <img data-cropper-image>
+  </div>
+
+  <button type=button onclick="cropper.rotate(90)">rotate</button>
+  <button type=button onclick="cropper.crop()">rotate</button>
+</div>

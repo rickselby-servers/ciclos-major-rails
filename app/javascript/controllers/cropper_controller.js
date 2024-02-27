@@ -4,9 +4,9 @@ import Cropper from "cropperjs"
 // Connects to data-controller="cropper"
 export default class extends Controller {
   connect() {
-    let inputImage = document.getElementById("guide_photo"),
-        croppableImage = document.getElementById("croppable-image"),
-        hiddenInput = document.getElementById("guide_photo_crop_data");
+    let inputImage = this.element.querySelectorAll("[data-cropper-upload]")[0],
+        croppableImage = this.element.querySelectorAll("[data-cropper-image]")[0],
+        hiddenInput = this.element.querySelectorAll("[data-cropper-data]")[0];
     let cropper;
 
     inputImage.onchange = function () {
