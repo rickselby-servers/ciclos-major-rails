@@ -14,7 +14,7 @@ export default class extends Controller {
 
   connect() {
     this.imageInput.onchange = this.setup.bind(this);
-    this.cancelButton.onclick = this.cancel;
+    this.cancelButton.onclick = this.cancel.bind(this);
   }
 
   disconnect() {
@@ -27,6 +27,7 @@ export default class extends Controller {
 
       if (/^image\/\w+/.test(file.type)) {
         this.croppableImage.src = URL.createObjectURL(file);
+        this.showPreviews();
         this.create();
       } else {
         window.alert("Please choose an image file.");
@@ -49,11 +50,29 @@ export default class extends Controller {
   cancel() {
     this.imageInput.value = null;
     this.croppableImage.src = "";
+    this.destroy();
+    this.hidePreviews();
   }
 
   destroy() {
     if (this.cropper) {
       this.cropper.destroy();
     }
+  }
+
+  showPreviews() {
+    this.previews.forEach((element) => {
+      element.style.display = "inline-block";
+      element.style.width = "200px";
+      element.style.height = "1000px";
+    });
+  }
+
+  hidePreviews() {
+    this.previews.forEach((element) => {
+      element.style.display = "inline-block";
+      element.style.width = "auto";
+      element.style.height = "auto";
+    });
   }
 }

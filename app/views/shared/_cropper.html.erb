@@ -1,14 +1,18 @@
-
 <div data-controller="cropper">
-  <div class="previews" style="width: 200px; height: 200px; display: inline-block; overflow: hidden;">
-    <% if form.object.public_send(identifier).present? %>
-      <%= image_tag url_for(form.object.public_send(identifier)), alt: "Preview" %>
-    <% end %>
-  </div>
 
-  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cropper-<%= identifier %>-modal">
-    Change image
-  </button>
+  <%= form.form_group identifier, label: { required: required } do %>
+    <div class="form-control cropper-control">
+      <div class="previews" style="<%= form.object.public_send(identifier).present? ? "" : "display: none;" %>">
+        <% if form.object.public_send(identifier).present? %>
+          <%= image_tag url_for(form.object.public_send(identifier)), alt: "Preview" %>
+        <% end %>
+      </div>
+
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cropper-<%= identifier %>-modal">
+        Change image
+      </button>
+    </div>
+  <% end %>
 
   <div class="modal fade" id="cropper-<%= identifier %>-modal" tabindex="-1" aria-labelledby="cropper-<%= identifier %>-modal-label" aria-hidden="true"
        data-bs-backdrop="static" data-bs-keyboard="false">
