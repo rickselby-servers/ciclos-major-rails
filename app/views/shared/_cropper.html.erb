@@ -1,6 +1,6 @@
 <div data-controller="cropper">
 
-  <%= form.form_group identifier, label: { required: required } do %>
+  <%= form.form_group identifier, label: { required: } do %>
     <div class="form-control cropper-control">
       <div class="previews" style="<%= form.object.public_send(identifier).present? ? "" : "display: none;" %>">
         <% if form.object.public_send(identifier).present? %>

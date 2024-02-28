@@ -15,7 +15,7 @@ class ImageCropService
     handle_negative_crop if negative_crop?
     handle_oversized_crop if oversized_crop?
 
-    @image.crop! *@crop_data.fetch_values(:x, :y, :width, :height)
+    @image.crop!(*@crop_data.fetch_values(:x, :y, :width, :height))
   end
 
   private
