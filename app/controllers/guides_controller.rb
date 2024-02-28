@@ -51,8 +51,6 @@ class GuidesController < ApplicationController
   private
 
   def process_photo
-    return unless guide_params.key? :photo
-
     process_image params[:guide][:photo], params[:guide][:photo_crop_data]
   end
 

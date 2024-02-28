@@ -4,6 +4,8 @@ module Cropper
   extend ActiveSupport::Concern
 
   def process_image(image_param, crop_data_param)
+    return if image_param.blank? || crop_data_param.blank?
+
     crop_data = JSON.parse(crop_data_param)
                     .slice("x", "y", "width", "height")
                     .symbolize_keys
