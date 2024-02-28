@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class GuidesController < ApplicationController
+  include Cropper
+
   before_action :authenticate_admin!, except: :index
   before_action :set_guide, only: %i[edit update destroy]
   before_action :process_photo, only: %i[create update]
@@ -51,31 +53,7 @@ class GuidesController < ApplicationController
   def process_photo
     return unless guide_params.key? :photo
 
-    image = ImageProcessing::Vips.source(params[:guide][:photo].tempfile.path)
-
-    crop_data = JSON.parse(params[:guide][:photo_crop_data]).fetch_values("x", "y", "width", "height").map(&:to_i)
-
-    original_image = Vips::Image.new_from_file(params[:guide][:photo].tempfile.path)
-    width = original_image.width
-    height = original_image.height
-
-    if crop_data[0].negative? || crop_data[1].negative?
-      width -= [0, crop_data[0]].min
-      height -= [0, crop_data[1]].min
-
-      image = image.resize_and_pad(width, height, gravity: "south-east")
-      crop_data[0] = [0, crop_data[0]].max
-      crop_data[1] = [0, crop_data[1]].max
-    end
-
-    if crop_data[2] > width || crop_data[3] > height
-      width = [width, crop_data[2]].max
-      height = [height, crop_data[3]].max
-
-      image = image.resize_and_pad(width, height, gravity: "north-west")
-    end
-
-    params[:guide][:photo].tempfile = image.crop!(*crop_data)
+    process_image params[:guide][:photo], params[:guide][:photo_crop_data]
   end
 
   # Use callbacks to share common setup or constraints between actions.
