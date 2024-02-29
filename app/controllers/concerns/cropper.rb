@@ -11,6 +11,8 @@ module Cropper
                     .symbolize_keys
                     .transform_values(&:to_i)
 
+    return if crop_data.blank?
+
     image_param.tempfile = ImageCropService.new(image_param.tempfile.path).crop(**crop_data)
   end
 end
