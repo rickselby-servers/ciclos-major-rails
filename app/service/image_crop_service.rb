@@ -33,32 +33,26 @@ class ImageCropService
     @height -= [0, @crop_data[:y]].min
 
     @image = @image.resize_and_pad(@width, @height, gravity: "south-east")
-    sort_negative_width
-    sort_negative_height
-  end
-
-  def sort_negative_width
-    return unless @crop_data[:x].negative?
-
-    @crop_data[:width] -= @crop_data[:x]
-    @crop_data[:x] = 0
-  end
-
-  def sort_negative_height
-    return unless @crop_data[:y].negative?
-
-    @crop_data[:height] -= @crop_data[:y]
-    @crop_data[:y] = 0
+    @crop_data[:x] = 0 if @crop_data[:x].negative?
+    @crop_data[:y] = 0 if @crop_data[:y].negative?
   end
 
   def oversized_crop?
-    @crop_data[:width] > @width || @crop_data[:height] > @height
+    crop_max_x > @width || crop_max_y > @height
   end
 
   def handle_oversized_crop
-    @width = [@width, @crop_data[:width]].max
-    @height = [@height, @crop_data[:height]].max
+    @width = [@width, crop_max_x].max
+    @height = [@height, crop_max_y].max
 
-    @image = @image.resize_and_pad(@width, @width, gravity: "north-west")
+    @image = @image.resize_and_pad(@width, @height, gravity: "north-west")
+  end
+
+  def crop_max_x
+    @crop_data[:width] + @crop_data[:x]
+  end
+
+  def crop_max_y
+    @crop_data[:height] + @crop_data[:y]
   end
 end
