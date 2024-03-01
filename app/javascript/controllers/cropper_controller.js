@@ -43,7 +43,7 @@ export default class extends Controller {
     this.destroy();
     this.cropper = new Cropper(this.croppableImage, {
       preview: this.previews,
-      viewMode: 1,
+      viewMode: 2,
       scalable: false,
       zoomable: false,
       autoCropArea: 1,
