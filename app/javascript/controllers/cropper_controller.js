@@ -9,12 +9,16 @@ export default class extends Controller {
     this.dataInput = this.element.querySelectorAll("[data-cropper-data]")[0];
     this.cancelButton = this.element.querySelectorAll("[data-cropper-cancel]")[0];
     this.previews = this.element.querySelectorAll(".previews");
+    this.rotateButtons = this.element.querySelectorAll("[data-cropper-rotate]");
     this.cropper = null;
   }
 
   connect() {
     this.imageInput.onchange = this.setup.bind(this);
     this.cancelButton.onclick = this.cancel.bind(this);
+    this.rotateButtons.forEach((button) => {
+      button.onclick = this.rotate.bind(this);
+    });
   }
 
   disconnect() {
@@ -45,6 +49,10 @@ export default class extends Controller {
 
   crop(event) {
     this.dataInput.value = JSON.stringify(event.detail)
+  }
+
+  rotate(event) {
+    this.cropper.rotate(event.currentTarget.dataset.cropperRotate);
   }
 
   cancel() {

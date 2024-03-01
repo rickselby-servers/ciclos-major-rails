@@ -31,8 +31,12 @@
             <img data-cropper-image>
           </div>
 
-          <button type=button onclick="cropper.rotate(90)">rotate</button>
-          <button type=button onclick="cropper.crop()">rotate</button>
+          <button type="button" class="btn btn-secondary" data-cropper-rotate="-90">
+            <%= fa_icon "rotate-left" %>
+          </button>
+          <button type="button" class="btn btn-secondary" data-cropper-rotate="90">
+            <%= fa_icon "rotate-right" %>
+          </button>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-cropper-cancel="true">Cancel</button>
