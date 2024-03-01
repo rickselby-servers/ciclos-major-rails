@@ -27,15 +27,30 @@
           <%= form.file_field identifier, required:, data: { "cropper-upload": true } %>
           <%= form.hidden_field :"#{identifier}_crop_data", data: { "cropper-data": true } %>
 
-          <div style="max-height: 500px; min-height: 500px">
+          <div style="max-height: 500px; min-height: 500px" class="mb-3">
             <img data-cropper-image>
           </div>
 
-          <button type="button" class="btn btn-secondary" data-cropper-rotate="-90">
-            <%= fa_icon "rotate-left" %>
-          </button>
-          <button type="button" class="btn btn-secondary" data-cropper-rotate="90">
-            <%= fa_icon "rotate-right" %>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-secondary" data-cropper-rotate="-90">
+              <%= fa_icon "rotate-left", title: "Rotate Left" %>
+            </button>
+            <button type="button" class="btn btn-secondary" data-cropper-rotate="90">
+              <%= fa_icon "rotate-right", title: "Rotate Right" %>
+            </button>
+          </div>
+
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-secondary" data-cropper-zoom="0.1">
+              <%= fa_icon "magnifying-glass-plus", title: "Zoom In" %>
+            </button>
+            <button type="button" class="btn btn-secondary" data-cropper-zoom="-0.1">
+              <%= fa_icon "magnifying-glass-minus", title: "Zoom Out" %>
+            </button>
+          </div>
+
+          <button type="button" class="btn btn-secondary" data-cropper-reset="true">
+            <%= fa_icon "rotate", title: "Reset" %>
           </button>
         </div>
         <div class="modal-footer">

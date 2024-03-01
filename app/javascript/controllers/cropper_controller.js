@@ -10,6 +10,8 @@ export default class extends Controller {
     this.cancelButton = this.element.querySelectorAll("[data-cropper-cancel]")[0];
     this.previews = this.element.querySelectorAll(".previews");
     this.rotateButtons = this.element.querySelectorAll("[data-cropper-rotate]");
+    this.resetButton = this.element.querySelectorAll("[data-cropper-reset]")[0];
+    this.zoomButtons = this.element.querySelectorAll("[data-cropper-zoom]");
     this.cropper = null;
   }
 
@@ -19,6 +21,10 @@ export default class extends Controller {
     this.rotateButtons.forEach((button) => {
       button.onclick = this.rotate.bind(this);
     });
+    this.resetButton.onclick = this.reset.bind(this);
+    this.zoomButtons.forEach((button) => {
+      button.onclick = this.zoom.bind(this);
+    })
   }
 
   disconnect() {
@@ -45,7 +51,6 @@ export default class extends Controller {
       preview: this.previews,
       viewMode: 2,
       scalable: false,
-      zoomable: false,
       autoCropArea: 1,
       crop: this.crop.bind(this)
     });
@@ -57,6 +62,14 @@ export default class extends Controller {
 
   rotate(event) {
     this.cropper.rotate(event.currentTarget.dataset.cropperRotate);
+  }
+
+  zoom(event) {
+    this.cropper.zoom(event.currentTarget.dataset.cropperZoom);
+  }
+
+  reset() {
+    this.cropper.reset();
   }
 
   cancel() {
