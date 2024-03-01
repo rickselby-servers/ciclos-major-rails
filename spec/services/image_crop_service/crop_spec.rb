@@ -4,7 +4,7 @@ require "rails_helper"
 require "vips"
 
 RSpec.describe ImageCropService, ".crop" do
-  subject(:resized_image) { described_class.new(image_path).crop x:, y:, width:, height: }
+  subject(:resized_image) { described_class.new(image_path).crop x:, y:, width:, height:, rotate: 0 }
 
   let(:height) { image.height }
   let(:image) { Vips::Image.new_from_file image_path }
@@ -29,20 +29,6 @@ RSpec.describe ImageCropService, ".crop" do
     let(:y) { 10 }
     let(:width) { image.width - 20 }
     let(:height) { image.height - 20 }
-
-    it_behaves_like "it resizes correctly"
-  end
-
-  context "with negative offset" do
-    let(:x) { -10 }
-    let(:y) { -10 }
-
-    it_behaves_like "it resizes correctly"
-  end
-
-  context "with positive overflow" do
-    let(:x) { 10 }
-    let(:y) { 10 }
 
     it_behaves_like "it resizes correctly"
   end

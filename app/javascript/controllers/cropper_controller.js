@@ -43,6 +43,10 @@ export default class extends Controller {
     this.destroy();
     this.cropper = new Cropper(this.croppableImage, {
       preview: this.previews,
+      viewMode: 1,
+      scalable: false,
+      zoomable: false,
+      autoCropArea: 1,
       crop: this.crop.bind(this)
     });
   }
