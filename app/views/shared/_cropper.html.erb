@@ -24,7 +24,8 @@
         </div>
         <div class="modal-body">
 
-          <%= form.file_field identifier, required:, data: { "cropper-target": "imageInput", action: "change->cropper#setup" } %>
+          <%= form.file_field identifier, required:,
+                              data: { "cropper-target": "imageInput", action: "change->cropper#setup" } %>
           <%= form.hidden_field :"#{identifier}_crop_data", data: { "cropper-target": "dataInput" } %>
 
           <div style="max-height: 500px; min-height: 500px" class="mb-3">
