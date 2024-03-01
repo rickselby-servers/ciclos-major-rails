@@ -3,10 +3,9 @@ import Cropper from "cropperjs"
 
 // Connects to data-controller="cropper"
 export default class extends Controller {
-  static targets = [ "imageInput", "dataInput", "croppableImage" ];
+  static targets = [ "imageInput", "dataInput", "croppableImage", "preview" ];
 
   connect() {
-    this.previews = this.element.querySelectorAll(".previews");
     this.cropper = null;
   }
 
@@ -31,7 +30,7 @@ export default class extends Controller {
   create() {
     this.destroy();
     this.cropper = new Cropper(this.croppableImageTarget, {
-      preview: this.previews,
+      preview: this.previewTargets,
       viewMode: 2,
       scalable: false,
       autoCropArea: 1,
@@ -69,7 +68,7 @@ export default class extends Controller {
   }
 
   showPreviews() {
-    this.previews.forEach((element) => {
+    this.previewTargets.forEach((element) => {
       element.style.display = "inline-block";
       element.style.width = "200px";
       element.style.height = "1000px";
@@ -77,7 +76,7 @@ export default class extends Controller {
   }
 
   hidePreviews() {
-    this.previews.forEach((element) => {
+    this.previewTargets.forEach((element) => {
       element.style.display = "inline-block";
       element.style.width = "auto";
       element.style.height = "auto";
