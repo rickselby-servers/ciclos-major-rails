@@ -7,7 +7,7 @@ module Cropper
     return if image_param.blank? || crop_data_param.blank?
 
     crop_data = JSON.parse(crop_data_param)
-                    .slice("x", "y", "width", "height")
+                    .slice("x", "y", "width", "height", "rotate")
                     .symbolize_keys
                     .transform_values(&:to_i)
 

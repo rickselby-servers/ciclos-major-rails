@@ -6,12 +6,13 @@ class ImageCropService
     @image_path = image_path
   end
 
-  def crop(x:, y:, width:, height:)
+  def crop(x:, y:, width:, height:, rotate:)
     @crop_data = { x:, y:, width:, height: }
     @image = ImageProcessing::Vips.source(@image_path)
     @width = image_source.width
     @height = image_source.height
 
+    rotate(rotate) unless rotate.zero?
     handle_negative_crop if negative_crop?
     handle_oversized_crop if oversized_crop?
 
@@ -22,6 +23,11 @@ class ImageCropService
 
   def image_source
     @image_source ||= Vips::Image.new_from_file(@image_path)
+  end
+
+  def rotate(degrees)
+    @image = @image.rotate(degrees)
+    @width, @height = @height, @width if degrees.abs == 90
   end
 
   def negative_crop?
