@@ -3,28 +3,11 @@ import Cropper from "cropperjs"
 
 // Connects to data-controller="cropper"
 export default class extends Controller {
-  initialize() {
-    this.imageInput = this.element.querySelectorAll("[data-cropper-upload]")[0];
-    this.croppableImage = this.element.querySelectorAll("[data-cropper-image]")[0];
-    this.dataInput = this.element.querySelectorAll("[data-cropper-data]")[0];
-    this.cancelButton = this.element.querySelectorAll("[data-cropper-cancel]")[0];
-    this.previews = this.element.querySelectorAll(".previews");
-    this.rotateButtons = this.element.querySelectorAll("[data-cropper-rotate]");
-    this.resetButton = this.element.querySelectorAll("[data-cropper-reset]")[0];
-    this.zoomButtons = this.element.querySelectorAll("[data-cropper-zoom]");
-    this.cropper = null;
-  }
+  static targets = [ "imageInput", "dataInput", "croppableImage" ];
 
   connect() {
-    this.imageInput.onchange = this.setup.bind(this);
-    this.cancelButton.onclick = this.cancel.bind(this);
-    this.rotateButtons.forEach((button) => {
-      button.onclick = this.rotate.bind(this);
-    });
-    this.resetButton.onclick = this.reset.bind(this);
-    this.zoomButtons.forEach((button) => {
-      button.onclick = this.zoom.bind(this);
-    })
+    this.previews = this.element.querySelectorAll(".previews");
+    this.cropper = null;
   }
 
   disconnect() {
@@ -36,7 +19,7 @@ export default class extends Controller {
       let file = event.target.files[0];
 
       if (/^image\/\w+/.test(file.type)) {
-        this.croppableImage.src = URL.createObjectURL(file);
+        this.croppableImageTarget.src = URL.createObjectURL(file);
         this.showPreviews();
         this.create();
       } else {
@@ -47,7 +30,7 @@ export default class extends Controller {
 
   create() {
     this.destroy();
-    this.cropper = new Cropper(this.croppableImage, {
+    this.cropper = new Cropper(this.croppableImageTarget, {
       preview: this.previews,
       viewMode: 2,
       scalable: false,
@@ -57,15 +40,15 @@ export default class extends Controller {
   }
 
   crop(event) {
-    this.dataInput.value = JSON.stringify(event.detail)
+    this.dataInputTarget.value = JSON.stringify(event.detail)
   }
 
   rotate(event) {
-    this.cropper.rotate(event.currentTarget.dataset.cropperRotate);
+    this.cropper.rotate(event.params.degrees);
   }
 
   zoom(event) {
-    this.cropper.zoom(event.currentTarget.dataset.cropperZoom);
+    this.cropper.zoom(event.params.scale);
   }
 
   reset() {
@@ -73,8 +56,8 @@ export default class extends Controller {
   }
 
   cancel() {
-    this.imageInput.value = null;
-    this.croppableImage.src = "";
+    this.imageInputTarget.value = null;
+    this.croppableImageTarget.src = "";
     this.destroy();
     this.hidePreviews();
   }
