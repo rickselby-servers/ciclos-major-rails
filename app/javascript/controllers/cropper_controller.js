@@ -43,12 +43,12 @@ export default class extends Controller {
     this.dataInputTarget.value = JSON.stringify(event.detail)
   }
 
-  rotate(event) {
-    this.cropper.rotate(event.params.degrees);
+  rotate({ params: { degrees }}) {
+    this.cropper.rotate(degrees);
   }
 
-  zoom(event) {
-    this.cropper.zoom(event.params.scale);
+  zoom({ params: { scale }}) {
+    this.cropper.zoom(scale);
   }
 
   reset() {
