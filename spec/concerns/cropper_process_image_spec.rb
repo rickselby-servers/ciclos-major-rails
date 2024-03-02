@@ -15,7 +15,7 @@ RSpec.describe Cropper, ".process_image", type: :controller do
     allow(image_param).to receive(:"tempfile=")
   end
 
-  let(:crop_data) { { x: 1, y: 1, width: 170, height: 176 } }
+  let(:crop_data) { { x: 1, y: 1, width: 170, height: 176, rotate: 0 } }
   let(:crop_data_json) { crop_data.to_json }
   let(:image_crop_service) { instance_double ImageCropService }
   let(:image_param) { instance_double ActionDispatch::Http::UploadedFile, tempfile: }
