@@ -133,7 +133,7 @@
     <orderEntry type="library" scope="PROVIDED" name="rubocop-rails (v2.23.1, RVM: ruby-3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubocop-rails-accessibility (v1.0.1, RVM: ruby-3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubocop-rake (v0.6.0, RVM: ruby-3.3.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rubocop-rickselby (v0.21.0, RVM: ruby-3.3.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rubocop-rickselby (v0.22.0, RVM: ruby-3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubocop-rspec (v2.26.1, RVM: ruby-3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubocop-sequel (v0.3.4, RVM: ruby-3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ruby-progressbar (v1.13.0, RVM: ruby-3.3.0) [gem]" level="application" />
@@ -626,6 +626,7 @@
           <RakeTaskImpl description="Run all specs in spec directory (excluding plugin specs)" fullCommand="spec" id="spec" />
           <RakeTaskImpl id="spec">
             <subtasks>
+              <RakeTaskImpl description="Run the code examples in spec/concerns" fullCommand="spec:concerns" id="concerns" />
               <RakeTaskImpl description="Run the code examples in spec/helpers" fullCommand="spec:helpers" id="helpers" />
               <RakeTaskImpl description="Run the code examples in spec/models" fullCommand="spec:models" id="models" />
               <RakeTaskImpl description="Run the code examples in spec/requests" fullCommand="spec:requests" id="requests" />

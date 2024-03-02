@@ -7,7 +7,7 @@ RSpec.describe "Guides", :logged_in do
 
   let(:photo) { file_fixture_upload("example.jpg") }
 
-  it "allows the user to create a new FAQ" do
+  it "allows the user to create a new guide" do
     visit guides_path
     click_on "New Guide"
     fill_in "Name", with: "Bob"
