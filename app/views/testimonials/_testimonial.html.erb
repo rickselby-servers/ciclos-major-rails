@@ -1,0 +1,17 @@
+<div id="<%= dom_id testimonial %>">
+  <h4>
+    <% if admin_signed_in? %>
+      <%= fa_icon "grip-lines", class: "me-2 sortable-handle" %>
+    <% end %>
+    <%= testimonial.title %>
+  </h4>
+  <p><%= sanitize testimonial.text %></p>
+  <% if admin_signed_in? %>
+    <p>
+      <%= link_to edit_testimonial_path(testimonial), class: %i[btn btn-secondary] do %>
+        <%= fa_icon "pencil" %>
+        <%= t ".edit" %>
+      <% end %>
+    </p>
+  <% end %>
+</div>

@@ -1,0 +1,24 @@
+<%= bootstrap_form_with(model: testimonial, data: { controller: :tinymce }) do |form| %>
+  <% if testimonial.errors.any? %>
+    <div style="color: red">
+      <h2><%= t ".errors", count: testimonial.errors.count %></h2>
+
+      <ul>
+        <% testimonial.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.text_field :title %>
+  <%= form.text_area :text, data: { tinymce_target: :input }, required: false %>
+
+  <div>
+    <%= form.submit %>
+    <% if testimonial.persisted? %>
+      <%= link_to t(".delete"), testimonial_path(testimonial), class: %i[btn btn-danger],
+                  data: { turbo_method: :delete, turbo_confirm: t(".delete_confirm") } %>
+    <% end %>
+  </div>
+<% end %>

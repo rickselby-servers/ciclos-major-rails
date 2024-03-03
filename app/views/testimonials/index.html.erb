@@ -1,0 +1,17 @@
+<h1><%= t ".title" %></h1>
+
+<% if admin_signed_in? %>
+  <p>
+    <%= link_to new_testimonial_path, class: %i[btn btn-primary] do %>
+      <%= fa_icon "plus" %>
+      <%= t ".new" %>
+    <% end %>
+  </p>
+<% end %>
+
+<div id="testimonials"
+     data-controller="sortable"
+     data-sortable-url-value="<%= move_testimonials_path %>"
+     data-sortable-handle-value=".sortable-handle">
+  <%= render @testimonials %>
+</div>
