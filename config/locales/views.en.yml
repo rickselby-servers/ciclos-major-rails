@@ -119,3 +119,26 @@ en:
       select: "Select Image"
       zoom-in: "Zoom In"
       zoom-out: "Zoom Out"
+  testimonials:
+    back: "Back to testimonials"
+    create:
+      success: "Testimonial was successfully created."
+    destroy:
+      success: "Testimonial was successfully deleted."
+    edit:
+      title: "Editing testimonial"
+    testimonial:
+      edit: "Edit testimonial"
+    form:
+      delete: "Delete"
+      delete_confirm: "Are you sure you wish to delete this testimonial?"
+      errors:
+        one: "One error prevented this testimonial from being saved:"
+        other: "%{count} errors prevented this testimonial from being saved:"
+    index:
+      title: "Testimonials"
+      new: "New testimonial"
+    new:
+      title: "New testimonial"
+    update:
+      success: "Testimonial was successfully updated."

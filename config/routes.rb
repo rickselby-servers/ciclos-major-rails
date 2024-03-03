@@ -29,4 +29,9 @@ Rails.application.routes.draw do
     end
   end
   resources :page_text, only: :update
+  resources :testimonials, except: :show do
+    collection do
+      patch :move
+    end
+  end
 end
