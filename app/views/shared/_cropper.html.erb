@@ -1,5 +1,4 @@
 <div data-controller="cropper">
-
   <%= form.form_group identifier, label: { required: } do %>
     <div class="form-control cropper-control">
       <div class="previews" style="<%= form.object.public_send(identifier).present? ? "" : "display: none;" %>" data-cropper-target="preview">
@@ -9,7 +8,7 @@
       </div>
 
       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cropper-<%= identifier %>-modal">
-        Change image
+        <%= t ".change" %>
       </button>
     </div>
   <% end %>
@@ -19,11 +18,10 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="cropper-<%= identifier %>-modal-label">Select Image</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <h1 class="modal-title fs-5" id="cropper-<%= identifier %>-modal-label"><%= t ".select" %></h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="<%= t ".close" %>"></button>
         </div>
         <div class="modal-body">
-
           <%= form.file_field identifier, required:,
                               data: { "cropper-target": "imageInput", action: "change->cropper#setup" } %>
           <%= form.hidden_field :"#{identifier}_crop_data", data: { "cropper-target": "dataInput" } %>
@@ -34,32 +32,32 @@
 
           <div class="btn-group" role="group">
             <button type="button" class="btn btn-secondary" data-action="cropper#rotate" data-cropper-degrees-param="-90">
-              <%= fa_icon "rotate-left", title: "Rotate Left" %>
+              <%= fa_icon "rotate-left", title: t(".rotate-left") %>
             </button>
             <button type="button" class="btn btn-secondary" data-action="cropper#rotate" data-cropper-degrees-param="90">
-              <%= fa_icon "rotate-right", title: "Rotate Right" %>
+              <%= fa_icon "rotate-right", title: t(".rotate-right") %>
             </button>
           </div>
 
           <div class="btn-group" role="group">
             <button type="button" class="btn btn-secondary" data-action="cropper#zoom" data-cropper-scale-param="0.1">
-              <%= fa_icon "magnifying-glass-plus", title: "Zoom In" %>
+              <%= fa_icon "magnifying-glass-plus", title: t(".zoom-in") %>
             </button>
             <button type="button" class="btn btn-secondary" data-action="cropper#zoom" data-cropper-scale-param="-0.1">
-              <%= fa_icon "magnifying-glass-minus", title: "Zoom Out" %>
+              <%= fa_icon "magnifying-glass-minus", title: t(".zoom-out") %>
             </button>
           </div>
 
           <button type="button" class="btn btn-secondary" data-action="cropper#reset">
-            <%= fa_icon "rotate", title: "Reset" %>
+            <%= fa_icon "rotate", title: t(".reset") %>
           </button>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-action="cropper#cancel">
-            Cancel
+            <%= t ".cancel" %>
           </button>
           <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
-            Save
+            <%= t ".save" %>
           </button>
         </div>
       </div>

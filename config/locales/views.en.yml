@@ -107,3 +107,15 @@ en:
       title: "Ride Groups"
     videos:
       title: "Videos"
+  shared:
+    cropper:
+      cancel: "Cancel"
+      change: "Change Image"
+      close: "Close"
+      reset: "Reset"
+      rotate-left: "Rotate Left"
+      rotate-right: "Rotate Right"
+      save: "Save"
+      select: "Select Image"
+      zoom-in: "Zoom In"
+      zoom-out: "Zoom Out"
