@@ -1,0 +1,23 @@
+# frozen_string_literal: true
+
+require "rails_helper"
+
+<% output_attributes = attributes.reject{|attribute| [:datetime, :timestamp, :time, :date].index(attribute.type) } -%>
+RSpec.describe "<%= ns_table_name %>/new" do
+  let(:<%= singular_table_name %>) { <%= class_name %>.new }
+
+  before { assign :<%= singular_table_name %>, <%= singular_table_name %> }
+
+  it { is_expected.to have_link href: <%= index_helper(type: :path) %> }
+  it { is_expected.to have_css "form[action='#{<%= index_helper(type: :path) %>}'][method='post']" }
+
+  context "with the form" do
+    subject { page.find("form") }
+
+<% for attribute in output_attributes -%>
+      <%- name = attribute.respond_to?(:column_name) ? attribute.column_name : attribute.name -%>
+    it { is_expected.to have_field "<%= singular_table_name %>[<%= name %>]" }
+<% end -%>
+    it { is_expected.to have_button "commit" }
+  end
+end
