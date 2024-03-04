@@ -34,4 +34,5 @@ Rails.application.routes.draw do
       patch :move
     end
   end
+  get "admin", to: "admin#index", as: :admin
 end

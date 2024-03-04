@@ -8,7 +8,7 @@
             <%= t ".logged_in", user: current_admin.email %>
           </div>
           <div class="col">
-            <%= button_to t(".logoout"), destroy_admin_session_path, method: :get, class: %w[btn btn-primary float-end] %>
+            <%= button_to t(".logout"), destroy_admin_session_path, method: :get, class: %w[btn btn-primary float-end] %>
           </div>
         </div>
       </div>

@@ -1,9 +1,12 @@
 ---
 en:
+  admin:
+    index:
+      title: "Admin Section"
   application:
     admin:
       logged_in: "Logged in as %{user}"
-      logoout: "Logout"
+      logout: "Logout"
     footer:
       call_us: "Call Us"
       email: "Email"
