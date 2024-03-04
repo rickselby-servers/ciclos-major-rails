@@ -12,7 +12,7 @@ RSpec.describe Cropper, ".process_image", type: :controller do
   before do
     allow(ImageCropService).to receive(:new).with(path).and_return(image_crop_service)
     allow(image_crop_service).to receive(:crop).and_return(returned_image)
-    allow(image_param).to receive(:"tempfile=")
+    allow(image_param).to receive(:"tempfile=") unless image_param.nil?
   end
 
   let(:crop_data) { { x: 1, y: 1, width: 170, height: 176, rotate: 0 } }

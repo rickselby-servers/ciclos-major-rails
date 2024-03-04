@@ -164,9 +164,6 @@ GEM
     irb (1.11.2)
       rdoc
       reline (>= 0.4.2)
-    jbuilder (2.11.5)
-      actionview (>= 5.0.0)
-      activesupport (>= 5.0.0)
     json (2.7.1)
     language_server-protocol (3.17.0.3)
     loofah (2.22.0)
@@ -429,7 +426,6 @@ DEPENDENCIES
   factory_bot_rails (~> 6.4)
   image_processing (~> 1.2)
   importmap-rails (~> 2.0)
-  jbuilder (~> 2.11)
   omniauth-rails_csrf_protection (~> 1.0)
   puma (>= 5.0)
   rails (~> 7.1.3)
