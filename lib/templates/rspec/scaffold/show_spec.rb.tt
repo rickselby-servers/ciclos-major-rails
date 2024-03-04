@@ -14,12 +14,6 @@ RSpec.describe "<%= ns_table_name %>/_<%= singular_table_name %>" do
 
   it { is_expected.to have_no_link href: <%= edit_helper %> }
 
-  context "with html" do
-    let(:<%= singular_table_name %>) { create :<%= singular_table_name %>, :html }
-
-    it { is_expected.to have_css "strong", text: strip_tags(<%= singular_table_name %>.answer) }
-  end
-
   context "when logged in", :logged_in do
     it { is_expected.to have_link href: <%= edit_helper %> }
   end

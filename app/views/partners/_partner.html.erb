@@ -1,0 +1,22 @@
+<div id="<%= dom_id partner %>">
+  <p>
+    <strong>Name:</strong>
+    <%= partner.name %>
+  </p>
+
+  <p>
+    <strong>Details:</strong>
+    <%= sanitize partner.details %>
+  </p>
+
+  <p>
+    <strong>Url:</strong>
+    <%= partner.url %>
+  </p>
+
+  <p>
+    <strong>Logo:</strong>
+    <%= link_to partner.logo.filename, partner.logo if partner.logo.attached? %>
+  </p>
+
+</div>

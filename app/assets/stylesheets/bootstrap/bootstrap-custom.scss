@@ -115,3 +115,8 @@ label.required:after {
 .sortable-ghost {
   border: 1px solid black !important;
 }
+
+.shrink {
+  white-space: nowrap;
+  width: 0;
+}
