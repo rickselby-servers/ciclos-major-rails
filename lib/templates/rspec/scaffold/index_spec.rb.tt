@@ -1,0 +1,28 @@
+# frozen_string_literal: true
+
+require "rails_helper"
+
+<% output_attributes = attributes.reject{|attribute| [:datetime, :timestamp, :time, :date].index(attribute.type) } -%>
+RSpec.describe "<%= ns_table_name %>/index" do
+  let(:attributes) do
+    {
+<% output_attributes.each_with_index do |attribute, attribute_index| -%>
+      <%= attribute.name %>: <%= value_for(attribute) %>,
+<% end -%>
+    }
+  end
+  let(:<%= singular_table_name %>) { create :<%= singular_table_name %>, **attributes }
+  let(:<%= singular_table_name %>2) { create :<%= singular_table_name %>, **attributes }
+
+  before { assign(:<%= table_name %>, [<%= singular_table_name %>, <%= singular_table_name %>2]) }
+
+<% for attribute in output_attributes -%>
+  it { is_expected.to have_css "div > p", text: <%= value_for(attribute) %>, count: 2 }
+<% end -%>
+
+  it { is_expected.to have_no_link href: <%= new_helper(type: :path) %> }
+
+  context "when logged in", :logged_in do
+    it { is_expected.to have_link href: <%= new_helper(type: :path) %> }
+  end
+end
