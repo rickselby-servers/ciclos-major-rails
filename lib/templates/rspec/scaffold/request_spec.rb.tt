@@ -1,0 +1,145 @@
+# frozen_string_literal: true
+
+require "rails_helper"
+
+<% module_namespacing do -%>
+RSpec.describe "/<%= name.underscore.pluralize %>" do
+  let(:<%= name %>) { create :<%= name %> }
+
+<% unless options[:singleton] -%>
+  describe "GET /index" do
+    subject do
+      get <%= index_helper type: :path %>
+      response
+    end
+
+    it { is_expected.to be_successful }
+  end
+<% end -%>
+
+  describe "GET /show" do
+    subject do
+      get <%= show_helper %>
+      response
+    end
+
+    it { is_expected.to be_successful }
+  end
+
+  describe "GET /new" do
+    subject do
+      get <%= new_helper type: :path %>
+      response
+    end
+
+    it_behaves_like "it redirects to login if not logged in"
+
+    context "when logged in", :logged_in do
+      it { is_expected.to be_successful }
+    end
+  end
+
+  describe "GET /edit" do
+    subject do
+      get <%= edit_helper %>
+      response
+    end
+
+    it_behaves_like "it redirects to login if not logged in"
+
+    context "when logged in", :logged_in do
+      it { is_expected.to be_successful }
+    end
+  end
+
+  describe "POST /create" do
+    subject(:do_post) do
+      post <%= index_helper type: :path %>, params: { <%= singular_table_name %>: attributes_for(:<%= singular_table_name %>) }
+      response
+    end
+
+    it_behaves_like "it redirects to login if not logged in"
+
+    context "when logged in", :logged_in do
+      context "with valid parameters" do
+        it "creates a new <%= class_name %>" do
+          expect { do_post }.to change(<%= class_name %>, :count).by(1)
+        end
+
+        it { is_expected.to redirect_to <%= index_helper type: :path %> }
+      end
+
+      context "with invalid parameters" do
+        subject(:do_post) do
+          post <%= index_helper type: :path %>, params: { <%= singular_table_name %>: attributes_for(:<%= singular_table_name %>, :invalid) }
+          response
+        end
+
+        it "does not create a new <%= class_name %>" do
+          expect { do_post }.not_to change(<%= class_name %>, :count)
+        end
+
+        it { is_expected.to have_http_status :unprocessable_entity }
+      end
+    end
+  end
+
+  describe "PATCH /update" do
+    subject(:do_patch) do
+      patch <%= show_helper %>, params: { <%= singular_table_name %>: new_attributes }
+      response
+    end
+
+    let(:new_attributes) { attributes_for :<%= singular_table_name %> }
+
+    it_behaves_like "it redirects to login if not logged in"
+
+    context "when logged in", :logged_in do
+      context "with valid parameters" do
+        let(:expected_attributes) { new_attributes.transform_keys(&:to_s) }
+
+        it "updates the requested <%= singular_table_name %>" do
+          do_patch
+          expect(<%= singular_table_name %>.reload.attributes.slice(*expected_attributes.keys)).to eq expected_attributes
+        end
+
+        it { is_expected.to redirect_to <%= index_helper type: :path %> }
+      end
+
+      context "with invalid parameters" do
+        subject(:do_patch) do
+          patch <%= show_helper %>, params: { <%= singular_table_name %>: attributes_for(:<%= singular_table_name %>, :invalid) }
+          response
+        end
+
+        let(:expected_attributes) { <%= singular_table_name %>.attributes.transform_keys(&:to_s) }
+
+        it "does not update the requested <%= singular_table_name %>" do
+          do_patch
+          expect(<%= singular_table_name %>.reload.attributes.slice(*expected_attributes.keys)).to eq expected_attributes
+        end
+
+        it { is_expected.to have_http_status :unprocessable_entity }
+      end
+    end
+  end
+
+  describe "DELETE /destroy" do
+    subject(:do_delete) do
+      delete <%= show_helper %>
+      response
+    end
+
+    it_behaves_like "it redirects to login if not logged in"
+
+    context "when logged in", :logged_in do
+      it "destroys the requested <%= singular_table_name %>" do
+        <%= file_name %> # load the <%= singular_table_name %> before the check that we delete it
+        expect { do_delete }.to change(<%= class_name %>, :count).by(-1)
+      end
+
+      it { is_expected.to redirect_to <%= index_helper type: :path %> }
+    end
+  end
+end
+<% end -%>
