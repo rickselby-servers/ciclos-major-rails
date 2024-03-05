@@ -30,7 +30,7 @@ Rails.application.routes.draw do
     end
   end
   resources :page_text, only: :update
-  resources :partners, except: :show do
+  resources :partners do
     collection do
       patch :move
     end

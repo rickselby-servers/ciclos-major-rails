@@ -1,22 +1,17 @@
-<div id="<%= dom_id partner %>">
-  <p>
-    <strong>Name:</strong>
-    <%= partner.name %>
-  </p>
-
-  <p>
-    <strong>Details:</strong>
-    <%= sanitize partner.details %>
-  </p>
-
-  <p>
-    <strong>Url:</strong>
-    <%= partner.url %>
-  </p>
-
-  <p>
-    <strong>Logo:</strong>
-    <%= link_to partner.logo.filename, partner.logo if partner.logo.attached? %>
-  </p>
-
+<div class="modal fade partner-modal" id="<%= dom_id partner, :modal %>" tabindex="-1" aria-labelledby="<%= dom_id partner, :modal_label %>" data-controller="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="<%= dom_id partner, :modal_label %>"><%= partner.name %></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%= image_tag partner.logo, alt: partner.name, aria_hidden: true %>
+        <%= sanitize partner.details %>
+      </div>
+      <div class="modal-footer">
+        <%= link_to partner.url, partner.url, class: %w[btn btn-outline-primary] %>
+      </div>
+    </div>
+  </div>
 </div>
