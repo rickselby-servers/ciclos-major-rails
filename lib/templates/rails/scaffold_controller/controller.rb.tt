@@ -20,7 +20,7 @@ class <%= controller_class_name %>Controller < ApplicationController
     @<%= singular_table_name %> = <%= orm_class.build(class_name, "#{singular_table_name}_params") %>
 
     if @<%= orm_instance.save %>
-      redirect_to <%= redirect_resource_name %>, notice: t(".success")
+      redirect_to <%= index_helper type: :path %>, notice: t(".success")
     else
       render :new, status: :unprocessable_entity
     end
@@ -28,7 +28,7 @@ class <%= controller_class_name %>Controller < ApplicationController
 
   def update
     if @<%= orm_instance.update("#{singular_table_name}_params") %>
-      redirect_to <%= redirect_resource_name %>, notice: t(".success"), status: :see_other
+      redirect_to <%= index_helper type: :path %>, notice: t(".success"), status: :see_other
     else
       render :edit, status: :unprocessable_entity
     end
@@ -37,7 +37,7 @@ class <%= controller_class_name %>Controller < ApplicationController
   def destroy
     @<%= orm_instance.destroy %>
 
-    redirect_to <%= index_helper %>_url, notice: t(".success"), status: :see_other
+    redirect_to <%= index_helper type: :path %>, notice: t(".success"), status: :see_other
   end
 
   private

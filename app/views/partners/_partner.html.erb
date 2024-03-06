@@ -1,0 +1,25 @@
+<% inline ||= false %>
+
+<%= tag.div class: partner_modal_classes(inline),
+            id: dom_id(partner, :modal),
+            tabindex: -1,
+            aria_labelledby: dom_id(partner, :modal_label),
+            data: partner_modal_data(inline) do %>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="<%= dom_id partner, :modal_label %>"><%= partner.name %></h5>
+        <% unless inline %>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <% end %>
+      </div>
+      <div class="modal-body">
+        <%= image_tag partner.logo, alt: partner.name, aria_hidden: true %>
+        <%= sanitize partner.details %>
+      </div>
+      <div class="modal-footer">
+        <%= link_to partner.url, partner.url, class: %w[btn btn-outline-primary] %>
+      </div>
+    </div>
+  </div>
+<% end %>

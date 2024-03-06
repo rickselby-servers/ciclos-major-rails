@@ -1,0 +1,41 @@
+
+<h1><%= t ".title" %></h1>
+
+<% if admin_signed_in? %>
+  <p>
+    <%= link_to new_partner_path, class: %i[btn btn-primary] do %>
+      <%= fa_icon "plus" %>
+      <%= t ".new" %>
+    <% end %>
+  </p>
+<% end %>
+
+<table id="partners" class="table table-bordered table-striped">
+  <thead>
+  <tr>
+    <th class="shrink"></th>
+    <th>Name</th>
+    <th>URL</th>
+    <th class="shrink"></th>
+  </tr>
+  </thead>
+  <tbody data-controller="sortable"
+         data-sortable-url-value="<%= move_partners_path %>"
+         data-sortable-handle-value=".sortable-handle">
+  <% @partners.each do |partner| %>
+  <tr id="<%= dom_id partner %>">
+    <td class="shrink">
+      <%= fa_icon "grip-lines", class: "me-2 sortable-handle" %>
+    </td>
+    <td><%= partner.name %></td>
+    <td><%= partner.url %></td>
+    <td class="shrink">
+      <%= link_to edit_partner_path(partner), class: %i[btn btn-secondary btn-sm] do %>
+        <%= fa_icon "pencil" %>
+        <%= t ".edit" %>
+      <% end %>
+    </td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>

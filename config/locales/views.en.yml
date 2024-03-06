@@ -1,9 +1,13 @@
 ---
 en:
+  admin:
+    index:
+      title: "Admin Section"
+      partners: "Partners"
   application:
     admin:
       logged_in: "Logged in as %{user}"
-      logoout: "Logout"
+      logout: "Logout"
     footer:
       call_us: "Call Us"
       email: "Email"
@@ -107,6 +111,29 @@ en:
       title: "Ride Groups"
     videos:
       title: "Videos"
+  partners:
+    back: "Back to Partners"
+    img_alt: "Logo for %{name}"
+    create:
+      success: "Partner was successfully created."
+    destroy:
+      success: "Partner was successfully deleted."
+    edit:
+      title: "Editing Partner"
+    form:
+      delete: "Delete"
+      delete_confirm: "Are you sure you wish to delete this partner?"
+      errors:
+        one: "One error prevented this partner from being saved:"
+        other: "%{count} errors prevented this partner from being saved:"
+    index:
+      edit: "Edit"
+      title: "Partners"
+      new: "New Partner"
+    new:
+      title: "New Partner"
+    update:
+      success: "Partner was successfully updated."
   shared:
     cropper:
       cancel: "Cancel"

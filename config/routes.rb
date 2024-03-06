@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     get path.dasherize, to: "pages##{path}", as: path.to_sym
   end
 
+  get "admin", to: "admin#index", as: :admin
   resources :faqs, except: :show do
     collection do
       patch :move
@@ -29,6 +30,11 @@ Rails.application.routes.draw do
     end
   end
   resources :page_text, only: :update
+  resources :partners do
+    collection do
+      patch :move
+    end
+  end
   resources :testimonials, except: :show do
     collection do
       patch :move
