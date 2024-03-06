@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Guide < ApplicationRecord
+  include ResizeImage
+
   acts_as_list top_of_list: 0
   audited
 
@@ -10,30 +12,7 @@ class Guide < ApplicationRecord
   validates :description, presence: true
   validates :photo, presence: true
 
-  before_save :resize_photo
+  before_save -> { resize_image :photo, 200, nil }
 
   scope :ordered, -> { order :position }
-
-  PHOTO_MAX_WIDTH = 200
-
-  private
-
-  def resize_photo
-    return unless can_resize_photo?
-
-    attachable = attachment_changes[:photo.to_s].attachable
-    tempfile = ImageProcessing::Vips.source(attachable.tempfile.path).resize_to_limit!(PHOTO_MAX_WIDTH, nil)
-
-    self.photo = if attachable.is_a? Rack::Test::UploadedFile
-                   Rack::Test::UploadedFile.new tempfile.path
-                 else
-                   attachable.tempfile = tempfile
-                   attachable
-                 end
-  end
-
-  def can_resize_photo?
-    photo.attached? && attachment_changes.key?(:photo.to_s) &&
-      attachment_changes[:photo.to_s].is_a?(ActiveStorage::Attached::Changes::CreateOne)
-  end
 end

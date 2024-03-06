@@ -5,7 +5,7 @@ FactoryBot.define do
     name { generate :text_content }
     details { generate :text_content }
     url { generate :text_content }
-    logo { Rack::Test::UploadedFile.new "spec/fixtures/files/example.jpg", "image/jpg" }
+    logo { Rack::Test::UploadedFile.new "spec/fixtures/files/400x400.jpg", "image/jpg" }
 
     trait :html do
       details { "<strong>#{generate :text_content}</strong>" }
