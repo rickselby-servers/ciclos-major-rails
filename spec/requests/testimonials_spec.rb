@@ -78,7 +78,7 @@ RSpec.describe "/testimonials" do
       response
     end
 
-    let(:new_attributes) { { title: "bar", text: "baz" } }
+    let(:new_attributes) { attributes_for :testimonial }
 
     it_behaves_like "it redirects to login if not logged in"
 
