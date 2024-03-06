@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "vips"
 
 RSpec.shared_examples "it resizes an image correctly" do |key, sizes|
