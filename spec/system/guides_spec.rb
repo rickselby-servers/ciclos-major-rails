@@ -5,8 +5,6 @@ require "rails_helper"
 RSpec.describe "Guides", :logged_in do
   include ActionView::RecordIdentifier
 
-  let(:photo) { file_fixture_upload("example.jpg") }
-
   it "allows the user to create a new guide" do
     visit guides_path
     click_on "New Guide"
