@@ -153,9 +153,9 @@ en:
     destroy:
       success: "Testimonial was successfully deleted."
     edit:
-      title: "Editing testimonial"
+      title: "Editing Testimonial"
     testimonial:
-      edit: "Edit testimonial"
+      edit: "Edit Testimonial"
     form:
       delete: "Delete"
       delete_confirm: "Are you sure you wish to delete this testimonial?"
@@ -164,8 +164,8 @@ en:
         other: "%{count} errors prevented this testimonial from being saved:"
     index:
       title: "Testimonials"
-      new: "New testimonial"
+      new: "New Testimonial"
     new:
-      title: "New testimonial"
+      title: "New Testimonial"
     update:
       success: "Testimonial was successfully updated."

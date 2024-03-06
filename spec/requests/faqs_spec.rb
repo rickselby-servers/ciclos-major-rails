@@ -78,7 +78,7 @@ RSpec.describe "/faqs" do
       response
     end
 
-    let(:new_attributes) { { question: "bar", answer: "baz" } }
+    let(:new_attributes) { attributes_for :faq }
 
     it_behaves_like "it redirects to login if not logged in"
 

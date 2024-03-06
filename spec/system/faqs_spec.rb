@@ -45,8 +45,8 @@ RSpec.describe "FAQs", :logged_in do
 
   context "with a few FAQs", :js do
     # rubocop:disable RSpec/IndexedLet
-    let!(:faq1) { create :faq, question: "Question 1" }
-    let!(:faq2) { create :faq, question: "Question 2" }
+    let!(:faq1) { create :faq }
+    let!(:faq2) { create :faq }
     # rubocop:enable RSpec/IndexedLet
 
     it "allows the order to be changed" do
