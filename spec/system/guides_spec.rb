@@ -10,7 +10,7 @@ RSpec.describe "Guides", :logged_in do
     click_on "New Guide"
     fill_in "Name", with: "Bob"
     fill_in "Description", with: "is person"
-    attach_file "Photo", file_fixture("example.jpg")
+    attach_file "Photo", file_fixture("400x400.jpg")
     click_on "Create"
 
     expect(page).to have_text "Bob"

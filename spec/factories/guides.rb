@@ -4,7 +4,7 @@ FactoryBot.define do
   factory :guide do
     name { generate :text_content }
     description { generate :text_content }
-    photo { Rack::Test::UploadedFile.new "spec/fixtures/files/example.jpg", "image/jpg" }
+    photo { Rack::Test::UploadedFile.new "spec/fixtures/files/400x400.jpg", "image/jpg" }
 
     trait :html do
       description { "<strong>#{generate :text_content}</strong>" }

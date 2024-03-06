@@ -8,7 +8,7 @@ RSpec.describe ImageCropService, ".crop" do
 
   let(:height) { image.height }
   let(:image) { Vips::Image.new_from_file image_path }
-  let(:image_path) { file_fixture("example.jpg").to_s }
+  let(:image_path) { file_fixture("400x400.jpg").to_s }
   let(:width) { image.width }
   let(:x) { 0 }
   let(:y) { 0 }

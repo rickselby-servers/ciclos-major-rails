@@ -11,7 +11,7 @@ RSpec.describe "Partners", :logged_in do
     fill_in "Name", with: "Bob Co"
     fill_in "Details", with: "is company"
     fill_in "Url", with: "http://test.test"
-    attach_file "Logo", file_fixture("example.jpg")
+    attach_file "Logo", file_fixture("400x400.jpg")
     click_on "Create"
 
     expect(page).to have_text "Bob Co"
