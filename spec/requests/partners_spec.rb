@@ -31,6 +31,15 @@ RSpec.describe "/partners" do
     end
   end
 
+  describe "GET /show" do
+    subject do
+      get partner_path partner
+      response
+    end
+
+    it { is_expected.to be_successful }
+  end
+
   describe "GET /edit" do
     subject do
       get edit_partner_path partner

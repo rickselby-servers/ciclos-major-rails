@@ -2,6 +2,7 @@
 
 class ApplicationController < ActionController::Base
   before_action :load_partners
+  before_action :turbo_frame_request_variant
 
   private
 
@@ -9,7 +10,7 @@ class ApplicationController < ActionController::Base
     @partners = Partner.ordered
   end
 
-  def turbo_only
-    head :bad_request unless turbo_frame_request?
+  def turbo_frame_request_variant
+    request.variant = :turbo_frame if turbo_frame_request?
   end
 end

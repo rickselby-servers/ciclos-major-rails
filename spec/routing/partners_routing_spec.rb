@@ -12,6 +12,10 @@ RSpec.describe PartnersController do
       expect(get: "/partners/new").to route_to("partners#new")
     end
 
+    it "routes to #show" do
+      expect(get: "/partners/1").to route_to("partners#show", id: "1")
+    end
+
     it "routes to #edit" do
       expect(get: "/partners/1/edit").to route_to("partners#edit", id: "1")
     end

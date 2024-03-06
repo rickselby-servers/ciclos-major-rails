@@ -3,7 +3,6 @@
 class PartnersController < ApplicationController
   include Cropper
 
-  before_action :turbo_only, only: :show
   before_action :authenticate_admin!, except: :show
   before_action :set_partner, only: %i[show edit update destroy]
   before_action :process_photo, only: %i[create update]

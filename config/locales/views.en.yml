@@ -112,7 +112,6 @@ en:
     videos:
       title: "Videos"
   partners:
-
     back: "Back to Partners"
     img_alt: "Logo for %{name}"
     create:
