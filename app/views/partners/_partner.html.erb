@@ -1,10 +1,10 @@
-<%
-  inline ||= false
-  classes = %w[modal partner-modal] + (inline ? %w[show position-static d-block] : %w[fade])
-  data = inline ? {} : { controller: :modal }
-%>
+<% inline ||= false %>
 
-<%= tag.div class: classes, id: dom_id(partner, :modal), tabindex: -1, aria_labelledby: dom_id(partner, :modal_label), data: data do %>
+<%= tag.div class: partner_modal_classes(inline),
+            id: dom_id(partner, :modal),
+            tabindex: -1,
+            aria_labelledby: dom_id(partner, :modal_label),
+            data: partner_modal_data(inline) do %>
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
