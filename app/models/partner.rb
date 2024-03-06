@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Partner < ApplicationRecord
+  include ResizeImage
+
   acts_as_list top_of_list: 0
   audited
 
@@ -11,31 +13,7 @@ class Partner < ApplicationRecord
   validates :url, presence: true
   validates :logo, presence: true
 
-  before_save :resize_photo
+  before_save -> { resize_image :logo, 200, 200 }
 
   scope :ordered, -> { order :position }
-
-  LOGO_MAX_WIDTH = 200
-  LOGO_MAX_HEIGHT = 200
-
-  private
-
-  def resize_photo
-    return unless can_resize_photo?
-
-    attachable = attachment_changes[:logo.to_s].attachable
-    tempfile = ImageProcessing::Vips.source(attachable.tempfile.path).resize_to_limit!(LOGO_MAX_WIDTH, LOGO_MAX_HEIGHT)
-
-    self.logo = if attachable.is_a? Rack::Test::UploadedFile
-                  Rack::Test::UploadedFile.new tempfile.path
-                else
-                  attachable.tempfile = tempfile
-                  attachable
-                end
-  end
-
-  def can_resize_photo?
-    logo.attached? && attachment_changes.key?(:logo.to_s) &&
-      attachment_changes[:logo.to_s].is_a?(ActiveStorage::Attached::Changes::CreateOne)
-  end
 end
