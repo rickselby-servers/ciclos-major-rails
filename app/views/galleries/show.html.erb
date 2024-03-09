@@ -1,0 +1,10 @@
+<% if admin_signed_in? %>
+  <div>
+    <%= link_to edit_gallery_path(@gallery), class: %i[btn btn-secondary] do %>
+      <%= fa_icon "pencil" %>
+      <%= t ".edit" %>
+    <% end %>
+  </div>
+<% end %>
+
+<%= render @gallery %>

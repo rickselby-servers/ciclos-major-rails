@@ -24,6 +24,7 @@ Rails.application.routes.draw do
       patch :move
     end
   end
+  resources :galleries
   resources :guides, except: :show do
     collection do
       patch :move
