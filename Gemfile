@@ -64,7 +64,7 @@ group :development, :test do
   gem "debug", "~> 1.9.1", platforms: %i[mri windows]
   gem "factory_bot_rails", "~> 6.4"
   gem "rspec-rails", "~> 6.1"
-  gem "rubocop-rickselby", "~> 0.19"
+  gem "rubocop-rickselby", "~> 0.25"
 end
 
 group :development do
