@@ -10,6 +10,12 @@
   </p>
 <% end %>
 
-<div id="galleries">
-  <%= render @galleries %>
+<div id="galleries" class="row row-cols-2 row-cols-md-3">
+  <% @galleries.each do |gallery| %>
+    <div class="col text-center mb-5">
+      <%= link_to gallery_path gallery do %>
+      <h2 class="h5"><%= gallery.name %></h2>
+      <% end %>
+    </div>
+  <% end %>
 </div>

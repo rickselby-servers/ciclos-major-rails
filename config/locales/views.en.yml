@@ -69,6 +69,30 @@ en:
       title: "New Frequently Asked Question"
     update:
       success: "FAQ was successfully updated."
+  galleries:
+    back: "Back to Galleries"
+    img_alt: "Photo of %{name}"
+    create:
+      success: "Gallery was successfully created."
+    destroy:
+      success: "Gallery was successfully deleted."
+    edit:
+      title: "Editing Gallery"
+    form:
+      delete: "Delete"
+      delete_confirm: "Are you sure you wish to delete this gallery?"
+      errors:
+        one: "One error prevented this gallery from being saved:"
+        other: "%{count} errors prevented this gallery from being saved:"
+    index:
+      title: "Galleries"
+      new: "New Gallery"
+    new:
+      title: "New Gallery"
+    show:
+      edit: "Edit Gallery"
+    update:
+      success: "Gallery was successfully updated."
   guides:
     back: "Back to Guides"
     img_alt: "Photo of %{name}"

@@ -1,3 +1,7 @@
+<h1><%= t "galleries.index.title" %></h1>
+
+<h2><%= @gallery.name %></h2>
+
 <% if admin_signed_in? %>
   <div>
     <%= link_to edit_gallery_path(@gallery), class: %i[btn btn-secondary] do %>
@@ -7,4 +11,6 @@
   </div>
 <% end %>
 
-<%= render @gallery %>
+<p>
+  #TODO: show photos (once in the system)
+</p>
