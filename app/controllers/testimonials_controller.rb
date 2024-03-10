@@ -26,7 +26,7 @@ class TestimonialsController < ApplicationController
 
   def update
     if @testimonial.update(testimonial_params)
-      redirect_to testimonials_path, notice: t(".success")
+      redirect_to testimonials_path, notice: t(".success"), status: :see_other
     else
       render :edit, status: :unprocessable_entity
     end
@@ -35,7 +35,7 @@ class TestimonialsController < ApplicationController
   def destroy
     @testimonial.destroy!
 
-    redirect_to testimonials_path, notice: t(".success")
+    redirect_to testimonials_path, notice: t(".success"), status: :see_other
   end
 
   def move

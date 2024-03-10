@@ -26,7 +26,7 @@ class FaqsController < ApplicationController
 
   def update
     if @faq.update(faq_params)
-      redirect_to faqs_path, notice: t(".success")
+      redirect_to faqs_path, notice: t(".success"), status: :see_other
     else
       render :edit, status: :unprocessable_entity
     end
@@ -35,7 +35,7 @@ class FaqsController < ApplicationController
   def destroy
     @faq.destroy!
 
-    redirect_to faqs_path, notice: t(".success")
+    redirect_to faqs_path, notice: t(".success"), status: :see_other
   end
 
   def move
