@@ -1,0 +1,21 @@
+
+<h1><%= t ".title" %></h1>
+
+<% if admin_signed_in? %>
+  <p>
+    <%= link_to new_gallery_path, class: %i[btn btn-primary] do %>
+      <%= fa_icon "plus" %>
+      <%= t ".new" %>
+    <% end %>
+  </p>
+<% end %>
+
+<div id="galleries" class="row row-cols-2 row-cols-md-3">
+  <% @galleries.each do |gallery| %>
+    <div class="col text-center mb-5">
+      <%= link_to gallery_path gallery do %>
+      <h2 class="h5"><%= gallery.name %></h2>
+      <% end %>
+    </div>
+  <% end %>
+</div>
