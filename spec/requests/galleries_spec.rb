@@ -93,7 +93,7 @@ RSpec.describe "/galleries" do
 
     context "when logged in", :logged_in do
       context "with valid parameters" do
-        let(:expected_attributes) { new_attributes.except(:photos).transform_keys(&:to_s) }
+        let(:expected_attributes) { new_attributes.transform_keys(&:to_s) }
 
         it "updates the requested gallery" do
           do_patch

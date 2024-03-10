@@ -8,7 +8,6 @@ RSpec.describe "galleries/show" do
   before { assign :gallery, gallery }
 
   it { is_expected.to have_content gallery.name }
-  # it { is_expected.to have_content gallery.photos }
 
   it { is_expected.to have_no_link href: edit_gallery_path(gallery) }
 

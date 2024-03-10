@@ -14,7 +14,6 @@ RSpec.describe "galleries/edit" do
     subject { page.find("form") }
 
     it { is_expected.to have_field "gallery[name]" }
-    # it { is_expected.to have_field "gallery[photos]" }
     it { is_expected.to have_button "commit" }
   end
 end

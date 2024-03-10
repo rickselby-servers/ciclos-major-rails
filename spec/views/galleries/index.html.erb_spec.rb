@@ -5,8 +5,7 @@ require "rails_helper"
 RSpec.describe "galleries/index" do
   let(:attributes) do
     {
-      name:   "Name",
-      photos: nil,
+      name: "Name",
     }
   end
   let(:gallery) { create :gallery, **attributes }
@@ -14,7 +13,7 @@ RSpec.describe "galleries/index" do
 
   before { assign(:galleries, [gallery, gallery2]) }
 
-  it { is_expected.to have_css "div > div > p", text: "Name", count: 2 }
+  it { is_expected.to have_css "div > div > a > h2", text: "Name", count: 2 }
 
   it { is_expected.to have_no_link href: new_gallery_path }
 

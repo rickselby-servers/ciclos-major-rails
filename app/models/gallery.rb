@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 class Gallery < ApplicationRecord
-  has_many_attached :photos
-
   audited
 
   validates :name, presence: true
