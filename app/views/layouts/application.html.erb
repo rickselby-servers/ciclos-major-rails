@@ -29,7 +29,7 @@
   <% if notice %><div class="alert alert-info"><%= notice %></div><% end %>
   <% if alert %><div class="alert alert-danger"><%= alert %></div><% end %>
 
-  <%= turbo_frame_tag "modal" %>
+  <%= turbo_frame_tag "modal", target: "_top" %>
 
   <%= yield %>
 </main>
