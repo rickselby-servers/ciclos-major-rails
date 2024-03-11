@@ -158,6 +158,23 @@ en:
       title: "New Partner"
     update:
       success: "Partner was successfully updated."
+  photos:
+    create:
+      success: "Photo was successfully added."
+    destroy:
+      success: "Photo was successfully removed."
+    edit:
+      title: "Editing Photo"
+    form:
+      delete: "Delete"
+      delete_confirm: "Are you sure you wish to delete this photo?"
+      errors:
+        one: "One error prevented this photo from being saved:"
+        other: "%{count} errors prevented this photo from being saved:"
+    new:
+      title: "New Photo"
+    update:
+      success: "Photo was successfully updated."
   shared:
     cropper:
       cancel: "Cancel"

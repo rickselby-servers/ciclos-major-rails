@@ -3,6 +3,7 @@
 require "rails_helper"
 
 RSpec.describe "/photos" do
+  let(:gallery) { create :gallery }
   let(:photo) { create :photo }
 
   describe "GET /new" do
@@ -33,9 +34,12 @@ RSpec.describe "/photos" do
 
   describe "POST /create" do
     subject(:do_post) do
-      post photos_path, params: { photo: attributes_for(:photo) }
+      post photos_path, params: { photo: valid_params }
       response
     end
+
+    let(:invalid_params) { build(:photo, photoable: gallery).attributes.merge(attributes_for(:photo, :invalid)) }
+    let(:valid_params) { build(:photo, photoable: gallery).attributes.merge(attributes_for(:photo)) }
 
     it_behaves_like "it redirects to login if not logged in"
 
@@ -50,7 +54,7 @@ RSpec.describe "/photos" do
 
       context "with invalid parameters" do
         subject(:do_post) do
-          post photos_path, params: { photo: attributes_for(:photo, :invalid) }
+          post photos_path, params: { photo: invalid_params }
           response
         end
 
@@ -75,7 +79,7 @@ RSpec.describe "/photos" do
 
     context "when logged in", :logged_in do
       context "with valid parameters" do
-        let(:expected_attributes) { new_attributes.transform_keys(&:to_s) }
+        let(:expected_attributes) { new_attributes.except(:photo).transform_keys(&:to_s) }
 
         it "updates the requested photo" do
           do_patch

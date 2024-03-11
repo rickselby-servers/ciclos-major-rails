@@ -43,6 +43,6 @@ class PhotosController < ApplicationController
   end
 
   def photo_params
-    params.require(:photo).permit(:photoable_id, :photoable_type, :position, :alt)
+    params.require(:photo).permit(:photoable_id, :photoable_type, :position, :alt, :photo)
   end
 end

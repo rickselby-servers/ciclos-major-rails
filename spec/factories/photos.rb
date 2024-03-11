@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :photo do
-    photoable { nil } # TODO: should be a model that has photos
+    photoable factory: :gallery
     alt { generate :text_content }
     photo { Rack::Test::UploadedFile.new "spec/fixtures/files/400x400.jpg", "image/jpg" }
 

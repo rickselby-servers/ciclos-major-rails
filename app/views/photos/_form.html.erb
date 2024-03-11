@@ -11,9 +11,13 @@
     </div>
   <% end %>
 
-  <%= form.text_field :photoable_id %>
-  <%= form.number_field :position %>
+  <% unless photo.persisted? %>
+    <%= form.hidden_field :photoable_id %>
+    <%= form.hidden_field :photoable_type %>
+  <% end %>
+
   <%= form.text_field :alt %>
+
   <div>
     <%= form.submit %>
     <% if photo.persisted? %>
