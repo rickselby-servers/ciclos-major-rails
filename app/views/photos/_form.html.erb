@@ -1,4 +1,4 @@
-<%= bootstrap_form_with(model: photo) do |form| %>
+<%= bootstrap_form_with(model: photo, data: { turbo: false }) do |form| %>
   <% if photo.errors.any? %>
     <div style="color: red">
       <h2><%= t ".errors", count: photo.errors.count %></h2>
@@ -15,6 +15,8 @@
     <%= form.hidden_field :photoable_id %>
     <%= form.hidden_field :photoable_type %>
   <% end %>
+
+  <%= form.file_field :photo %>
 
   <%= form.text_field :alt %>
 

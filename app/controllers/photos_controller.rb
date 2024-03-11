@@ -5,9 +5,10 @@ class PhotosController < ApplicationController
 
   before_action :authenticate_admin!
   before_action :set_photo, only: %i[edit update destroy]
+  before_action :set_target, only: :new
 
   def new
-    @photo = Photo.new
+    @photo = Photo.new photoable: @target
   end
 
   def edit; end
@@ -16,7 +17,7 @@ class PhotosController < ApplicationController
     @photo = Photo.new(photo_params)
 
     if @photo.save
-      redirect_to photos_path, notice: t(".success")
+      redirect_to polymorphic_path(@photo.photoable), notice: t(".success")
     else
       render :new, status: :unprocessable_entity
     end
@@ -37,6 +38,11 @@ class PhotosController < ApplicationController
   end
 
   private
+
+  def set_target
+    @target = GlobalID::Locator.locate params[:target]
+    head :unprocessable_entity unless @target
+  end
 
   def set_photo
     @photo = Photo.find(params[:id])
