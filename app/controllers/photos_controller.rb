@@ -5,21 +5,19 @@ class PhotosController < ApplicationController
 
   before_action :authenticate_admin!
   before_action :set_photo, only: %i[edit update destroy]
+  before_action :set_target, only: :new
 
   def new
-    @photo = Photo.new
+    @photo = Photo.new photoable: @target
   end
 
   def edit; end
 
   def create
-    @photo = Photo.new(photo_params)
+    params[:photo][:photos].each { |photo| Photo.create create_photo_params.merge(photo:) }
+    temp_photo = Photo.new create_photo_params
 
-    if @photo.save
-      redirect_to photos_path, notice: t(".success")
-    else
-      render :new, status: :unprocessable_entity
-    end
+    redirect_to polymorphic_path(temp_photo.photoable), notice: t(".success")
   end
 
   def update
@@ -38,11 +36,20 @@ class PhotosController < ApplicationController
 
   private
 
+  def set_target
+    @target = GlobalID::Locator.locate params[:target]
+    head :unprocessable_entity unless @target
+  end
+
   def set_photo
     @photo = Photo.find(params[:id])
   end
 
-  def photo_params
-    params.require(:photo).permit(:photoable_id, :photoable_type, :position, :alt, :photo)
+  def create_photo_params
+    params.require(:photo).permit(:photoable_id, :photoable_type)
+  end
+
+  def edit_photo_params
+    params.require(:photo).permit(:alt)
   end
 end

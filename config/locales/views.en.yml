@@ -159,8 +159,9 @@ en:
     update:
       success: "Partner was successfully updated."
   photos:
+    add: "Add new photos"
     create:
-      success: "Photo was successfully added."
+      success: "Photos were successfully added."
     destroy:
       success: "Photo was successfully removed."
     edit:
