@@ -24,10 +24,13 @@
 
   <div>
     <%= form.submit %>
+  </div>
+<% end %>
 
-    <% if photo.persisted? %>
-      <%= link_to t(".delete"), photo, class: %i[btn btn-danger],
-                  data: { turbo_method: :delete, turbo_confirm: t(".delete_confirm") } %>
+<% if photo.persisted? %>
+  <div class="mt-3">
+    <%= bootstrap_form_with(model: photo, method: :delete, data: { turbo_confirm: t(".delete_confirm") }) do |f| %>
+      <%= f.submit t(".delete"), class: "btn btn-danger" %>
     <% end %>
   </div>
 <% end %>

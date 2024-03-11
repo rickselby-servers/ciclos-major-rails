@@ -1,16 +1,5 @@
 <turbo-frame id="photo-list">
   <div class="row row-cols-2 row-cols-md-3">
-    <% photos.ordered.each do |photo| %>
-      <div class="col mb-3 align-items-center d-flex flex-column">
-        <%= image_tag photo.photo, class: %w[img-fluid d-block] %>
-
-        <% if admin_signed_in? %>
-          <%= link_to edit_photo_path(photo), data: { turbo_frame: "modal" }, class: %i[btn btn-primary d-flex] do %>
-            <%= fa_icon "pencil" %>
-            <%= t "photos.edit_button" %>
-          <% end %>
-        <% end %>
-      </div>
-    <% end %>
+    <%= render photos %>
   </div>
 </turbo-frame>
