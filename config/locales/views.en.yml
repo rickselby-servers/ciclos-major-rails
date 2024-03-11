@@ -160,6 +160,7 @@ en:
       success: "Partner was successfully updated."
   photos:
     add: "Add new photos"
+    edit_button: "Edit photo"
     create:
       success: "Photos were successfully added."
     destroy:

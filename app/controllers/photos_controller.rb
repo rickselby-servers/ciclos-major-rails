@@ -21,8 +21,8 @@ class PhotosController < ApplicationController
   end
 
   def update
-    if @photo.update(photo_params)
-      redirect_to photos_path, notice: t(".success"), status: :see_other
+    if @photo.update(edit_photo_params)
+      redirect_to polymorphic_path(@photo.photoable), notice: t(".success"), status: :see_other
     else
       render :edit, status: :unprocessable_entity
     end
@@ -31,7 +31,7 @@ class PhotosController < ApplicationController
   def destroy
     @photo.destroy!
 
-    redirect_to photos_path, notice: t(".success"), status: :see_other
+    redirect_to polymorphic_path(@photo.photoable), notice: t(".success"), status: :see_other
   end
 
   private
