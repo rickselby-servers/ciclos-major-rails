@@ -8,13 +8,22 @@ export default class extends Controller {
       backdrop.remove();
     }
 
-    let modal = new bootstrap.Modal(this.element);
-    modal.show();
+    this.modal = new bootstrap.Modal(this.element);
+    this.modal.show();
+
     this.element.addEventListener('hidden.bs.modal', this.hideModal.bind(this));
   }
 
   hideModal() {
     this.element.parentElement.removeAttribute("src");
     this.element.remove();
+  }
+
+  // hide modal on successful form submission
+  // action: "turbo:submit-end->modal#submitEnd"
+  submitEnd(e) {
+    if (e.detail.success) {
+      this.modal.hide();
+    }
   }
 }

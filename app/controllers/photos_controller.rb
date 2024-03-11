@@ -17,7 +17,14 @@ class PhotosController < ApplicationController
     @photo = Photo.new(photo_params)
 
     if @photo.save
-      redirect_to polymorphic_path(@photo.photoable), notice: t(".success")
+      respond_to do |format|
+        format.turbo_stream do
+          render turbo_stream: turbo_stream.append(
+            "photos", partial: "#{@photo.photoable.model_name.route_key}/photo", locals: { photo: @photo },
+          )
+        end
+        format.html { redirect_to polymorphic_path(@photo.photoable), notice: t(".success") }
+      end
     else
       render :new, status: :unprocessable_entity
     end
@@ -25,7 +32,14 @@ class PhotosController < ApplicationController
 
   def update
     if @photo.update(photo_params)
-      redirect_to polymorphic_path(@photo.photoable), notice: t(".success"), status: :see_other
+      respond_to do |format|
+        format.turbo_stream do
+          render turbo_stream: turbo_stream.replace(
+            helpers.dom_id(@photo), partial: "#{@photo.photoable.model_name.route_key}/photo", locals: { photo: @photo },
+          )
+        end
+        format.html { redirect_to polymorphic_path(@photo.photoable), notice: t(".success"), status: :see_other }
+      end
     else
       render :edit, status: :unprocessable_entity
     end
@@ -34,7 +48,10 @@ class PhotosController < ApplicationController
   def destroy
     @photo.destroy!
 
-    redirect_to polymorphic_path(@photo.photoable), notice: t(".success"), status: :see_other
+    respond_to do |format|
+      format.turbo_stream { render turbo_stream: turbo_stream.remove(helpers.dom_id(@photo)) }
+      format.html { redirect_to polymorphic_path(@photo.photoable), notice: t(".success"), status: :see_other }
+    end
   end
 
   private
