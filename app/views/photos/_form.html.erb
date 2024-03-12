@@ -1,4 +1,4 @@
-<%= bootstrap_form_with(model: photo) do |form| %>
+<%= bootstrap_form_with(model: photo, id: dom_id(photo, :edit_form)) do |form| %>
   <% if photo.errors.any? %>
     <div style="color: red">
       <h2><%= t ".errors", count: photo.errors.count %></h2>
@@ -30,7 +30,12 @@
 
 <% if photo.persisted? %>
   <div class="mt-3">
-    <%= bootstrap_form_with(model: photo, method: :delete, data: { turbo_confirm: t(".delete_confirm") }) do |f| %>
+    <%= bootstrap_form_with(
+          model: photo,
+          id: dom_id(photo, :delete_form),
+          method: :delete,
+          data: { turbo_confirm: t(".delete_confirm") },
+        ) do |f| %>
       <%= f.submit t(".delete"), class: "btn btn-danger" %>
     <% end %>
   </div>
