@@ -12,7 +12,7 @@
   <% end %>
 
   <% if photo.persisted? %>
-    <%= image_tag photo.photo, class: %w[img-fluid d-block] %>
+    <%= image_tag photo.photo, class: %w[img-fluid d-block], alt: photo.alt %>
   <% else %>
     <%= form.hidden_field :photoable_id %>
     <%= form.hidden_field :photoable_type %>
