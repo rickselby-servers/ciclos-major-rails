@@ -1,5 +1,5 @@
 <div class="col mb-3 align-items-center d-flex flex-column" id="<%= dom_id photo %>">
-  <%= image_tag photo.photo, class: %w[img-fluid d-block] %>
+  <%= image_tag photo.photo, class: %w[img-fluid d-block], alt: photo.alt %>
 
   <% if admin_signed_in? %>
     <%= link_to edit_photo_path(photo), data: { turbo_frame: "modal" }, class: %i[btn btn-primary mt-1] do %>

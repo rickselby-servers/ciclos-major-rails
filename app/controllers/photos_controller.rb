@@ -5,7 +5,7 @@ class PhotosController < ApplicationController
 
   before_action :authenticate_admin!
   before_action :set_photo, only: %i[edit update destroy]
-  before_action :set_target, only: :new
+  before_action :set_target, only: %i[new create]
 
   def new
     @photo = Photo.new photoable: @target
@@ -14,14 +14,13 @@ class PhotosController < ApplicationController
   def edit; end
 
   def create
-    params[:photo][:photos].each { |photo| Photo.create create_photo_params.merge(photo:) }
-    temp_photo = Photo.new create_photo_params
+    add_photos
 
     respond_to do |format|
       format.turbo_stream do
-        render turbo_stream: turbo_stream.replace("photo-list", partial: "list", locals: { photos: temp_photo.photoable.photos })
+        render turbo_stream: turbo_stream.replace("photo-list", partial: "list", locals: { photos: @target.photos })
       end
-      format.html { redirect_to polymorphic_path(temp_photo.photoable), notice: t(".success") }
+      format.html { redirect_to polymorphic_path(@target), notice: t(".success") }
     end
   end
 
@@ -64,5 +63,9 @@ class PhotosController < ApplicationController
 
   def edit_photo_params
     params.require(:photo).permit(:alt)
+  end
+
+  def add_photos
+    params[:photo][:photos].each { |photo| Photo.create create_photo_params.merge(photo:) }
   end
 end

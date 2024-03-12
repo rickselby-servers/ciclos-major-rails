@@ -8,7 +8,9 @@
       <%= fa_icon "pencil" %>
       <%= t ".edit" %>
     <% end %>
-    <%= link_to new_photo_path(target: @gallery.to_global_id), data: { turbo_frame: "modal" }, class: %i[btn btn-primary] do %>
+    <%= link_to new_photo_path(target: @gallery.to_global_id),
+                data: { turbo_frame: "modal" },
+                class: %i[btn btn-primary] do %>
       <%= fa_icon "plus" %>
       <%= t "photos.add" %>
     <% end %>
