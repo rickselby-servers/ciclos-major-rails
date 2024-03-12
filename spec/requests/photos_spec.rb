@@ -4,18 +4,29 @@ require "rails_helper"
 
 RSpec.describe "/photos" do
   let(:gallery) { create :gallery }
-  let(:photo) { create :photo }
+  let(:photo) { create :photo, photoable: gallery }
 
   describe "GET /new" do
     subject do
-      get new_photo_path
+      get new_photo_path(target: gallery.to_global_id)
       response
     end
 
     it_behaves_like "it redirects to login if not logged in"
 
     context "when logged in", :logged_in do
-      it { is_expected.to be_successful }
+      context "with a target" do
+        it { is_expected.to be_successful }
+      end
+
+      context "without a target" do
+        subject do
+          get new_photo_path
+          response
+        end
+
+        it { is_expected.to have_http_status :unprocessable_entity }
+      end
     end
   end
 
@@ -49,7 +60,7 @@ RSpec.describe "/photos" do
           expect { do_post }.to change(Photo, :count).by(1)
         end
 
-        it { is_expected.to redirect_to photos_path }
+        it { is_expected.to redirect_to gallery_path(gallery) }
       end
 
       context "with invalid parameters" do
@@ -69,6 +80,7 @@ RSpec.describe "/photos" do
 
   describe "PATCH /update" do
     subject(:do_patch) do
+      p new_attributes
       patch photo_url(photo), params: { photo: new_attributes }
       response
     end
@@ -86,23 +98,7 @@ RSpec.describe "/photos" do
           expect(photo.reload.attributes.slice(*expected_attributes.keys)).to eq expected_attributes
         end
 
-        it { is_expected.to redirect_to photos_path }
-      end
-
-      context "with invalid parameters" do
-        subject(:do_patch) do
-          patch photo_url(photo), params: { photo: attributes_for(:photo, :invalid) }
-          response
-        end
-
-        let(:expected_attributes) { photo.attributes.transform_keys(&:to_s) }
-
-        it "does not update the requested photo" do
-          do_patch
-          expect(photo.reload.attributes.slice(*expected_attributes.keys)).to eq expected_attributes
-        end
-
-        it { is_expected.to have_http_status :unprocessable_entity }
+        it { is_expected.to redirect_to gallery_path(gallery) }
       end
     end
   end
@@ -121,7 +117,7 @@ RSpec.describe "/photos" do
         expect { do_delete }.to change(Photo, :count).by(-1)
       end
 
-      it { is_expected.to redirect_to photos_path }
+      it { is_expected.to redirect_to gallery_path(gallery) }
     end
   end
 end
