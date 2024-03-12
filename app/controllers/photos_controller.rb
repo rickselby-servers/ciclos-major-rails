@@ -18,11 +18,7 @@ class PhotosController < ApplicationController
 
     if @photo.save
       respond_to do |format|
-        format.turbo_stream do
-          render turbo_stream: turbo_stream.append(
-            "photos", partial: "#{@photo.photoable.model_name.route_key}/photo", locals: { photo: @photo },
-          )
-        end
+        format.turbo_stream { render turbo_stream: turbo_stream.append("photos", **photo_partial) }
         format.html { redirect_to polymorphic_path(@photo.photoable), notice: t(".success") }
       end
     else
@@ -33,11 +29,7 @@ class PhotosController < ApplicationController
   def update
     if @photo.update(photo_params)
       respond_to do |format|
-        format.turbo_stream do
-          render turbo_stream: turbo_stream.replace(
-            helpers.dom_id(@photo), partial: "#{@photo.photoable.model_name.route_key}/photo", locals: { photo: @photo },
-          )
-        end
+        format.turbo_stream { render turbo_stream: turbo_stream.replace(helpers.dom_id(@photo), **photo_partial) }
         format.html { redirect_to polymorphic_path(@photo.photoable), notice: t(".success"), status: :see_other }
       end
     else
@@ -55,6 +47,13 @@ class PhotosController < ApplicationController
   end
 
   private
+
+  def photo_partial
+    {
+      partial: "#{@photo.photoable.model_name.route_key}/photo",
+      locals:  { photo: @photo },
+    }
+  end
 
   def set_target
     @target = GlobalID::Locator.locate params[:target]
