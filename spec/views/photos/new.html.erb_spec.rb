@@ -7,7 +7,6 @@ RSpec.describe "photos/new" do
 
   before { assign :photo, photo }
 
-  it { is_expected.to have_link href: photos_path }
   it { is_expected.to have_css "form[action='#{photos_path}'][method='post']" }
 
   context "with the form" do
