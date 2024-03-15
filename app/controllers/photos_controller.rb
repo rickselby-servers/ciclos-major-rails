@@ -6,6 +6,7 @@ class PhotosController < ApplicationController
   before_action :authenticate_admin!
   before_action :set_photo, only: %i[edit update destroy]
   before_action :set_target, only: :new
+  before_action :process_new_photo, only: :create
 
   def new
     @photo = Photo.new photoable: @target
@@ -66,5 +67,9 @@ class PhotosController < ApplicationController
 
   def photo_params
     params.require(:photo).permit(:photoable_id, :photoable_type, :position, :alt, :photo)
+  end
+
+  def process_new_photo
+    process_image params[:photo][:photo], params[:photo][:photo_crop_data]
   end
 end

@@ -5,7 +5,7 @@ class GuidesController < ApplicationController
 
   before_action :authenticate_admin!, except: :index
   before_action :set_guide, only: %i[edit update destroy]
-  before_action :process_photo, only: %i[create update]
+  before_action :process_new_photo, only: %i[create update]
 
   def index
     @guides = Guide.ordered
@@ -50,7 +50,7 @@ class GuidesController < ApplicationController
 
   private
 
-  def process_photo
+  def process_new_photo
     process_image params[:guide][:photo], params[:guide][:photo_crop_data]
   end
 

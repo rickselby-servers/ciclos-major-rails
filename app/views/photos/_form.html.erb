@@ -12,12 +12,21 @@
   <% end %>
 
   <% if photo.persisted? %>
-    <%= image_tag photo.photo, class: %w[img-fluid d-block], alt: photo.alt %>
+      <%= image_tag photo.photo, class: %w[img-fluid d-block], alt: photo.alt %>
   <% else %>
     <%= form.hidden_field :photoable_id %>
     <%= form.hidden_field :photoable_type %>
 
-    <%= form.file_field :photo %>
+    <div data-controller="cropper">
+      <%= form.file_field :photo, data: { "cropper-target": "imageInput", action: "change->cropper#setup" } %>
+      <%= form.hidden_field :photo_crop_data, data: { "cropper-target": "dataInput" } %>
+
+      <div style="max-height: 500px; min-height: 500px" class="mb-3">
+        <img data-cropper-target="croppableImage">
+      </div>
+
+      <%= render "shared/cropper_buttons" %>
+    </div>
   <% end %>
 
   <%= form.text_field :alt %>
