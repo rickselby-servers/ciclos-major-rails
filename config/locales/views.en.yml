@@ -174,7 +174,7 @@ en:
         one: "One error prevented this photo from being saved:"
         other: "%{count} errors prevented this photo from being saved:"
     new:
-      title: "New Photo"
+      title: "Add New Photos"
     update:
       success: "Photo was successfully updated."
   shared:
