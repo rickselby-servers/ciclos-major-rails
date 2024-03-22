@@ -21,7 +21,7 @@ class GalleriesController < ApplicationController
     @gallery = Gallery.new(gallery_params)
 
     if @gallery.save
-      redirect_to galleries_path, notice: t(".success")
+      redirect_to gallery_path(@gallery), notice: t(".success")
     else
       render :new, status: :unprocessable_entity
     end
@@ -29,7 +29,7 @@ class GalleriesController < ApplicationController
 
   def update
     if @gallery.update(gallery_params)
-      redirect_to galleries_path, notice: t(".success"), status: :see_other
+      redirect_to gallery_path(@gallery), notice: t(".success"), status: :see_other
     else
       render :edit, status: :unprocessable_entity
     end
