@@ -1,5 +1,7 @@
 <turbo-frame id="photo-list">
-  <div class="row row-cols-2 row-cols-md-3">
-    <%= render photos %>
+  <div class="row row-cols-2 row-cols-md-3"
+       data-controller="sortable"
+       data-sortable-url-value="<%= move_photos_path(target: target.to_global_id) %>">
+    <%= render photos.ordered %>
   </div>
 </turbo-frame>

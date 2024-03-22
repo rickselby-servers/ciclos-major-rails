@@ -5,7 +5,7 @@ class PhotosController < ApplicationController
 
   before_action :authenticate_admin!
   before_action :set_photo, only: %i[edit update destroy]
-  before_action :set_target, only: %i[new create]
+  before_action :set_target, only: %i[new create move]
 
   def new
     @photo = Photo.new photoable: @target
@@ -18,7 +18,9 @@ class PhotosController < ApplicationController
 
     respond_to do |format|
       format.turbo_stream do
-        render turbo_stream: turbo_stream.replace("photo-list", partial: "list", locals: { photos: @target.photos })
+        render turbo_stream: turbo_stream.replace(
+          "photo-list", partial: "list", locals: { photos: @target.photos, target: @target },
+        )
       end
       format.html { redirect_to polymorphic_path(@target), notice: t(".success") }
     end
@@ -44,6 +46,13 @@ class PhotosController < ApplicationController
       format.turbo_stream { render turbo_stream: turbo_stream.remove(helpers.dom_id(@photo)) }
       format.html { redirect_to polymorphic_path(@photo.photoable), notice: t(".success"), status: :see_other }
     end
+  end
+
+  def move
+    photo = Photo.find_by position: params[:from], photoable: @target
+    photo.insert_at params[:to].to_i
+
+    head :ok
   end
 
   private
