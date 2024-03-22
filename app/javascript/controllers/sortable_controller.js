@@ -18,7 +18,10 @@ export default class extends Controller {
   }
 
   async end(event) {
-    const request = new FetchRequest('patch', `${this.urlValue}?from=${event.oldIndex}&to=${event.newIndex}`)
+    console.log(this.urlValue);
+    console.log(`${this.urlValue}&from=${event.oldIndex}&to=${event.newIndex}`);
+    const glue = this.urlValue.includes("?") ? "&" : "?"
+    const request = new FetchRequest('patch', `${this.urlValue}${glue}from=${event.oldIndex}&to=${event.newIndex}`)
     await request.perform()
   }
 }

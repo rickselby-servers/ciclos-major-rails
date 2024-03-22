@@ -63,7 +63,7 @@ RSpec.describe "/galleries" do
           expect { do_post }.to change(Gallery, :count).by(1)
         end
 
-        it { is_expected.to redirect_to galleries_path }
+        it { is_expected.to redirect_to gallery_path Gallery.first }
       end
 
       context "with invalid parameters" do
@@ -100,7 +100,7 @@ RSpec.describe "/galleries" do
           expect(gallery.reload.attributes.slice(*expected_attributes.keys)).to eq expected_attributes
         end
 
-        it { is_expected.to redirect_to galleries_path }
+        it { is_expected.to redirect_to gallery_path gallery }
       end
 
       context "with invalid parameters" do

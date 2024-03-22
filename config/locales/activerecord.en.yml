@@ -9,3 +9,7 @@ en:
       faq:
         answer: "Answer"
         question: "Question"
+  helpers:
+    submit:
+      photo:
+        create: "Add"

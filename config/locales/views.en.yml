@@ -71,6 +71,7 @@ en:
       success: "FAQ was successfully updated."
   galleries:
     back: "Back to Galleries"
+    back_to: "Back to %{name}"
     img_alt: "Photo of %{name}"
     create:
       success: "Gallery was successfully created."
@@ -158,6 +159,25 @@ en:
       title: "New Partner"
     update:
       success: "Partner was successfully updated."
+  photos:
+    add: "Add new photos"
+    edit_button: "Edit photo"
+    create:
+      success: "Photos were successfully added."
+    destroy:
+      success: "Photo was successfully removed."
+    edit:
+      title: "Editing Photo"
+    form:
+      delete: "Delete"
+      delete_confirm: "Are you sure you wish to delete this photo?"
+      errors:
+        one: "One error prevented this photo from being saved:"
+        other: "%{count} errors prevented this photo from being saved:"
+    new:
+      title: "Add New Photos"
+    update:
+      success: "Photo was successfully updated."
   shared:
     cropper:
       cancel: "Cancel"
