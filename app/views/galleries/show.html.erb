@@ -3,7 +3,7 @@
 <h2><%= @gallery.name %></h2>
 
 <% if admin_signed_in? %>
-  <div>
+  <div class="mb-2">
     <%= link_to edit_gallery_path(@gallery), class: %i[btn btn-secondary] do %>
       <%= fa_icon "pencil" %>
       <%= t ".edit" %>

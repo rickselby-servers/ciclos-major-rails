@@ -71,6 +71,7 @@ en:
       success: "FAQ was successfully updated."
   galleries:
     back: "Back to Galleries"
+    back_to: "Back to %{name}"
     img_alt: "Photo of %{name}"
     create:
       success: "Gallery was successfully created."
