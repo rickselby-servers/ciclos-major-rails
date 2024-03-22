@@ -17,8 +17,6 @@
     <%= form.text_field :alt %>
   <% else %>
     <%= form.hidden_field :target, name: :target, value: @target.to_global_id %>
-    <%= form.hidden_field :photoable_id %>
-    <%= form.hidden_field :photoable_type %>
 
     <%= form.file_field :photos, multiple: true %>
   <% end %>

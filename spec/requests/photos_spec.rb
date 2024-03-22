@@ -45,12 +45,11 @@ RSpec.describe "/photos" do
 
   describe "POST /create" do
     subject(:do_post) do
-      post photos_path, params: { photo: valid_params }
+      post photos_path, params: { photo: { photos: [photo] }, target: gallery.to_global_id }
       response
     end
 
-    let(:invalid_params) { build(:photo, photoable: gallery).attributes.merge(attributes_for(:photo, :invalid)) }
-    let(:valid_params) { build(:photo, photoable: gallery).attributes.merge(attributes_for(:photo)) }
+    let(:photo) { attributes_for(:photo)[:photo] }
 
     it_behaves_like "it redirects to login if not logged in"
 
@@ -63,9 +62,9 @@ RSpec.describe "/photos" do
         it { is_expected.to redirect_to gallery_path(gallery) }
       end
 
-      context "with invalid parameters" do
+      context "without a target" do
         subject(:do_post) do
-          post photos_path, params: { photo: invalid_params }
+          post photos_path, params: { photo: { photos: [photo] } }
           response
         end
 
@@ -75,12 +74,24 @@ RSpec.describe "/photos" do
 
         it { is_expected.to have_http_status :unprocessable_entity }
       end
+
+      context "with no photos" do
+        subject(:do_post) do
+          post photos_path, params: { photo: { photos: [] }, target: gallery.to_global_id }
+          response
+        end
+
+        it "does not create a new Photo" do
+          expect { do_post }.not_to change(Photo, :count)
+        end
+
+        it { is_expected.to redirect_to gallery_path(gallery) }
+      end
     end
   end
 
   describe "PATCH /update" do
     subject(:do_patch) do
-      p new_attributes
       patch photo_url(photo), params: { photo: new_attributes }
       response
     end

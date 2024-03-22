@@ -57,15 +57,11 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
   end
 
-  def create_photo_params
-    params.require(:photo).permit(:photoable_id, :photoable_type)
-  end
-
   def edit_photo_params
     params.require(:photo).permit(:alt)
   end
 
   def add_photos
-    params[:photo][:photos].each { |photo| Photo.create create_photo_params.merge(photo:) }
+    params[:photo][:photos].each { |photo| Photo.create photoable: @target, photo: }
   end
 end
