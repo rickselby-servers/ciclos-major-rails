@@ -46,14 +46,14 @@ gem "sassc-rails", "~> 2.1"
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.2"
 
-gem "audited", "~> 5.4"
+gem "audited", "~> 5.6"
 gem "devise", "~> 4.9"
 gem "omniauth-rails_csrf_protection", "~> 1.0"
 
 # Bootstrap for front end
 gem "bootstrap", "~> 5.3"
 gem "bootstrap_form", "~> 5.3"
-gem "tinymce-rails", "~> 6.8.3"
+gem "tinymce-rails", "~> 7.0.1"
 
 # Other things...
 gem "acts_as_list", "~> 1.1"
@@ -61,10 +61,10 @@ gem "requestjs-rails", "~> 0.0.11"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", "~> 1.9.1", platforms: %i[mri windows]
+  gem "debug", "~> 1.9.2", platforms: %i[mri windows]
   gem "factory_bot_rails", "~> 6.4"
   gem "rspec-rails", "~> 6.1"
-  gem "rubocop-rickselby", "~> 0.25"
+  gem "rubocop-rickselby", "~> 0.27"
 end
 
 group :development do
@@ -83,6 +83,6 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara", "~> 3.40"
-  gem "selenium-webdriver", "~> 4.18"
-  gem "shoulda-matchers", "~> 6.0"
+  gem "selenium-webdriver", "~> 4.19"
+  gem "shoulda-matchers", "~> 6.2"
 end
