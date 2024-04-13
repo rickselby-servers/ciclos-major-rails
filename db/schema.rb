@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_09_101156) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_11_072921) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -108,6 +108,16 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_09_101156) do
     t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string "photoable_type", null: false
+    t.integer "photoable_id", null: false
+    t.integer "position"
+    t.string "alt"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["photoable_type", "photoable_id"], name: "index_photos_on_photoable"
   end
 
   create_table "testimonials", force: :cascade do |t|

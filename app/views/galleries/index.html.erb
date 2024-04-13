@@ -1,4 +1,3 @@
-
 <h1><%= t ".title" %></h1>
 
 <% if admin_signed_in? %>
@@ -14,7 +13,10 @@
   <% @galleries.each do |gallery| %>
     <div class="col text-center mb-5">
       <%= link_to gallery_path gallery do %>
-      <h2 class="h5"><%= gallery.name %></h2>
+        <% if gallery.index_photo.present? %>
+          <%= image_tag gallery.index_photo.photo, alt: gallery.index_photo.alt, class: %i[img-fluid mb-1] %>
+        <% end %>
+        <h2 class="h5"><%= gallery.name %></h2>
       <% end %>
     </div>
   <% end %>

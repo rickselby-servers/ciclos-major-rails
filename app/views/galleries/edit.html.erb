@@ -5,5 +5,5 @@
 <br>
 
 <div>
-  <%= link_to t("galleries.back"), galleries_path %>
+  <%= link_to t("galleries.back_to", name: @gallery.name), gallery_path(@gallery) %>
 </div>

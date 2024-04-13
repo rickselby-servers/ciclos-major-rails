@@ -7,7 +7,7 @@ RSpec.describe "galleries/edit" do
 
   before { assign :gallery, gallery }
 
-  it { is_expected.to have_link href: galleries_path }
+  it { is_expected.to have_link href: gallery_path(gallery) }
   it { is_expected.to have_css "form[action='#{gallery_path(gallery)}'][method='post']" }
 
   context "with the form" do

@@ -36,6 +36,11 @@ Rails.application.routes.draw do
       patch :move
     end
   end
+  resources :photos, except: %i[index show] do
+    collection do
+      patch :move
+    end
+  end
   resources :testimonials, except: :show do
     collection do
       patch :move
