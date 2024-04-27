@@ -352,7 +352,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    selenium-webdriver (4.19.0)
+    selenium-webdriver (4.20.1)
       base64 (~> 0.2)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
@@ -432,7 +432,7 @@ DEPENDENCIES
   rspec-rails (~> 6.1)
   rubocop-rickselby (~> 0.28)
   sassc-rails (~> 2.1)
-  selenium-webdriver (~> 4.19)
+  selenium-webdriver (~> 4.20)
   shoulda-matchers (~> 6.2)
   sprockets-rails (~> 3.4)
   sqlite3 (~> 1.7)
