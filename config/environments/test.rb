@@ -65,5 +65,6 @@ Rails.application.configure do
   config.action_controller.raise_on_missing_callback_actions = true
 
   # Cannot compile on the fly due to tinymce weirdness
-  config.assets.compile = false
+  # https://github.com/spohlenz/tinymce-rails/issues/304
+  config.assets.compile = true
 end
