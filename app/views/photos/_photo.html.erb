@@ -1,4 +1,5 @@
-<div class="col mb-3 align-items-center d-flex flex-column" id="<%= dom_id photo %>" data-sortable-url="<%= move_photo_path photo %>">
+<div class="col mb-3 align-items-center d-flex flex-column" id="<%= dom_id photo %>"
+     data-sortable-url="<%= move_photo_path photo %>">
   <%= image_tag photo.photo, class: %w[img-fluid d-block], alt: photo.alt %>
 
   <% if admin_signed_in? %>
