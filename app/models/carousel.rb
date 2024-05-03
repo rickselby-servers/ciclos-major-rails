@@ -3,6 +3,9 @@
 class Carousel < ApplicationRecord
   audited
 
+  PHOTO_WIDTH = nil
+  PHOTO_HEIGHT = 400
+
   has_many :photos, as: :photoable, dependent: :destroy
 
   validates :reference, presence: true
