@@ -46,6 +46,8 @@ en:
   auth:
     sign_in:
       sign_in: "Sign in with %{name}"
+  carousels:
+
   faqs:
     back: "Back to FAQs"
     create:
