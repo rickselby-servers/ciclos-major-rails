@@ -29,7 +29,7 @@ RSpec.describe GuidesController do
     end
 
     it "routes to #move via PATCH" do
-      expect(patch: "/guides/move").to route_to("guides#move")
+      expect(patch: "/guides/1/move").to route_to("guides#move", id: "1")
     end
 
     it "routes to #destroy" do

@@ -1,4 +1,4 @@
-<div id="<%= dom_id guide %>" class="clearfix">
+<div id="<%= dom_id guide %>" class="clearfix" data-sortable-url="<%= move_guide_path guide %>">
   <%= image_tag url_for(guide.photo), class: %i[float-end ms-3 mb-3], alt: t("guides.img_alt", name: guide.name) %>
 
   <h2>

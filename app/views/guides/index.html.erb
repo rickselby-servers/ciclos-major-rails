@@ -9,9 +9,6 @@
   </p>
 <% end %>
 
-<div id="guides"
-     data-controller="sortable"
-     data-sortable-url-value="<%= move_guides_path %>"
-     data-sortable-handle-value=".sortable-handle">
+<div id="guides" data-controller="sortable" data-sortable-handle-value=".sortable-handle">
   <%= render @guides %>
 </div>

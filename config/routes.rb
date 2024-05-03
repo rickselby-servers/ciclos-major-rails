@@ -20,29 +20,29 @@ Rails.application.routes.draw do
 
   get "admin", to: "admin#index", as: :admin
   resources :faqs, except: :show do
-    collection do
+    member do
       patch :move
     end
   end
   resources :galleries
   resources :guides, except: :show do
-    collection do
+    member do
       patch :move
     end
   end
   resources :page_text, only: :update
   resources :partners do
-    collection do
+    member do
       patch :move
     end
   end
   resources :photos, except: %i[index show] do
-    collection do
+    member do
       patch :move
     end
   end
   resources :testimonials, except: :show do
-    collection do
+    member do
       patch :move
     end
   end

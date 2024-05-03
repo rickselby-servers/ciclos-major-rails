@@ -2,9 +2,10 @@
 
 class PartnersController < ApplicationController
   include Cropper
+  include Moveable
 
   before_action :authenticate_admin!, except: :show
-  before_action :set_partner, only: %i[show edit update destroy]
+  before_action :set_partner, only: %i[show edit update destroy move]
   before_action :process_photo, only: %i[create update]
 
   def index
@@ -44,10 +45,7 @@ class PartnersController < ApplicationController
   end
 
   def move
-    partner = Partner.find_by position: params[:from]
-    partner.insert_at params[:to].to_i
-
-    head :ok
+    super(@partner)
   end
 
   private

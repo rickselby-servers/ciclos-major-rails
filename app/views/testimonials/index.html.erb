@@ -9,9 +9,6 @@
   </p>
 <% end %>
 
-<div id="testimonials"
-     data-controller="sortable"
-     data-sortable-url-value="<%= move_testimonials_path %>"
-     data-sortable-handle-value=".sortable-handle">
+<div id="testimonials" data-controller="sortable" data-sortable-handle-value=".sortable-handle">
   <%= render @testimonials %>
 </div>

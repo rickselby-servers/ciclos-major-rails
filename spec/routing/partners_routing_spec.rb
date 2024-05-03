@@ -33,7 +33,7 @@ RSpec.describe PartnersController do
     end
 
     it "routes to #move via PATCH" do
-      expect(patch: "/partners/move").to route_to("partners#move")
+      expect(patch: "/partners/1/move").to route_to("partners#move", id: "1")
     end
 
     it "routes to #destroy" do

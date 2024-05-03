@@ -1,4 +1,4 @@
-<div id="<%= dom_id testimonial %>">
+<div id="<%= dom_id testimonial %>" data-sortable-url="<%= move_testimonial_path testimonial %>">
   <h4>
     <% if admin_signed_in? %>
       <%= fa_icon "grip-lines", class: "me-2 sortable-handle" %>

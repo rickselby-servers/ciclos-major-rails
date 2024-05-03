@@ -29,7 +29,7 @@ RSpec.describe FaqsController do
     end
 
     it "routes to #move via PATCH" do
-      expect(patch: "/faqs/move").to route_to("faqs#move")
+      expect(patch: "/faqs/1/move").to route_to("faqs#move", id: "1")
     end
 
     it "routes to #destroy" do
