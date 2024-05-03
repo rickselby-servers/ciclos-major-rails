@@ -4,6 +4,7 @@ en:
     index:
       title: "Admin Section"
       partners: "Partners"
+      carousels: "Carousels"
   application:
     admin:
       logged_in: "Logged in as %{user}"
