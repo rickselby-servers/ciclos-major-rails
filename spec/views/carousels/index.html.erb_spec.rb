@@ -13,5 +13,5 @@ RSpec.describe "carousels/index" do
 
   before { assign(:carousels, [carousel, carousel2]) }
 
-  it { is_expected.to have_css "div > div > a > h2", text: "Reference", count: 2 }
+  it { is_expected.to have_css "ul > li > a", text: "Reference", count: 2 }
 end

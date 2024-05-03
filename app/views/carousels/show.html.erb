@@ -1,1 +1,14 @@
-<%= render @carousel %>
+<h1><%= link_to t("carousels.index.title"), carousels_path %></h1>
+
+<h2><%= @carousel.name %></h2>
+
+<div class="mb-2">
+  <%= link_to new_photo_path(target: @carousel.to_global_id),
+              data: { turbo_frame: "modal" },
+              class: %i[btn btn-primary] do %>
+    <%= fa_icon "plus" %>
+    <%= t "photos.add" %>
+  <% end %>
+</div>
+
+<%= render "photos/list", photos: @carousel.photos, target: @carousel %>

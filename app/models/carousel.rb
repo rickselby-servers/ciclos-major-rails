@@ -8,4 +8,8 @@ class Carousel < ApplicationRecord
   validates :reference, presence: true
 
   scope :ordered, -> { order reference: :desc }
+
+  def name
+    reference.underscore.humanize.titleize
+  end
 end

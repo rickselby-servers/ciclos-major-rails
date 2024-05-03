@@ -7,5 +7,5 @@ RSpec.describe "carousels/show" do
 
   before { assign :carousel, carousel }
 
-  it { is_expected.to have_content carousel.reference }
+  it { is_expected.to have_content carousel.name }
 end

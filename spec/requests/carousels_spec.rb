@@ -11,7 +11,11 @@ RSpec.describe "/carousels" do
       response
     end
 
-    it { is_expected.to be_successful }
+    it_behaves_like "it redirects to login if not logged in"
+
+    context "when logged in", :logged_in do
+      it { is_expected.to be_successful }
+    end
   end
 
   describe "GET /show" do
@@ -20,6 +24,10 @@ RSpec.describe "/carousels" do
       response
     end
 
-    it { is_expected.to be_successful }
+    it_behaves_like "it redirects to login if not logged in"
+
+    context "when logged in", :logged_in do
+      it { is_expected.to be_successful }
+    end
   end
 end

@@ -48,6 +48,8 @@ en:
     sign_in:
       sign_in: "Sign in with %{name}"
   carousels:
+    index:
+      title: "Carousels"
 
   faqs:
     back: "Back to FAQs"

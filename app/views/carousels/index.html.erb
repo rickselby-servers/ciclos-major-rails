@@ -1,15 +1,11 @@
 
 <h1><%= t ".title" %></h1>
 
-<% if admin_signed_in? %>
-  <p>
-    <%= link_to new_carousel_path, class: %i[btn btn-primary] do %>
-      <%= fa_icon "plus" %>
-      <%= t ".new" %>
-    <% end %>
-  </p>
-<% end %>
-
-<div id="carousels">
+<ul id="carousels" class="list-group">
+  <% @carousels.each do |carousel| %>
+  <li class="list-group-item">
+    <%= link_to carousel.name, carousel_path(carousel) %>
+  </li>
+  <% end %>
   <%= render @carousels %>
-</div>
+</ul>
