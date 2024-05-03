@@ -24,7 +24,8 @@ RSpec.shared_examples "it handles a list of photos" do
   end
 
   context "with a photo" do
-    before { create :photo, photoable: model }
+    let!(:photo) { create :photo, photoable: model }
+    let(:filename) { photo.photo.blob.filename }
 
     it "allows the photo to be edited", :js do
       visit path
@@ -38,12 +39,12 @@ RSpec.shared_examples "it handles a list of photos" do
     it "allows the photo to be deleted", :js do
       visit path
 
-      expect(photo_list).to have_css("img[src*='400x400.jpg']")
+      expect(photo_list).to have_css("img[src*='#{filename}']")
 
       click_on "Edit photo"
       accept_alert { click_on "Delete" }
 
-      expect(photo_list).to have_no_css("img[src*='400x400.jpg']")
+      expect(photo_list).to have_no_css("img[src*='#{filename}']")
     end
   end
 
