@@ -7,9 +7,9 @@ class Carousel < ApplicationRecord
 
   validates :reference, presence: true
 
-  scope :ordered, -> { order reference: :desc }
+  scope :ordered, -> { order reference: :asc }
 
   def name
-    reference.underscore.humanize.titleize
+    reference.humanize.titleize
   end
 end

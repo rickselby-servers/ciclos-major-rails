@@ -1,2 +1,33 @@
-<div id="<%= dom_id carousel %>">
+<div id="<%= dom_id carousel %>" class="carousel slide mb-3" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <% carousel.photos.each_with_index do |_, index| %>
+      <button type="button" data-bs-target="#<%= dom_id carousel %>" data-bs-slide-to="<%= index %>"
+              <% if index == 0 %>
+              class="active" aria-current="true"
+              <% end %>
+              aria-label="Slide <%= (index + 1) %>"></button>
+    <% end %>
+  </div>
+  <div class="carousel-inner">
+    <% carousel.photos.each_with_index do |photo, index| %>
+      <div class="carousel-item <%= index.zero? ? "active" : "" %>">
+        <%= image_tag url_for(photo.photo), class: %i[d-block mx-auto img-fluid], alt: photo.alt %>
+      </div>
+    <% end %>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#<%= dom_id carousel %>" data-bs-slide="prev">
+    <span class="fas fa-2xl fa-chevron-left carousel-chevron-left" title="Previous"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#<%= dom_id carousel %>" data-bs-slide="next">
+    <span class="fas fa-2xl fa-chevron-right carousel-chevron-right" title="Next"></span>
+  </button>
 </div>
+
+<% if admin_signed_in? %>
+  <p>
+    <%= link_to carousel_path(carousel), class: %i[btn btn-secondary] do %>
+      <%= fa_icon "edit" %>
+      <%= t ".edit" %>
+    <% end %>
+  </p>
+<% end %>

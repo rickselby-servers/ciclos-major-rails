@@ -50,6 +50,8 @@ en:
   carousels:
     index:
       title: "Carousels"
+    carousel:
+      edit: "Edit Carousel"
 
   faqs:
     back: "Back to FAQs"
