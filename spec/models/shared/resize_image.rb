@@ -5,9 +5,21 @@ require "vips"
 RSpec.shared_examples "it resizes an image correctly" do |key, sizes|
   let(:model) { create described_class.model_name.i18n_key, key => image }
   let(:image_path) { ActiveStorage::Blob.service.path_for model.public_send(key).key }
-  let(:vips_image) { Vips::Image.new_from_file image_path }
 
+  it_behaves_like "it resizes an image", sizes
+end
+
+RSpec.shared_examples "it resizes a photo correctly" do |sizes|
+  let(:model) { create described_class.model_name.i18n_key }
+  let(:photo) { model.photos.create photo: image }
+  let(:image_path) { ActiveStorage::Blob.service.path_for photo.photo.key }
+
+  it_behaves_like "it resizes an image", sizes
+end
+
+RSpec.shared_examples "it resizes an image" do |sizes|
   let(:image) { Rack::Test::UploadedFile.new "spec/fixtures/files/#{basename}.jpg", "image/jpg" }
+  let(:vips_image) { Vips::Image.new_from_file image_path }
 
   sizes.each do |file_basename, size|
     context "with the file #{file_basename}" do

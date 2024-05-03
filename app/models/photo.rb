@@ -11,5 +11,11 @@ class Photo < ApplicationRecord
 
   validates :photo, presence: true
 
+  before_save do
+    resize_image :photo,
+                 photoable.class.const_get(:PHOTO_WIDTH),
+                 photoable.class.const_get(:PHOTO_HEIGHT)
+  end
+
   scope :ordered, -> { order :position }
 end

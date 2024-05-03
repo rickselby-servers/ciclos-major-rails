@@ -3,6 +3,9 @@
 class Gallery < ApplicationRecord
   audited
 
+  PHOTO_WIDTH = 400
+  PHOTO_HEIGHT = nil
+
   has_many :photos, as: :photoable, dependent: :destroy
 
   validates :name, presence: true
