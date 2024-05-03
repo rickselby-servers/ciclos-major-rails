@@ -1,0 +1,10 @@
+
+<h1><%= t ".title" %></h1>
+
+<ul id="carousels" class="list-group">
+  <% @carousels.each do |carousel| %>
+  <li class="list-group-item">
+    <%= link_to carousel.name, carousel_path(carousel) %>
+  </li>
+  <% end %>
+</ul>

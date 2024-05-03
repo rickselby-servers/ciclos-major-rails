@@ -6,4 +6,5 @@ RSpec.describe "admin/index", :logged_in do
   it { is_expected.to have_text "Admin Section" }
 
   it { is_expected.to have_link href: partners_path }
+  it { is_expected.to have_link href: carousels_path }
 end

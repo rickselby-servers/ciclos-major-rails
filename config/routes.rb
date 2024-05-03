@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   end
 
   get "admin", to: "admin#index", as: :admin
+
+  resources :carousels, only: %i[index show]
   resources :faqs, except: :show do
     member do
       patch :move

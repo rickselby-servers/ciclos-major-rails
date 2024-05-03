@@ -4,6 +4,7 @@ en:
     index:
       title: "Admin Section"
       partners: "Partners"
+      carousels: "Carousels"
   application:
     admin:
       logged_in: "Logged in as %{user}"
@@ -46,6 +47,12 @@ en:
   auth:
     sign_in:
       sign_in: "Sign in with %{name}"
+  carousels:
+    index:
+      title: "Carousels"
+    carousel:
+      edit: "Edit Carousel"
+
   faqs:
     back: "Back to FAQs"
     create:
