@@ -2,9 +2,10 @@
 
 class GuidesController < ApplicationController
   include Cropper
+  include Moveable
 
   before_action :authenticate_admin!, except: :index
-  before_action :set_guide, only: %i[edit update destroy]
+  before_action :set_guide, only: %i[edit update destroy move]
   before_action :process_photo, only: %i[create update]
 
   def index
@@ -42,10 +43,7 @@ class GuidesController < ApplicationController
   end
 
   def move
-    guide = Guide.find_by position: params[:from]
-    guide.insert_at params[:to].to_i
-
-    head :ok
+    super(@guide)
   end
 
   private

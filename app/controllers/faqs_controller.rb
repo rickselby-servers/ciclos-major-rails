@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
 class FaqsController < ApplicationController
+  include Moveable
+
   before_action :authenticate_admin!, except: :index
-  before_action :set_faq, only: %i[edit update destroy]
+  before_action :set_faq, only: %i[edit update destroy move]
 
   def index
     @faqs = Faq.ordered
@@ -39,10 +41,7 @@ class FaqsController < ApplicationController
   end
 
   def move
-    faq = Faq.find_by position: params[:from]
-    faq.insert_at params[:to].to_i
-
-    head :ok
+    super(@faq)
   end
 
   private

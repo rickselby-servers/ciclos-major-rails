@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
 class TestimonialsController < ApplicationController
+  include Moveable
+
   before_action :authenticate_admin!, except: :index
-  before_action :set_testimonial, only: %i[edit update destroy]
+  before_action :set_testimonial, only: %i[edit update destroy move]
 
   def index
     @testimonials = Testimonial.ordered
@@ -39,10 +41,7 @@ class TestimonialsController < ApplicationController
   end
 
   def move
-    testimonial = Testimonial.find_by position: params[:from]
-    testimonial.insert_at params[:to].to_i
-
-    head :ok
+    super(@testimonial)
   end
 
   private

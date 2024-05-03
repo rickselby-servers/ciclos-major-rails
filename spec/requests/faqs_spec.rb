@@ -114,7 +114,7 @@ RSpec.describe "/faqs" do
 
   describe "PATCH /move" do
     subject(:do_move) do
-      patch move_faqs_path from: 0, to: 1
+      patch move_faq_path faq, from: 0, to: 1
       response
     end
 

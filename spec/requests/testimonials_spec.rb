@@ -112,9 +112,10 @@ RSpec.describe "/testimonials" do
     end
   end
 
+  # New testimonials are added at the top of the list!
   describe "PATCH /move" do
     subject(:do_move) do
-      patch move_testimonials_path from: 0, to: 1
+      patch move_testimonial_path testimonial, from: 1, to: 0
       response
     end
 

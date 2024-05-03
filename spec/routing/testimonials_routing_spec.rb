@@ -29,7 +29,7 @@ RSpec.describe TestimonialsController do
     end
 
     it "routes to #move via PATCH" do
-      expect(patch: "/testimonials/move").to route_to("testimonials#move")
+      expect(patch: "/testimonials/1/move").to route_to("testimonials#move", id: "1")
     end
 
     it "routes to #destroy" do

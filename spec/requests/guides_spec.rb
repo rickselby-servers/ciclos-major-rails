@@ -114,7 +114,7 @@ RSpec.describe "/guides" do
 
   describe "PATCH /move" do
     subject(:do_move) do
-      patch move_guides_path from: 0, to: 1
+      patch move_guide_path guide, from: 0, to: 1
       response
     end
 

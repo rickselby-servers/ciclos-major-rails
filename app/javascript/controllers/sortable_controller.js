@@ -4,7 +4,6 @@ import { FetchRequest } from '@rails/request.js';
 
 export default class extends Controller {
   static values = {
-    url: String,
     handle: String
   }
 
@@ -18,10 +17,9 @@ export default class extends Controller {
   }
 
   async end(event) {
-    console.log(this.urlValue);
-    console.log(`${this.urlValue}&from=${event.oldIndex}&to=${event.newIndex}`);
-    const glue = this.urlValue.includes("?") ? "&" : "?"
-    const request = new FetchRequest('patch', `${this.urlValue}${glue}from=${event.oldIndex}&to=${event.newIndex}`)
+    const url = event.item.dataset.sortableUrl;
+    const glue = url.includes("?") ? "&" : "?"
+    const request = new FetchRequest('patch', `${url}${glue}from=${event.oldIndex}&to=${event.newIndex}`)
     await request.perform()
   }
 }

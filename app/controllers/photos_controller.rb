@@ -2,10 +2,11 @@
 
 class PhotosController < ApplicationController
   include Cropper
+  include Moveable
 
   before_action :authenticate_admin!
-  before_action :set_photo, only: %i[edit update destroy]
-  before_action :set_target, only: %i[new create move]
+  before_action :set_photo, only: %i[edit update destroy move]
+  before_action :set_target, only: %i[new create]
 
   def new
     @photo = Photo.new photoable: @target
@@ -49,10 +50,7 @@ class PhotosController < ApplicationController
   end
 
   def move
-    photo = Photo.find_by position: params[:from], photoable: @target
-    photo.insert_at params[:to].to_i
-
-    head :ok
+    super(@photo)
   end
 
   private
