@@ -32,8 +32,18 @@ COPY --from=ruby-build /app /app
 COPY --from=ruby-build /usr/local/bundle /usr/local/bundle
 
 WORKDIR /app
+
+# Run and own only the runtime files as a non-root user for security
+RUN useradd rails --create-home --shell /bin/bash && \
+    chown -R rails:rails db log storage tmp
+USER rails:rails
+
 ENV APP_ENV production
 ENV RACK_ENV production
+
+# Entrypoint prepares the database
+ENTRYPOINT ["/rails/bin/docker-entrypoint"]
+
 CMD ["./bin/rails", "server"]
 
 ###############################################################################
