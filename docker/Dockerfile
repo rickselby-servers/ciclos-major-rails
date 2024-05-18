@@ -34,7 +34,7 @@ COPY --from=ruby-build /usr/local/bundle /usr/local/bundle
 WORKDIR /app
 
 # Run and own only the runtime files as a non-root user for security
-RUN useradd rails --create-home --shell /bin/bash && \
+RUN adduser rails -D && \
     chown -R rails:rails db log storage tmp
 USER rails:rails
 
