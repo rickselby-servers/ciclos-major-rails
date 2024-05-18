@@ -65,7 +65,7 @@ jobs:
         with:
           COMPOSE_FILE_PATH: docker/production.yml
           CONNECT_CONTAINERS: nginx-proxy
-          STACK_NAME: stardew-helpers
+          STACK_NAME: ciclos-major-rails
         env:
           CONTAINER_FRONTEND_PROD: ghcr.io/${{ github.repository }}-frontend:${{ github.sha }}
           CONTAINER_BACKEND_PROD: ghcr.io/${{ github.repository }}-app:${{ github.sha }}
