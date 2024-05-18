@@ -42,7 +42,7 @@ ENV APP_ENV production
 ENV RACK_ENV production
 
 # Entrypoint prepares the database
-ENTRYPOINT ["/rails/bin/docker-entrypoint"]
+ENTRYPOINT ["/app/bin/docker-entrypoint"]
 
 CMD ["./bin/rails", "server"]
 
