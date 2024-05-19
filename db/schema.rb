@@ -11,6 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.1].define(version: 2024_05_03_192657) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -57,7 +60,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_03_192657) do
     t.string "user_type"
     t.string "username"
     t.string "action"
-    t.json "audited_changes"
+    t.jsonb "audited_changes"
     t.integer "version", default: 0
     t.string "comment"
     t.string "remote_address"
@@ -118,7 +121,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_03_192657) do
 
   create_table "photos", force: :cascade do |t|
     t.string "photoable_type", null: false
-    t.integer "photoable_id", null: false
+    t.bigint "photoable_id", null: false
     t.integer "position"
     t.string "alt"
     t.datetime "created_at", null: false
