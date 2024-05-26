@@ -53,7 +53,7 @@ gem "omniauth-rails_csrf_protection", "~> 1.0"
 # Bootstrap for front end
 gem "bootstrap", "~> 5.3"
 gem "bootstrap_form", "~> 5.3"
-gem "tinymce-rails", "~> 7.1.0"
+gem "tinymce-rails", "~> 7.1.1"
 
 # Other things...
 gem "acts_as_list", "~> 1.1"
