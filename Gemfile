@@ -8,7 +8,7 @@ ruby file: ".ruby-version"
 gem "rails", "~> 7.1.3"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem "sprockets-rails", "~> 3.4"
+gem "sprockets-rails", "~> 3.5"
 
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", "~> 1.7"
