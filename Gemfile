@@ -56,7 +56,7 @@ gem "bootstrap_form", "~> 5.3"
 gem "tinymce-rails", "~> 7.1.1"
 
 # Other things...
-gem "acts_as_list", "~> 1.1"
+gem "acts_as_list", "~> 1.2"
 gem "requestjs-rails", "~> 0.0.11"
 
 group :development, :test do
