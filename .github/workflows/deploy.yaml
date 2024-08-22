@@ -13,42 +13,10 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
-    name: Build production image
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          lfs: true
-      - uses: docker/login-action@v3
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build and push frontend image
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          file: docker/Dockerfile
-          pull: true
-          push: true
-          tags: ghcr.io/${{ github.repository }}-frontend:${{ github.sha }}
-          target: web-production
-      - name: Build and push backend image
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          file: docker/Dockerfile
-          pull: true
-          push: true
-          tags: ghcr.io/${{ github.repository }}-app:${{ github.sha }}
-          target: ruby-app
-
   deploy:
     name: Deploy to production server
     runs-on: ubuntu-latest
     environment: production
-    needs: build
     steps:
       - uses: actions/checkout@v4
       - uses: docker/login-action@v3
