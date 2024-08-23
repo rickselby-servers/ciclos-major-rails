@@ -8,7 +8,7 @@ ruby file: ".ruby-version"
 gem "rails", "~> 7.1.3"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem "sprockets-rails", "~> 3.4"
+gem "sprockets-rails", "~> 3.5"
 
 gem "pg", "~> 1.5"
 
@@ -43,19 +43,19 @@ gem "bootsnap", "~> 1.18", require: false
 gem "sassc-rails", "~> 2.1"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.13"
 
-gem "audited", "~> 5.6"
+gem "audited", "~> 5.7"
 gem "devise", "~> 4.9"
 gem "omniauth-rails_csrf_protection", "~> 1.0"
 
 # Bootstrap for front end
 gem "bootstrap", "~> 5.3"
 gem "bootstrap_form", "~> 5.3"
-gem "tinymce-rails", "~> 7.1.0"
+gem "tinymce-rails", "~> 7.3.0"
 
 # Other things...
-gem "acts_as_list", "~> 1.1"
+gem "acts_as_list", "~> 1.2"
 gem "requestjs-rails", "~> 0.0.11"
 
 group :development, :test do
@@ -63,7 +63,7 @@ group :development, :test do
   gem "debug", "~> 1.9.2", platforms: %i[mri windows]
   gem "factory_bot_rails", "~> 6.4"
   gem "rspec-rails", "~> 6.1"
-  gem "rubocop-rickselby", "~> 0.28"
+  gem "rubocop-rickselby", "~> 0.35"
 end
 
 group :development do
@@ -82,6 +82,6 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara", "~> 3.40"
-  gem "selenium-webdriver", "~> 4.21"
-  gem "shoulda-matchers", "~> 6.2"
+  gem "selenium-webdriver", "~> 4.23"
+  gem "shoulda-matchers", "~> 6.4"
 end
