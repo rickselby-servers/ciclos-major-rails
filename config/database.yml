@@ -8,8 +8,8 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: rails
-  password: test
+  username: <%= Rails.application.credentials.dig(:postgres, :username) || "rails" %>
+  password: <%= Rails.application.credentials.dig(:postgres, :password) || "test" %>
   host: localhost
   timeout: 5000
 
@@ -24,6 +24,4 @@ test:
 production:
   <<: *default
   host: postgres
-  database: <%= Rails.application.credentials.dig(:postgres, :database, :production) %>
-  username: <%= Rails.application.credentials.dig(:postgres, :username, :production) %>
-  password: <%= Rails.application.credentials.dig(:postgres, :password, :production) %>
+  database: <%= Rails.application.credentials.dig(:postgres, :database) %>
