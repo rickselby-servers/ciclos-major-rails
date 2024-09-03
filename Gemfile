@@ -10,8 +10,7 @@ gem "rails", "~> 7.1.3"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails", "~> 3.5"
 
-# Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.7"
+gem "pg", "~> 1.5"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
@@ -64,7 +63,7 @@ group :development, :test do
   gem "debug", "~> 1.9.2", platforms: %i[mri windows]
   gem "factory_bot_rails", "~> 6.4"
   gem "rspec-rails", "~> 6.1"
-  gem "rubocop-rickselby", "~> 0.35"
+  gem "rubocop-rickselby", "~> 0.36"
 end
 
 group :development do
@@ -83,6 +82,6 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara", "~> 3.40"
-  gem "selenium-webdriver", "~> 4.23"
+  gem "selenium-webdriver", "~> 4.24"
   gem "shoulda-matchers", "~> 6.4"
 end
