@@ -8,12 +8,12 @@ ADD docker/nginx/rails-vhost.conf /etc/nginx/conf.d/default.conf
 ###############################################################################
 FROM ruby:3.3.1-alpine3.18 AS ruby-base
 
-RUN apk --no-cache add imagemagick tzdata nodejs
+RUN apk --no-cache add imagemagick tzdata nodejs libpq
 
 ###############################################################################
 FROM ruby-base AS ruby-build
 
-RUN apk --no-cache add build-base
+RUN apk --no-cache add build-base libpq-dev
 
 ENV RAILS_ENV="production"
 

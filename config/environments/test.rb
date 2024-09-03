@@ -67,4 +67,6 @@ Rails.application.configure do
   # Cannot compile on the fly due to tinymce weirdness
   # https://github.com/spohlenz/tinymce-rails/issues/304
   config.assets.compile = true
+
+  config.active_job.queue_adapter = :inline
 end
