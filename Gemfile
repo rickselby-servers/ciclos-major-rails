@@ -62,8 +62,8 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", "~> 1.9.2", platforms: %i[mri windows]
   gem "factory_bot_rails", "~> 6.4"
-  gem "rspec-rails", "~> 6.1"
-  gem "rubocop-rickselby", "~> 0.36"
+  gem "rspec-rails", "~> 7.0"
+  gem "rubocop-rickselby", "~> 0.37"
 end
 
 group :development do
