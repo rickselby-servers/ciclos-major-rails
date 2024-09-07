@@ -56,7 +56,7 @@ gem "tinymce-rails", "~> 7.3.0"
 
 # Other things...
 gem "acts_as_list", "~> 1.2"
-gem "requestjs-rails", "~> 0.0.11"
+gem "requestjs-rails", "~> 0.0.12"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
