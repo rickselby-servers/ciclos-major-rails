@@ -14,7 +14,6 @@ class BikeRentalsController < ApplicationController
 
   def new
     @bike_rental = BikeRental.new
-    @bike_rental.bike_rental_details.build
   end
 
   def edit; end
@@ -58,6 +57,7 @@ class BikeRentalsController < ApplicationController
   end
 
   def bike_rental_params
-    params.require(:bike_rental).permit(:name, :description, :photo, bike_rental_details_attributes: %i[id key value])
+    params.require(:bike_rental)
+          .permit(:name, :description, :photo, bike_rental_details_attributes: %i[id _destroy key value])
   end
 end

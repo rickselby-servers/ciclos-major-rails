@@ -21,3 +21,4 @@ pin "@fortawesome/free-brands-svg-icons", to: "@fortawesome--free-brands-svg-ico
 pin "@fortawesome/free-regular-svg-icons", to: "@fortawesome--free-regular-svg-icons.js" # @6.5.2
 pin "@fortawesome/free-solid-svg-icons", to: "@fortawesome--free-solid-svg-icons.js" # @6.5.2
 pin "cropperjs" # @1.6.2
+pin "@stimulus-components/rails-nested-form", to: "@stimulus-components--rails-nested-form.js" # @5.0.0

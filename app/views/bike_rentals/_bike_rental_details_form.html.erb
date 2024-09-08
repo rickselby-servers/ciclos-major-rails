@@ -1,0 +1,14 @@
+<div class="nested-form-wrapper" data-new-record="<%= form.object.new_record? %>">
+  <div class="row">
+    <div class="col">
+      <%= form.text_field :key, hide_label: true %>
+    </div>
+    <div class="col">
+      <%= form.text_field :value, hide_label: true %>
+    </div>
+    <div class="col-1">
+      <button type="button" class="btn btn-danger" data-action="nested-form#remove">Remove</button>
+    </div>
+    <%= form.hidden_field :_destroy %>
+  </div>
+</div>

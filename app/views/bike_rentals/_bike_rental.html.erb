@@ -21,6 +21,13 @@
       <p>
         <%= sanitize bike_rental.description %>
       </p>
+      <div class="list-group bg-transparent mb-3">
+        <% bike_rental.bike_rental_details.each do |detail| %>
+          <div class="list-group-item bg-transparent">
+            <span class="fw-bold"><%= detail.key %>:</span> <%= detail.value %>
+          </div>
+        <% end %>
+      </div>
     </div>
     <div class="col-sm-4">
 

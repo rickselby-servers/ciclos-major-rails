@@ -1,4 +1,4 @@
-<%= bootstrap_form_with(model: bike_rental, data: { controller: :tinymce }) do |form| %>
+<%= bootstrap_form_with(model: bike_rental, data: { controller: "tinymce nested-form" }) do |form| %>
   <% if bike_rental.errors.any? %>
     <div style="color: red">
       <h2><%= t ".errors", count: bike_rental.errors.count %></h2>
@@ -17,10 +17,27 @@
   <%= render partial: "shared/cropper", locals: { form:, identifier: :photo, required: bike_rental.photo.blank? } %>
 
   <h2>Details</h2>
-  <%= form.fields_for :bike_rental_details do |details_form| %>
-    <%= details_form.text_field :key %>
-    <%= details_form.text_field :value %>
-  <% end %>
+
+  <div class="mb-5">
+    <div class="row mb-2 fw-bold">
+      <div class="col px-4">Item (e.g. frame)</div>
+      <div class="col px-4">Detail (e.g. Carbon)</div>
+      <div class="col-1"></div>
+    </div>
+
+    <template data-nested-form-target="template">
+      <%= form.fields_for :bike_rental_details, BikeRentalDetail.new, child_index: 'NEW_RECORD' do |details_form| %>
+        <%= render "bike_rental_details_form", form: details_form %>
+      <% end %>
+    </template>
+
+    <%= form.fields_for :bike_rental_details do |details_form| %>
+      <%= render "bike_rental_details_form", form: details_form %>
+    <% end %>
+
+    <div data-nested-form-target="target"></div>
+    <button type="button" class="btn btn-info" data-action="nested-form#add">Add another detail</button>
+  </div>
 
   <div>
     <%= form.submit %>

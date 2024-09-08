@@ -17,5 +17,5 @@ class BikeRental < ApplicationRecord
 
   scope :ordered, -> { order :position }
 
-  accepts_nested_attributes_for :bike_rental_details, allow_destroy: true
+  accepts_nested_attributes_for :bike_rental_details, reject_if: :all_blank, allow_destroy: true
 end
