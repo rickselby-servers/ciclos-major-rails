@@ -16,6 +16,12 @@
 
   <%= render partial: "shared/cropper", locals: { form:, identifier: :photo, required: bike_rental.photo.blank? } %>
 
+  <h2>Details</h2>
+  <%= form.fields_for :bike_rental_details do |details_form| %>
+    <%= details_form.text_field :key %>
+    <%= details_form.text_field :value %>
+  <% end %>
+
   <div>
     <%= form.submit %>
     <% if bike_rental.persisted? %>
