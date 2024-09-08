@@ -10,6 +10,20 @@ FactoryBot.define do
       description { "<strong>#{generate :text_content}</strong>" }
     end
 
+    trait :with_detail do
+      transient do
+        details_count { 5 }
+      end
+
+      after(:create) do |bike_rental, evaluator|
+        create_list(:bike_rental_detail, evaluator.details_count, bike_rental: bike_rental)
+      end
+    end
+
+    trait :with_detail_attributes do
+      bike_rental_details_attributes { [attributes_for(:bike_rental_detail)] }
+    end
+
     trait :invalid do
       name { "" }
       description { "" }

@@ -42,9 +42,11 @@ RSpec.describe "/bike_rentals" do
 
   describe "POST /create" do
     subject(:do_post) do
-      post bike_rentals_path, params: { bike_rental: attributes_for(:bike_rental) }
+      post bike_rentals_path, params: { bike_rental: attributes }
       response
     end
+
+    let(:attributes) { attributes_for :bike_rental }
 
     it_behaves_like "it redirects to login if not logged in"
 
@@ -57,11 +59,22 @@ RSpec.describe "/bike_rentals" do
         it { is_expected.to redirect_to bike_rentals_path }
       end
 
-      context "with invalid parameters" do
-        subject(:do_post) do
-          post bike_rentals_path, params: { bike_rental: attributes_for(:bike_rental, :invalid) }
-          response
+      context "with bike rental detail" do
+        let(:attributes) { attributes_for :bike_rental, :with_detail_attributes }
+
+        it "creates a new BikeRental" do
+          expect { do_post }.to change(BikeRental, :count).by(1)
         end
+
+        it "creates a new BikeRentalDetail" do
+          expect { do_post }.to change(BikeRentalDetail, :count).by(1)
+        end
+
+        it { is_expected.to redirect_to bike_rentals_path }
+      end
+
+      context "with invalid parameters" do
+        let(:attributes) { attributes_for :bike_rental, :invalid }
 
         it "does not create a new BikeRental" do
           expect { do_post }.not_to change(BikeRental, :count)
@@ -94,12 +107,18 @@ RSpec.describe "/bike_rentals" do
         it { is_expected.to redirect_to bike_rentals_path }
       end
 
-      context "with invalid parameters" do
-        subject(:do_patch) do
-          patch bike_rental_path(bike_rental), params: { bike_rental: attributes_for(:bike_rental, :invalid) }
-          response
+      context "with bike rental detail" do
+        let(:new_attributes) { attributes_for :bike_rental, :with_detail_attributes }
+
+        it "creates a new BikeRentalDetail" do
+          expect { do_patch }.to change(BikeRentalDetail, :count).by(1)
         end
 
+        it { is_expected.to redirect_to bike_rentals_path }
+      end
+
+      context "with invalid parameters" do
+        let(:new_attributes) { attributes_for :bike_rental, :invalid }
         let(:expected_attributes) { bike_rental.attributes.transform_keys(&:to_s) }
 
         it "does not update the requested bike_rental" do

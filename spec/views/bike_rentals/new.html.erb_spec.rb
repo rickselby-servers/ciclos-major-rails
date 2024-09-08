@@ -16,6 +16,7 @@ RSpec.describe "bike_rentals/new" do
     it { is_expected.to have_field "bike_rental[name]" }
     it { is_expected.to have_field "bike_rental[description]" }
     it { is_expected.to have_field "bike_rental[photo]" }
+    it { is_expected.to have_button "Add another detail" }
     it { is_expected.to have_button "commit" }
   end
 end
