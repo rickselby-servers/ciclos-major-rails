@@ -1,0 +1,26 @@
+<%= bootstrap_form_with(model: bike_rental, data: { controller: :tinymce }) do |form| %>
+  <% if bike_rental.errors.any? %>
+    <div style="color: red">
+      <h2><%= t ".errors", count: bike_rental.errors.count %></h2>
+
+      <ul>
+        <% bike_rental.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.text_field :name %>
+  <%= form.text_area :description, data: { tinymce_target: :input }, required: false %>
+
+  <%= render partial: "shared/cropper", locals: { form:, identifier: :photo, required: bike_rental.photo.blank? } %>
+
+  <div>
+    <%= form.submit %>
+    <% if bike_rental.persisted? %>
+      <%= link_to t(".delete"), bike_rental_path(bike_rental), class: %i[btn btn-danger],
+                  data: { turbo_method: :delete, turbo_confirm: t(".delete_confirm") } %>
+    <% end %>
+  </div>
+<% end %>

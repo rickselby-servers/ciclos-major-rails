@@ -3,8 +3,9 @@
 require "rails_helper"
 
 RSpec.describe "guides/index" do
-  let(:guide) { create :guide, name: "Bob", description: "is person" }
-  let(:guide2) { create :guide, name: "Bob", description: "is person" }
+  let(:attributes) { { name: "Bob", description: "is person" } }
+  let(:guide) { create :guide, **attributes }
+  let(:guide2) { create :guide, **attributes }
 
   before { assign(:guides, [guide, guide2]) }
 

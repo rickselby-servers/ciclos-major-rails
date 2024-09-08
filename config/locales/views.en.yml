@@ -44,6 +44,30 @@ en:
       testimonials: "Testimonials"
       zafiro_palace: "Zafiro Palace"
       zafiro_tropic: "Zafiro Tropic"
+  bike_rentals:
+    back: "Back to Bike Rental"
+    img_alt: "Photo of %{name}"
+    bike_rental:
+      edit: "Edit Bike Rental"
+    create:
+      success: "Bike Rental was successfully created."
+    destroy:
+      success: "Bike Rental was successfully deleted."
+    edit:
+      title: "Editing Bike Rental"
+    form:
+      delete: "Delete"
+      delete_confirm: "Are you sure you wish to delete this bike rental?"
+      errors:
+        one: "One error prevented this bike rental from being saved:"
+        other: "%{count} errors prevented this bike rental from being saved:"
+    index:
+      title: "Bike Rentals"
+      new: "New Bike Rental"
+    new:
+      title: "New Bike Rental"
+    update:
+      success: "Bike Rental was successfully updated."
   auth:
     sign_in:
       sign_in: "Sign in with %{name}"

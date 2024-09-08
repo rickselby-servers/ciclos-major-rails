@@ -1,0 +1,29 @@
+<div id="<%= dom_id bike_rental %>" class="clearfix" data-sortable-url="<%= move_bike_rental_path bike_rental %>">
+  <h2>
+    <% if admin_signed_in? %>
+      <%= fa_icon "grip-lines", class: "me-2 sortable-handle" %>
+    <% end %>
+    <%= bike_rental.name %>
+  </h2>
+
+  <% if admin_signed_in? %>
+    <div>
+      <%= link_to edit_bike_rental_path(bike_rental), class: %i[btn btn-secondary] do %>
+        <%= fa_icon "pencil" %>
+        <%= t ".edit" %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="row mb-3">
+    <div class="col-sm-8">
+      <%= image_tag url_for(bike_rental.photo), class: %i[mb-3 mx-auto d-block img-fluid], alt: t("bike_rentals.img_alt", name: bike_rental.name) %>
+      <p>
+        <%= sanitize bike_rental.description %>
+      </p>
+    </div>
+    <div class="col-sm-4">
+
+    </div>
+  </div>
+</div>
