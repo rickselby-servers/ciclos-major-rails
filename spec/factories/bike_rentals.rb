@@ -16,7 +16,7 @@ FactoryBot.define do
       end
 
       after(:create) do |bike_rental, evaluator|
-        create_list(:bike_rental_detail, evaluator.details_count, bike_rental: bike_rental)
+        create_list :bike_rental_detail, evaluator.details_count, bike_rental:
       end
     end
 

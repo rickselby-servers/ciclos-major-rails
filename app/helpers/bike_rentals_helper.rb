@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
-# TODO: add comment here
+# Helpers for displaying bike rentals
 module BikeRentalsHelper
 end

@@ -26,7 +26,7 @@
     </div>
 
     <template data-nested-form-target="template">
-      <%= form.fields_for :bike_rental_details, BikeRentalDetail.new, child_index: 'NEW_RECORD' do |details_form| %>
+      <%= form.fields_for :bike_rental_details, BikeRentalDetail.new, child_index: "NEW_RECORD" do |details_form| %>
         <%= render "bike_rental_details_form", form: details_form %>
       <% end %>
     </template>

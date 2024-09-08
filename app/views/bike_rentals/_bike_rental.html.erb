@@ -17,7 +17,9 @@
 
   <div class="row mb-3">
     <div class="col-sm-8">
-      <%= image_tag url_for(bike_rental.photo), class: %i[mb-3 mx-auto d-block img-fluid], alt: t("bike_rentals.img_alt", name: bike_rental.name) %>
+      <%= image_tag url_for(bike_rental.photo),
+                    class: %i[mb-3 mx-auto d-block img-fluid],
+                    alt: t("bike_rentals.img_alt", name: bike_rental.name) %>
       <p>
         <%= sanitize bike_rental.description %>
       </p>
