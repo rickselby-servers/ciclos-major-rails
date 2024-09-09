@@ -32,7 +32,31 @@
       </div>
     </div>
     <div class="col-sm-4">
-
+      <h3>Price List</h3>
+      <p>
+        Including Bike Insurance and Cleaning (€2.50 / day
+      </p>
+      <table class="table text-end table-striped">
+        <thead>
+        <tr>
+          <th>Days</th>
+          <th>€ / day</th>
+          <th>Hire Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% bike_rental.bike_rental_prices.ordered.each do |price| %>
+        <tr>
+          <td><%= price.days %></td>
+          <td><%= number_to_currency price.total_price / price.days %></td>
+          <td><%= number_to_currency price.total_price %></td>
+        </tr>
+        <% end %>
+        </tbody>
+      </table>
+      <div class="d-grid gap-2">
+        <a href="https://form.jotform.com/232906110109344" class="btn btn-primary">Book Now</a>
+      </div>
     </div>
   </div>
 </div>

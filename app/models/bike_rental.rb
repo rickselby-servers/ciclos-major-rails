@@ -8,6 +8,7 @@ class BikeRental < ApplicationRecord
 
   has_one_attached :photo
   has_many :bike_rental_details, dependent: :destroy
+  has_many :bike_rental_prices, dependent: :destroy
 
   validates :name, presence: true
   validates :description, presence: true
@@ -18,4 +19,5 @@ class BikeRental < ApplicationRecord
   scope :ordered, -> { order :position }
 
   accepts_nested_attributes_for :bike_rental_details, reject_if: :all_blank, allow_destroy: true
+  accepts_nested_attributes_for :bike_rental_prices, reject_if: :all_blank, allow_destroy: true
 end
