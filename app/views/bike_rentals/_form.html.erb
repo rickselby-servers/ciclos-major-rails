@@ -53,7 +53,7 @@
       <% end %>
     </template>
 
-    <%= form.fields_for :bike_rental_prices do |prices_form| %>
+    <%= form.fields_for :bike_rental_prices, bike_rental.bike_rental_prices.ordered do |prices_form| %>
       <%= render "bike_rental_prices_form", form: prices_form %>
     <% end %>
 

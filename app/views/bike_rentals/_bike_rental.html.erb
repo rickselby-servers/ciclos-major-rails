@@ -48,7 +48,7 @@
         <% bike_rental.bike_rental_prices.ordered.each do |price| %>
         <tr>
           <td><%= price.days %></td>
-          <td><%= number_to_currency price.total_price / price.days %></td>
+          <td><%= number_to_currency price.price_per_day %></td>
           <td><%= number_to_currency price.total_price %></td>
         </tr>
         <% end %>

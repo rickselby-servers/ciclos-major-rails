@@ -9,4 +9,8 @@ class BikeRentalPrice < ApplicationRecord
   validates :total_price, presence: true, numericality: { only_integer: true }
 
   scope :ordered, -> { order :days }
+
+  def price_per_day
+    total_price.fdiv days
+  end
 end
