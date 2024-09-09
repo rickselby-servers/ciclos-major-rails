@@ -8,6 +8,8 @@ class CreateBikeRentalPrices < ActiveRecord::Migration[7.1]
       t.integer :total_price, limit: 2, null: false
 
       t.timestamps
+
+      t.index %i[bike_rental_id days], unique: true
     end
   end
 end

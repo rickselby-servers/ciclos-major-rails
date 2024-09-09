@@ -89,6 +89,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_09_184707) do
     t.integer "total_price", limit: 2, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["bike_rental_id", "days"], name: "index_bike_rental_prices_on_bike_rental_id_and_days", unique: true
     t.index ["bike_rental_id"], name: "index_bike_rental_prices_on_bike_rental_id"
   end
 
