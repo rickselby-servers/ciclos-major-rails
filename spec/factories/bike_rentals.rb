@@ -24,6 +24,20 @@ FactoryBot.define do
       bike_rental_details_attributes { [attributes_for(:bike_rental_detail)] }
     end
 
+    trait :with_prices do
+      transient do
+        prices_count { 5 }
+      end
+
+      after(:create) do |bike_rental, evaluator|
+        create_list :bike_rental_price, evaluator.prices_count, bike_rental:
+      end
+    end
+
+    trait :with_price_attributes do
+      bike_rental_prices_attributes { [attributes_for(:bike_rental_price)] }
+    end
+
     trait :invalid do
       name { "" }
       description { "" }

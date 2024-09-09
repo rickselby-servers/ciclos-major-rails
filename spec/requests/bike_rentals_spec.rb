@@ -73,6 +73,20 @@ RSpec.describe "/bike_rentals" do
         it { is_expected.to redirect_to bike_rentals_path }
       end
 
+      context "with bike rental prices" do
+        let(:attributes) { attributes_for :bike_rental, :with_price_attributes }
+
+        it "creates a new BikeRental" do
+          expect { do_post }.to change(BikeRental, :count).by(1)
+        end
+
+        it "creates a new BikeRentalPrice" do
+          expect { do_post }.to change(BikeRentalPrice, :count).by(1)
+        end
+
+        it { is_expected.to redirect_to bike_rentals_path }
+      end
+
       context "with invalid parameters" do
         let(:attributes) { attributes_for :bike_rental, :invalid }
 
@@ -112,6 +126,16 @@ RSpec.describe "/bike_rentals" do
 
         it "creates a new BikeRentalDetail" do
           expect { do_patch }.to change(BikeRentalDetail, :count).by(1)
+        end
+
+        it { is_expected.to redirect_to bike_rentals_path }
+      end
+
+      context "with bike rental price" do
+        let(:new_attributes) { attributes_for :bike_rental, :with_price_attributes }
+
+        it "creates a new BikeRentalPrice" do
+          expect { do_patch }.to change(BikeRentalPrice, :count).by(1)
         end
 
         it { is_expected.to redirect_to bike_rentals_path }
