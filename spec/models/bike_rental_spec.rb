@@ -14,4 +14,7 @@ RSpec.describe BikeRental do
   it_behaves_like "it resizes an image correctly",
                   :photo,
                   { "400x400" => [400, 400], "400x800" => [400, 800], "800x400" => [800, 400] }
+
+  it { is_expected.to have_many :bike_rental_details }
+  it { is_expected.to accept_nested_attributes_for :bike_rental_details }
 end

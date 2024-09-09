@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_09_08_122738) do
+ActiveRecord::Schema[7.1].define(version: 2024_09_09_184707) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -81,6 +81,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_08_122738) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["bike_rental_id"], name: "index_bike_rental_details_on_bike_rental_id"
+  end
+
+  create_table "bike_rental_prices", force: :cascade do |t|
+    t.bigint "bike_rental_id"
+    t.integer "days", limit: 2, null: false
+    t.integer "total_price", limit: 2, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bike_rental_id"], name: "index_bike_rental_prices_on_bike_rental_id"
   end
 
   create_table "bike_rentals", force: :cascade do |t|
