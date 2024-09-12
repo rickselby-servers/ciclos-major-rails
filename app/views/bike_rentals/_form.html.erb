@@ -16,12 +16,12 @@
 
   <%= render partial: "shared/cropper", locals: { form:, identifier: :photo, required: bike_rental.photo.blank? } %>
 
-  <h2>Details</h2>
+  <h2><%= t ".details" %></h2>
 
   <div class="mb-5" data-controller="nested-form">
     <div class="row mb-2 fw-bold">
-      <div class="col px-4">Item (e.g. frame)</div>
-      <div class="col px-4">Detail (e.g. Carbon)</div>
+      <div class="col px-4"><%= t ".item" %></div>
+      <div class="col px-4"><%= t ".detail" %></div>
       <div class="col-1"></div>
     </div>
 
@@ -36,14 +36,14 @@
     <% end %>
 
     <div data-nested-form-target="target"></div>
-    <button type="button" class="btn btn-info" data-action="nested-form#add">Add another detail</button>
+    <button type="button" class="btn btn-info" data-action="nested-form#add"><%= t ".add_detail" %></button>
   </div>
 
-  <h2>Prices</h2>
+  <h2><%= t ".prices" %></h2>
   <div class="mb-5" data-controller="nested-form">
     <div class="row mb-2 fw-bold">
-      <div class="col px-4">Days</div>
-      <div class="col px-4">Total Price</div>
+      <div class="col px-4"><%= t ".days" %></div>
+      <div class="col px-4"><%= t ".total_price" %></div>
       <div class="col-1"></div>
     </div>
 
@@ -58,7 +58,7 @@
     <% end %>
 
     <div data-nested-form-target="target"></div>
-    <button type="button" class="btn btn-info" data-action="nested-form#add">Add another price</button>
+    <button type="button" class="btn btn-info" data-action="nested-form#add"><%= t ".add_price" %></button>
   </div>
 
   <div>

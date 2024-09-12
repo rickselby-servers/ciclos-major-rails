@@ -32,16 +32,14 @@
       </div>
     </div>
     <div class="col-sm-4">
-      <h3>Price List</h3>
-      <p>
-        Including Bike Insurance and Cleaning (€2.50 / day
-      </p>
+      <h3><%= t ".price_list" %></h3>
+      <p><%= t ".insurance" %></p>
       <table class="table text-end table-striped">
         <thead>
         <tr>
-          <th>Days</th>
-          <th>€ / day</th>
-          <th>Hire Price</th>
+          <th><%= t ".days" %></th>
+          <th><%= t ".price_per_day" %></th>
+          <th><%= t ".hire_price" %></th>
         </tr>
         </thead>
         <tbody>
@@ -55,7 +53,7 @@
         </tbody>
       </table>
       <div class="d-grid gap-2">
-        <a href="https://form.jotform.com/232906110109344" class="btn btn-primary">Book Now</a>
+        <a href="https://form.jotform.com/232906110109344" class="btn btn-primary"><%= t ".book_now" %></a>
       </div>
     </div>
   </div>
