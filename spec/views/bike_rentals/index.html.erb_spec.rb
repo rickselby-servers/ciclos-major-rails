@@ -9,8 +9,8 @@ RSpec.describe "bike_rentals/index" do
 
   before { assign(:bike_rentals, [bike_rental, bike_rental2]) }
 
-  it { is_expected.to have_css "div > div > h2", text: "Genesis", count: 2 }
-  it { is_expected.to have_css "div > div > p", text: "is bike", count: 2 }
+  it { is_expected.to have_css "div > div > h2", text: attributes[:name], count: 2 }
+  it { is_expected.to have_css "div > div > p", text: attributes[:description], count: 2 }
 
   it { is_expected.to have_no_link href: new_bike_rental_path }
 
