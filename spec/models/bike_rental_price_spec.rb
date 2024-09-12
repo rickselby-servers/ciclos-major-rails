@@ -13,4 +13,12 @@ RSpec.describe BikeRentalPrice do
 
   it { is_expected.to be_audited }
   it { is_expected.to belong_to :bike_rental }
+
+  describe "price_per_day" do
+    let(:bike_rental_price) { create :bike_rental_price, days: 4, total_price: 99 }
+
+    it "divides total price by days and includes pence/cents" do
+      expect(bike_rental_price.price_per_day).to eq 24.75
+    end
+  end
 end
