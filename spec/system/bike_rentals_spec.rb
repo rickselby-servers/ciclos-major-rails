@@ -10,10 +10,7 @@ RSpec.describe "Bike Rentals", :logged_in do
     click_on "New Bike Rental"
     fill_in "Name", with: "Bob"
 
-    click_on "Change Image"
-    attach_file "Photo", file_fixture("400x400.jpg")
-    sleep 0.5 # yuck! but required...
-    click_on "Save"
+    attach_photo
 
     click_on "Create"
 
@@ -25,12 +22,9 @@ RSpec.describe "Bike Rentals", :logged_in do
     click_on "New Bike Rental"
     fill_in "Name", with: "Bob"
 
-    within_frame("bike_rental_description_ifr") { page.find_by_id("tinymce").set("is bike") }
+    fill_in_tinymce "bike_rental_description_ifr", "is bike"
 
-    click_on "Change Image"
-    attach_file "Photo", file_fixture("400x400.jpg")
-    sleep 0.5 # yuck! but required...
-    click_on "Save"
+    attach_photo
 
     click_on "Add another detail"
     fill_in "Key", with: "Wheels"

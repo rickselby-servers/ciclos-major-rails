@@ -77,6 +77,8 @@ RSpec.configure do |config|
   config.include ViewHelpers, type: :view
   config.include_context "with view rendering", type: :view
 
+  config.include SystemHelpers, type: :system
+
   # Add other helpers...
   config.include ActionDispatch::TestProcess::FixtureFile, type: :request
   config.include ActionDispatch::TestProcess::FixtureFile, type: :system
