@@ -12,7 +12,7 @@ RSpec.describe "Bike Rentals", :logged_in do
 
     click_on "Change Image"
     attach_file "Photo", file_fixture("400x400.jpg")
-    sleep 0.2
+    sleep 0.5 # yuck! but required...
     click_on "Save"
 
     click_on "Create"
