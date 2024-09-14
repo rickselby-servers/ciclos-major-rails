@@ -2,7 +2,7 @@
   <%= form.form_group identifier, label: { required: } do %>
     <div class="form-control cropper-control">
       <div class="previews" style="<%= form.object.public_send(identifier).present? ? "" : "display: none;" %>" data-cropper-target="preview">
-        <% if form.object.public_send(identifier).present? %>
+        <% if form.object.public_send(identifier).present? && form.object.public_send(identifier).persisted? %>
           <%= image_tag url_for(form.object.public_send(identifier)), alt: "Preview" %>
         <% end %>
       </div>

@@ -20,32 +20,29 @@ Rails.application.routes.draw do
 
   get "admin", to: "admin#index", as: :admin
 
+  resources :bike_rentals, except: :show do
+    member { patch :move }
+  end
   resources :carousels, only: %i[index show]
   resources :faqs, except: :show do
-    member do
-      patch :move
-    end
+    member { patch :move }
   end
   resources :galleries
   resources :guides, except: :show do
-    member do
-      patch :move
-    end
+    member { patch :move }
   end
   resources :page_text, only: :update
   resources :partners do
-    member do
-      patch :move
-    end
+    member { patch :move }
   end
   resources :photos, except: %i[index show] do
-    member do
-      patch :move
-    end
+    member { patch :move }
   end
   resources :testimonials, except: :show do
-    member do
-      patch :move
-    end
+    member { patch :move }
   end
+
+  # redirects
+  get "bike-rental", to: redirect("/bike_rentals")
+  get "login", to: redirect("/sign_in")
 end

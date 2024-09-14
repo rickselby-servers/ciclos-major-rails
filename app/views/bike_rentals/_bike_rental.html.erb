@@ -1,0 +1,60 @@
+<div id="<%= dom_id bike_rental %>" class="clearfix" data-sortable-url="<%= move_bike_rental_path bike_rental %>">
+  <h2>
+    <% if admin_signed_in? %>
+      <%= fa_icon "grip-lines", class: "me-2 sortable-handle" %>
+    <% end %>
+    <%= bike_rental.name %>
+  </h2>
+
+  <% if admin_signed_in? %>
+    <div>
+      <%= link_to edit_bike_rental_path(bike_rental), class: %i[btn btn-secondary] do %>
+        <%= fa_icon "pencil" %>
+        <%= t ".edit" %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="row mb-3">
+    <div class="col-sm-8">
+      <%= image_tag url_for(bike_rental.photo),
+                    class: %i[mb-3 mx-auto d-block img-fluid],
+                    alt: t("bike_rentals.img_alt", name: bike_rental.name) %>
+      <p>
+        <%= sanitize bike_rental.description %>
+      </p>
+      <div class="list-group bg-transparent mb-3">
+        <% bike_rental.bike_rental_details.each do |detail| %>
+          <div class="list-group-item bg-transparent">
+            <span class="fw-bold"><%= detail.key %>:</span> <%= detail.value %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <h3><%= t ".price_list" %></h3>
+      <p><%= t ".insurance" %></p>
+      <table class="table text-end table-striped">
+        <thead>
+        <tr>
+          <th><%= t ".days" %></th>
+          <th><%= t ".price_per_day" %></th>
+          <th><%= t ".hire_price" %></th>
+        </tr>
+        </thead>
+        <tbody>
+        <% bike_rental.bike_rental_prices.ordered.each do |price| %>
+        <tr>
+          <td><%= price.days %></td>
+          <td><%= number_to_currency price.price_per_day %></td>
+          <td><%= number_to_currency price.total_price %></td>
+        </tr>
+        <% end %>
+        </tbody>
+      </table>
+      <div class="d-grid gap-2">
+        <a href="https://form.jotform.com/232906110109344" class="btn btn-primary"><%= t ".book_now" %></a>
+      </div>
+    </div>
+  </div>
+</div>

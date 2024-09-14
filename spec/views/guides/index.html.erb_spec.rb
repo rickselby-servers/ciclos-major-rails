@@ -3,13 +3,14 @@
 require "rails_helper"
 
 RSpec.describe "guides/index" do
-  let(:guide) { create :guide, name: "Bob", description: "is person" }
-  let(:guide2) { create :guide, name: "Bob", description: "is person" }
+  let(:attributes) { { name: "Bob", description: "is person" } }
+  let(:guide) { create :guide, **attributes }
+  let(:guide2) { create :guide, **attributes }
 
   before { assign(:guides, [guide, guide2]) }
 
-  it { is_expected.to have_css "div > div > h2", text: "Bob", count: 2 }
-  it { is_expected.to have_css "div > div", text: "is person", count: 2 }
+  it { is_expected.to have_css "div > div > h2", text: attributes[:name], count: 2 }
+  it { is_expected.to have_css "div > div", text: attributes[:description], count: 2 }
 
   it { is_expected.to have_no_link href: new_guide_path }
 

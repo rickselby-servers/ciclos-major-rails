@@ -47,12 +47,53 @@ en:
   auth:
     sign_in:
       sign_in: "Sign in with %{name}"
+  bike_rentals:
+    back: "Back to Bike Rental"
+    img_alt: "Photo of %{name}"
+    bike_rental:
+      book_now: "Book Now"
+      days: "Days"
+      edit: "Edit Bike Rental"
+      hire_price: "Hire Price"
+      insurance: "Including Bike Insurance and Cleaning (€2.50 / day)"
+      price_list: "Price List"
+      price_per_day: "€ / day"
+    bike_rental_details_form:
+      remove: "Remove"
+    bike_rental_prices_form:
+      remove: "Remove"
+    create:
+      success: "Bike Rental was successfully created."
+    destroy:
+      success: "Bike Rental was successfully deleted."
+    edit:
+      title: "Editing Bike Rental"
+    form:
+      add_detail: "Add another detail"
+      add_price: "Add another price"
+      days: "Days"
+      delete: "Delete"
+      delete_confirm: "Are you sure you wish to delete this bike rental?"
+      detail: "Detail (e.g. Carbon)"
+      details: "Details"
+      errors:
+        one: "One error prevented this bike rental from being saved:"
+        other: "%{count} errors prevented this bike rental from being saved:"
+      item: "Item (e.g. frame)"
+      prices: "Prices"
+      total_price: "Total Price"
+    index:
+      title: "Bike Rentals"
+      new: "New Bike Rental"
+    new:
+      title: "New Bike Rental"
+    update:
+      success: "Bike Rental was successfully updated."
   carousels:
     index:
       title: "Carousels"
     carousel:
       edit: "Edit Carousel"
-
   faqs:
     back: "Back to FAQs"
     create:

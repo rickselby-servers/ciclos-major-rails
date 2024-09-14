@@ -1,0 +1,71 @@
+<%= bootstrap_form_with(model: bike_rental, data: { controller: :tinymce }) do |form| %>
+  <% if bike_rental.errors.any? %>
+    <div style="color: red">
+      <h2><%= t ".errors", count: bike_rental.errors.count %></h2>
+
+      <ul>
+        <% bike_rental.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.text_field :name %>
+  <%= form.text_area :description, data: { tinymce_target: :input }, required: false %>
+
+  <%= render partial: "shared/cropper", locals: { form:, identifier: :photo, required: bike_rental.photo.blank? } %>
+
+  <h2><%= t ".details" %></h2>
+
+  <div class="mb-5" data-controller="nested-form">
+    <div class="row mb-2 fw-bold">
+      <div class="col px-4"><%= t ".item" %></div>
+      <div class="col px-4"><%= t ".detail" %></div>
+      <div class="col-1"></div>
+    </div>
+
+    <template data-nested-form-target="template">
+      <%= form.fields_for :bike_rental_details, BikeRentalDetail.new, child_index: "NEW_RECORD" do |details_form| %>
+        <%= render "bike_rental_details_form", form: details_form %>
+      <% end %>
+    </template>
+
+    <%= form.fields_for :bike_rental_details do |details_form| %>
+      <%= render "bike_rental_details_form", form: details_form %>
+    <% end %>
+
+    <div data-nested-form-target="target"></div>
+    <button type="button" class="btn btn-info" data-action="nested-form#add"><%= t ".add_detail" %></button>
+  </div>
+
+  <h2><%= t ".prices" %></h2>
+  <div class="mb-5" data-controller="nested-form">
+    <div class="row mb-2 fw-bold">
+      <div class="col px-4"><%= t ".days" %></div>
+      <div class="col px-4"><%= t ".total_price" %></div>
+      <div class="col-1"></div>
+    </div>
+
+    <template data-nested-form-target="template">
+      <%= form.fields_for :bike_rental_prices, BikeRentalPrice.new, child_index: "NEW_RECORD" do |prices_form| %>
+        <%= render "bike_rental_prices_form", form: prices_form %>
+      <% end %>
+    </template>
+
+    <%= form.fields_for :bike_rental_prices, bike_rental.bike_rental_prices.ordered do |prices_form| %>
+      <%= render "bike_rental_prices_form", form: prices_form %>
+    <% end %>
+
+    <div data-nested-form-target="target"></div>
+    <button type="button" class="btn btn-info" data-action="nested-form#add"><%= t ".add_price" %></button>
+  </div>
+
+  <div>
+    <%= form.submit %>
+    <% if bike_rental.persisted? %>
+      <%= link_to t(".delete"), bike_rental_path(bike_rental), class: %i[btn btn-danger],
+                  data: { turbo_method: :delete, turbo_confirm: t(".delete_confirm") } %>
+    <% end %>
+  </div>
+<% end %>
