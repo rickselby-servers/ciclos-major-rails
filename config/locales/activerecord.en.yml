@@ -9,6 +9,8 @@ en:
       faq:
         answer: "Answer"
         question: "Question"
+      season:
+        sold_out: "Sold out?"
     help:
       season:
         launch_date: "The date this season will be made visible on the home page"

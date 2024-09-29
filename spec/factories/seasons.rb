@@ -8,6 +8,7 @@ FactoryBot.define do
     launch_date { 2.days.ago.to_date }
     start_date { 1.day.ago.to_date }
     end_date { 1.day.from_now.to_date }
+    sold_out { false }
 
     trait :invalid do
       name { nil }

@@ -19,6 +19,7 @@ RSpec.describe "seasons/edit" do
     it { is_expected.to have_field "season[start_date]" }
     it { is_expected.to have_field "season[end_date]" }
     it { is_expected.to have_field "season[launch_date]" }
+    it { is_expected.to have_field "season[sold_out]" }
     it { is_expected.to have_button "commit" }
   end
 end

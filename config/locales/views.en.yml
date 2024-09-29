@@ -255,6 +255,7 @@ en:
     active: "Active"
     launched: "Launched"
     future: "Not yet launched"
+    sold_out: "Sold Out"
   shared:
     cropper:
       cancel: "Cancel"

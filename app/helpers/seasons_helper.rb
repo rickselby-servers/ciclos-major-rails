@@ -10,6 +10,9 @@ module SeasonsHelper
                   else [:light, I18n.t("seasons.future")]
                   end
 
-    content_tag :div, text, class: [:badge, :"text-bg-#{klass}"]
+    date_status = content_tag :div, text, class: [:badge, :"text-bg-#{klass}"]
+    return date_status unless season.sold_out?
+
+    date_status + content_tag(:div, I18n.t("seasons.sold_out"), class: %i[badge text-bg-primary ms-1])
   end
 end

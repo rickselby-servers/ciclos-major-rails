@@ -2,11 +2,13 @@
 
 <h2><%= @season.name %></h2>
 
+<p><%= season_status @season %></p>
+
 <p>
-<%= link_to edit_season_path(@season), class: %i[btn btn-secondary] do %>
-    <%= fa_icon "pencil" %>
-    <%= t ".edit" %>
-<% end %>
+    <%= link_to edit_season_path(@season), class: %i[btn btn-secondary] do %>
+        <%= fa_icon "pencil" %>
+        <%= t ".edit" %>
+    <% end %>
 </p>
 
 <dl class="row">
