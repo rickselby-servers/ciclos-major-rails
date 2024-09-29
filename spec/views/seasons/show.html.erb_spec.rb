@@ -2,16 +2,10 @@
 
 require "rails_helper"
 
-RSpec.describe "seasons/_season" do
-  # TODO later
+RSpec.describe "seasons/show" do
+  let(:season) { create :season }
 
-  # let(:season) { create :season }
-  # let(:locals) { { season: } }
-  #
-  #
-  # it { is_expected.to have_no_link href: edit_season_url(season) }
-  #
-  # context "when logged in", :logged_in do
-  #   it { is_expected.to have_link href: edit_season_url(season) }
-  # end
+  before { assign :season, season }
+
+  it { is_expected.to have_link href: edit_season_path(season) }
 end

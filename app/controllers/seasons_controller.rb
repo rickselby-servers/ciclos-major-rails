@@ -23,7 +23,7 @@ class SeasonsController < ApplicationController
     @season = Season.new(season_params)
 
     if @season.save
-      redirect_to seasons_path, notice: t(".success")
+      redirect_to season_path(@season), notice: t(".success")
     else
       render :new, status: :unprocessable_entity
     end
@@ -31,7 +31,7 @@ class SeasonsController < ApplicationController
 
   def update
     if @season.update(season_params)
-      redirect_to seasons_path, notice: t(".success"), status: :see_other
+      redirect_to season_path(@season), notice: t(".success"), status: :see_other
     else
       render :edit, status: :unprocessable_entity
     end

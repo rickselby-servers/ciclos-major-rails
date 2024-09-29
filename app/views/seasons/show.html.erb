@@ -1,3 +1,19 @@
-# TODO #
+<h1><%= link_to t("seasons.index.title"), seasons_path %></h1>
 
-editing of prices etc?
+<h2><%= @season.name %></h2>
+
+<p>
+<%= link_to edit_season_path(@season), class: %i[btn btn-secondary] do %>
+    <%= fa_icon "pencil" %>
+    <%= t ".edit" %>
+<% end %>
+</p>
+
+<dl class="row">
+    <dt class="col-sm-3 col-md-2">Launch date</dt>
+    <dd class="col-sm-9 col-md-10"><%= l @season.launch_date %></dd>
+    <dt class="col-sm-3 col-md-2">Start date</dt>
+    <dd class="col-sm-9 col-md-10"><%= l @season.start_date %></dd>
+    <dt class="col-sm-3 col-md-2">End date</dt>
+    <dd class="col-sm-9 col-md-10"><%= l @season.end_date %></dd>
+</dl>

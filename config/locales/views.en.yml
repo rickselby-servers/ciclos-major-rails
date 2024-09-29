@@ -235,7 +235,7 @@ en:
       success: "Season was successfully deleted."
     edit:
       title: "Editing Season"
-    season:
+    show:
       edit: "Edit Season"
     form:
       delete: "Delete"
@@ -246,6 +246,7 @@ en:
     index:
       title: "Seasons"
       new: "New Season"
+      manage: "Manage"
     new:
       title: "New Season"
     update:

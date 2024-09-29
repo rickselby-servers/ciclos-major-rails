@@ -71,7 +71,7 @@ RSpec.describe "/seasons" do
           expect { do_post }.to change(Season, :count).by(1)
         end
 
-        it { is_expected.to redirect_to seasons_path }
+        it { is_expected.to redirect_to season_path(Season.last) }
       end
 
       context "with invalid parameters" do
@@ -108,7 +108,7 @@ RSpec.describe "/seasons" do
           expect(season.reload.attributes.slice(*expected_attributes.keys)).to eq expected_attributes
         end
 
-        it { is_expected.to redirect_to seasons_path }
+        it { is_expected.to redirect_to season_path(season) }
       end
 
       context "with invalid parameters" do

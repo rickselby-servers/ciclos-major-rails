@@ -1,14 +1,12 @@
 
 <h1><%= t ".title" %></h1>
 
-<% if admin_signed_in? %>
-  <p>
-    <%= link_to new_season_path, class: %i[btn btn-primary] do %>
-      <%= fa_icon "plus" %>
-      <%= t ".new" %>
-    <% end %>
-  </p>
-<% end %>
+<p>
+  <%= link_to new_season_path, class: %i[btn btn-primary] do %>
+    <%= fa_icon "plus" %>
+    <%= t ".new" %>
+  <% end %>
+</p>
 
 <table id="seasons" class="table">
     <thead>
@@ -18,7 +16,7 @@
         <th>Start</th>
         <th>End</th>
         <th>Status</th>
-        <th></th>
+        <th class="shrink"></th>
     </tr>
     </thead>
     <tbody>
@@ -29,8 +27,11 @@
         <td><%= l season.start_date %></td>
         <td><%= l season.end_date %></td>
         <td><%= season_status season %></td>
-        <td>
-            <%= link_to "Edit", edit_season_path(season), class: %w[btn btn-sm btn-secondary] %>
+        <td class="shrink">
+            <%= link_to season_path(season), class: %w[btn btn-sm btn-primary nowrap] do %>
+                <%= fa_icon "eye" %>
+                <%= t ".manage" %>
+            <% end %>
         </td>
     </tr>
     <% end %>
