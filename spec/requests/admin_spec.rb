@@ -3,7 +3,7 @@
 require "rails_helper"
 
 RSpec.describe "Admins" do
-  describe "GET /new" do
+  describe "GET /admin" do
     subject do
       get admin_path
       response

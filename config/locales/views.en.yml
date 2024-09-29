@@ -2,9 +2,10 @@
 en:
   admin:
     index:
-      title: "Admin Section"
-      partners: "Partners"
       carousels: "Carousels"
+      partners: "Partners"
+      seasons: "Seasons"
+      title: "Admin Section"
   application:
     admin:
       logged_in: "Logged in as %{user}"
@@ -226,6 +227,33 @@ en:
       title: "Add New Photos"
     update:
       success: "Photo was successfully updated."
+  seasons:
+    back: "Back to Seasons"
+    create:
+      success: "Season was successfully created."
+    destroy:
+      success: "Season was successfully deleted."
+    edit:
+      title: "Editing Season"
+    season:
+      edit: "Edit Season"
+    form:
+      delete: "Delete"
+      delete_confirm: "Are you sure you wish to delete this Season?"
+      errors:
+        one: "One error prevented this season from being saved:"
+        other: "%{count} errors prevented this season from being saved:"
+    index:
+      title: "Seasons"
+      new: "New Season"
+    new:
+      title: "New Season"
+    update:
+      success: "Season was successfully updated."
+    finished: "Finished"
+    active: "Active"
+    launched: "Launched"
+    future: "Not yet launched"
   shared:
     cropper:
       cancel: "Cancel"

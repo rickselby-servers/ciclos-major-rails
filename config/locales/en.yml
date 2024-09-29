@@ -32,3 +32,6 @@ en:
     currency:
       format:
         unit: €
+  date:
+    formats:
+      default: "%d-%m-%Y"

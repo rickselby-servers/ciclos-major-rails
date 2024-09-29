@@ -1,0 +1,31 @@
+<%= bootstrap_form_with(model: season, data: { controller: :tinymce }) do |form| %>
+  <% if season.errors.any? %>
+    <div style="color: red">
+      <h2><%= t ".errors", count: season.errors.count %></h2>
+
+      <ul>
+        <% season.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= form.text_field :name %>
+
+    <%= form.date_field :start_date %>
+    <%= form.date_field :end_date %>
+    <%= form.date_field :launch_date %>
+
+    <%= form.text_area :description, data: { tinymce_target: :input }, required: false %>
+
+    <%= render partial: "shared/cropper", locals: { form:, identifier: :photo, required: season.photo.blank? } %>
+
+    <div>
+    <%= form.submit %>
+    <% if season.persisted? %>
+      <%= link_to t(".delete"), season, class: %i[btn btn-danger],
+                  data: { turbo_method: :delete, turbo_confirm: t(".delete_confirm") } %>
+    <% end %>
+  </div>
+<% end %>
