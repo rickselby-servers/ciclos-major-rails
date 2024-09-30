@@ -13,9 +13,9 @@ class Season < ApplicationRecord
   validates :name, presence: true
   validates :description, presence: true
   validates :photo, presence: true
-  validates :start_date, presence: true
-  validates :end_date, presence: true
   validates :launch_date, presence: true
+  validates :start_date, presence: true, comparison: { greater_than_or_equal_to: :launch_date }
+  validates :end_date, presence: true, comparison: { greater_than_or_equal_to: :start_date }
 
   before_save -> { resize_image :photo, 550, 413 }
 

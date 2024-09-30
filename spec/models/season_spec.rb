@@ -11,6 +11,13 @@ RSpec.describe Season do
   it { is_expected.to validate_presence_of :end_date }
   it { is_expected.to validate_presence_of :launch_date }
 
+  context "with values for comparison" do
+    subject { create :season }
+
+    it { is_expected.to validate_comparison_of(:start_date).is_greater_than_or_equal_to(:launch_date) }
+    it { is_expected.to validate_comparison_of(:end_date).is_greater_than_or_equal_to(:start_date) }
+  end
+
   it { is_expected.to be_audited }
   it { is_expected.to have_one_attached :photo }
 
