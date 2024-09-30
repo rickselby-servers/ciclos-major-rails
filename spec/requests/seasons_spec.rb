@@ -108,7 +108,7 @@ RSpec.describe "/seasons" do
           expect(season.reload.attributes.slice(*expected_attributes.keys)).to eq expected_attributes
         end
 
-        it { is_expected.to redirect_to season_path(season) }
+        it { is_expected.to redirect_to season_path(season.reload) }
       end
 
       context "with invalid parameters" do

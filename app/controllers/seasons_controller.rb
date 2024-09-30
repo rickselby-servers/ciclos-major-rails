@@ -50,7 +50,7 @@ class SeasonsController < ApplicationController
   end
 
   def set_season
-    @season = Season.find params[:id]
+    @season = Season.friendly.find params[:id]
   end
 
   def season_params

@@ -56,6 +56,7 @@ gem "tinymce-rails", "~> 7.3.0"
 
 # Other things...
 gem "acts_as_list", "~> 1.2"
+gem "friendly_id", "~> 5.5"
 gem "requestjs-rails", "~> 0.0.12"
 
 group :development, :test do

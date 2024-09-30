@@ -7,3 +7,4 @@ inherit_gem:
     - config/rails.yml # Rails-specific rules and cops
     - config/rspec.yml # RSpec-specific rules and cops
     - config/rspec_rails.yml # RSpec/rails-specific rules and cops
+
