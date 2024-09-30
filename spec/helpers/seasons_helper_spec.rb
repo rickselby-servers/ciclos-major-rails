@@ -44,4 +44,42 @@ RSpec.describe SeasonsHelper do
       include_examples "when season is sold out"
     end
   end
+
+  describe ".seasons_for_home_page" do
+    subject { helper.seasons_for_home_page }
+
+    context "with no seasons" do
+      it { is_expected.to be_empty }
+    end
+
+    context "with a past season" do
+      before { create :season, :past }
+
+      it { is_expected.to be_empty }
+    end
+
+    context "with a season yet to be launched" do
+      before { create :season, :future }
+
+      it { is_expected.to be_empty }
+    end
+
+    context "with a launched season" do
+      let!(:season) { create :season, :launched }
+
+      it { is_expected.to contain_exactly(season) }
+    end
+
+    context "with an active season" do
+      let!(:season) { create :season }
+
+      it { is_expected.to contain_exactly(season) }
+    end
+
+    context "with more than 4 seasons" do
+      before { create_list :season, 5 }
+
+      it { is_expected.to have_attributes size: 4 }
+    end
+  end
 end

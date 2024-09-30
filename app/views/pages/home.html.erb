@@ -2,22 +2,27 @@
 <%= editable_text "block", classes: %w[home-highlight-block] %>
 
 <%# when 4 columns: <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 text-center mb-3"> %>
-<div class="row row-cols-1 row-cols-sm-3 row-cols-lg-3 g-4 text-center mb-3">
-  <div class="col">
-    <div class="card h-100">
-      Camp card
+<div class="<%= home_page_season_row_classes.join " " %>">
+
+    <% seasons_for_home_page.each do |season| %>
+    <div class="<%= home_page_season_col_classes(season).join " " %>">
+        <div class="card h-100">
+            <%= image_tag url_for(season.photo), class: %i[card-img-top img-fluid] %>
+            <div class="card-body">
+                <h5 class="card-title"><%= season.name %></h5>
+                <p class="card-text">
+                    <%= l season.start_date, format: :words_no_year %> -
+                    <%= l season.end_date, format: :words_no_year %>
+                </p>
+            </div>
+            <div class="card-footer">
+                <%= link_to season, class: %i[btn btn-primary] do %>
+                    Book Now
+                <% end %>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="col">
-    <div class="card h-100">
-      Camp card
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100">
-      312 card
-    </div>
-  </div>
+    <% end %>
 </div>
 
 <%# when 4 columns: <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 text-center mb-3"> %>
