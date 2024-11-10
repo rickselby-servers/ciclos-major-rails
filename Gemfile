@@ -45,14 +45,14 @@ gem "sassc-rails", "~> 2.1"
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.13"
 
-gem "audited", "~> 5.7"
+gem "audited", "~> 5.8"
 gem "devise", "~> 4.9"
 gem "omniauth-rails_csrf_protection", "~> 1.0"
 
 # Bootstrap for front end
 gem "bootstrap", "~> 5.3"
 gem "bootstrap_form", "~> 5.3"
-gem "tinymce-rails", "~> 7.4.1"
+gem "tinymce-rails", "~> 7.5.0"
 
 # Other things...
 gem "acts_as_list", "~> 1.2"
