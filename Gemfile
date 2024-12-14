@@ -64,7 +64,7 @@ group :development, :test do
   gem "factory_bot", "~> 6.4"
   gem "factory_bot_rails", "~> 6.4"
   gem "rspec-rails", "~> 7.1"
-  gem "rubocop-rickselby", "~> 0.46"
+  gem "rubocop-rickselby", "~> 0.47"
 end
 
 group :development do
