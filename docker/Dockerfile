@@ -6,7 +6,7 @@ WORKDIR /app/public
 ADD docker/nginx/rails-vhost.conf /etc/nginx/conf.d/default.conf
 
 ###############################################################################
-FROM ruby:3.3.6-alpine AS ruby-base
+FROM ruby:3.4.1-alpine AS ruby-base
 
 RUN apk --no-cache add imagemagick tzdata nodejs libpq
 
