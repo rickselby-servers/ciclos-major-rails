@@ -345,7 +345,7 @@ GEM
     ruby-vips (2.2.2)
       ffi (~> 1.12)
       logger
-    rubyzip (2.3.2)
+    rubyzip (2.4.1)
     sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -355,7 +355,7 @@ GEM
       sprockets-rails
       tilt
     securerandom (0.4.1)
-    selenium-webdriver (4.27.0)
+    selenium-webdriver (4.28.0)
       base64 (~> 0.2)
       logger (~> 1.4)
       rexml (~> 3.2, >= 3.2.5)
@@ -434,7 +434,7 @@ DEPENDENCIES
   rspec-rails (~> 7.1)
   rubocop-rickselby (~> 0.49)
   sassc-rails (~> 2.1)
-  selenium-webdriver (~> 4.27)
+  selenium-webdriver (~> 4.28)
   shoulda-matchers (~> 6.4)
   sprockets-rails (~> 3.5)
   stimulus-rails (~> 1.3)
