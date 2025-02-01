@@ -56,12 +56,17 @@ class BikeRentalsController < ApplicationController
     @bike_rental = BikeRental.find params[:id]
   end
 
-  def bike_rental_params
-    params.require(:bike_rental)
-          .permit(
-            :name, :description, :photo,
-            bike_rental_details_attributes: %i[id _destroy key value],
-            bike_rental_prices_attributes:  %i[id _destroy days total_price],
-          )
+  def bike_rental_params # rubocop:disable Metrics/MethodLength
+    params.expect(
+      bike_rental: [
+        :name,
+        :description,
+        :photo,
+        {
+          bike_rental_details_attributes: [%i[id _destroy key value]],
+          bike_rental_prices_attributes:  [%i[id _destroy days total_price]],
+        },
+      ],
+    )
   end
 end

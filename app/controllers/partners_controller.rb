@@ -59,6 +59,6 @@ class PartnersController < ApplicationController
   end
 
   def partner_params
-    params.require(:partner).permit(:name, :details, :url, :logo)
+    params.expect(partner: %i[name details url logo])
   end
 end

@@ -51,6 +51,6 @@ class TestimonialsController < ApplicationController
   end
 
   def testimonial_params
-    params.require(:testimonial).permit(:title, :text)
+    params.expect(testimonial: %i[title text])
   end
 end

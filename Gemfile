@@ -61,10 +61,10 @@ gem "requestjs-rails", "~> 0.0.12"
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", "~> 1.10.0", platforms: %i[mri windows]
-  gem "factory_bot", "~> 6.4"
+  gem "factory_bot", "~> 6.5"
   gem "factory_bot_rails", "~> 6.4"
   gem "rspec-rails", "~> 7.1"
-  gem "rubocop-rickselby", "~> 0.49"
+  gem "rubocop-rickselby", "~> 0.50"
 end
 
 group :development do

@@ -65,7 +65,7 @@ class PhotosController < ApplicationController
   end
 
   def edit_photo_params
-    params.require(:photo).permit(:alt)
+    params.expect(photo: %i[alt])
   end
 
   def add_photos

@@ -51,6 +51,6 @@ class FaqsController < ApplicationController
   end
 
   def faq_params
-    params.require(:faq).permit(:question, :answer)
+    params.expect(faq: %i[question answer])
   end
 end
