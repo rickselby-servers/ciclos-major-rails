@@ -63,8 +63,8 @@ class BikeRentalsController < ApplicationController
         :description,
         :photo,
         {
-          bike_rental_details_attributes: %i[id _destroy key value],
-          bike_rental_prices_attributes:  %i[id _destroy days total_price],
+          bike_rental_details_attributes: [%i[id _destroy key value]],
+          bike_rental_prices_attributes:  [%i[id _destroy days total_price]],
         },
       ],
     )
