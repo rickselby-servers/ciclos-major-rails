@@ -1,11 +1,4 @@
 ###############################################################################
-FROM nginx:1.27.4-alpine AS nginx
-
-WORKDIR /app/public
-
-ADD docker/nginx/rails-vhost.conf /etc/nginx/conf.d/default.conf
-
-###############################################################################
 FROM ruby:3.3.6-alpine AS ruby-base
 
 RUN apk --no-cache add imagemagick tzdata nodejs libpq
@@ -45,8 +38,3 @@ ENV RACK_ENV production
 ENTRYPOINT ["/app/bin/docker-entrypoint"]
 
 CMD ["./bin/rails", "server"]
-
-###############################################################################
-FROM nginx AS web-production
-
-COPY --from=ruby-build /app/public /app/public

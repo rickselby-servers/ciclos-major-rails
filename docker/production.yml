@@ -2,23 +2,17 @@ version: '2.4'
 
 services:
   app:
-    image: $CONTAINER_BACKEND_PROD
+    image: $CONTAINER_PROD
     restart: always
     container_name: ciclos-major-rails-app
     environment:
+      VIRTUAL_HOST: rails.ciclosmajor.com
+      VIRTUAL_PORT: 3000
+      LETSENCRYPT_HOST: rails.ciclosmajor.com
+      LETSENCRYPT_EMAIL:
       CONTAINER_ROLE: app
       RACK_ENV: production
       RAILS_MASTER_KEY:
-  web:
-    image: $CONTAINER_FRONTEND_PROD
-    restart: always
-    container_name: ciclos-major-rails-web
-    environment:
-      VIRTUAL_HOST: rails.ciclosmajor.com
-      LETSENCRYPT_HOST: rails.ciclosmajor.com
-      LETSENCRYPT_EMAIL:
-    depends_on:
-      - app
 
 networks:
   default:

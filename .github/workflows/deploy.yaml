@@ -28,24 +28,14 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build and push frontend image
+      - name: Build and push image
         uses: docker/build-push-action@v6
         with:
           context: .
           file: docker/Dockerfile
           pull: true
           push: true
-          tags: ghcr.io/${{ github.repository }}-frontend:${{ github.sha }}
-          target: web-production
-      - name: Build and push backend image
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          file: docker/Dockerfile
-          pull: true
-          push: true
-          tags: ghcr.io/${{ github.repository }}-app:${{ github.sha }}
-          target: ruby-app
+          tags: ghcr.io/${{ github.repository }}:${{ github.sha }}
 
   deploy:
     name: Deploy to production server
@@ -70,8 +60,7 @@ jobs:
           CONNECT_CONTAINERS: nginx-proxy,postgres
           STACK_NAME: ciclos-major-rails
         env:
-          CONTAINER_FRONTEND_PROD: ghcr.io/${{ github.repository }}-frontend:${{ github.sha }}
-          CONTAINER_BACKEND_PROD: ghcr.io/${{ github.repository }}-app:${{ github.sha }}
+          CONTAINER_PROD: ghcr.io/${{ github.repository }}:${{ github.sha }}
           DOCKER_HOST: ${{ secrets.LINODE_HOST }}
           DOCKER_TLS_VERIFY: 1
           LETSENCRYPT_EMAIL: ${{ secrets.LETSENCRYPT_EMAIL }}
