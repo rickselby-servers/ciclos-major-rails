@@ -36,7 +36,6 @@ jobs:
           pull: true
           push: true
           tags: ghcr.io/${{ github.repository }}:${{ github.sha }}
-          target: production
 
   deploy:
     name: Deploy to production server
