@@ -48,6 +48,7 @@ gem "image_processing", "~> 1.13"
 gem "audited", "~> 5.8"
 gem "devise", "~> 4.9"
 gem "omniauth-rails_csrf_protection", "~> 1.0"
+gem "thruster", "~> 0.1", require: false
 
 # Bootstrap for front end
 gem "bootstrap", "~> 5.3"

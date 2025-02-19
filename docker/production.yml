@@ -7,7 +7,6 @@ services:
     container_name: ciclos-major-rails-app
     environment:
       VIRTUAL_HOST: rails.ciclosmajor.com
-      VIRTUAL_PORT: 3000
       LETSENCRYPT_HOST: rails.ciclosmajor.com
       LETSENCRYPT_EMAIL:
       CONTAINER_ROLE: app
