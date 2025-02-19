@@ -2,7 +2,7 @@ version: '2.4'
 
 services:
   app:
-    image: $CONTAINER_BACKEND_PROD
+    image: $CONTAINER_PROD
     restart: always
     container_name: ciclos-major-rails-app
     environment:
